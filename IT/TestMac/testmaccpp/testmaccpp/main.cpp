@@ -26,7 +26,8 @@ struct date{
         if (yy!=T.yy) return yy-T.yy;
         if (mm!=T.mm) return mm-T.mm;
         return dd-T.dd;
-    }                                               // встроенные функции работы с файлом
+    }
+    // встроенные функции работы с файлом
     void loadDate(FILE *fd){ fscanf(fd,"%d%d%d",&dd,&mm,&yy); }
     void saveDate(FILE *fd){ fprintf(fd,"%d %d %d ",dd,mm,yy); }
     void showDate(){ printf("%02d.%02d.%04d ",dd,mm,yy); }
@@ -103,7 +104,6 @@ struct exam
             fprintf(fd, "%s %s ",name,profName);
             _date.saveDate(fd);
             saveMarks(fd);
-            fclose(fd);
         }
     }
 };
@@ -135,11 +135,11 @@ struct table
     }
     void saveTable(char nm[])
     {
-        FILE *fd=fopen(nm,"wb");
+        FILE *fd=fopen(nm,"w");
         if (fd==NULL) return;
         cout << " Write " << nn << " exams into file. Begin" << endl;
         fprintf(fd, "%d\n",nn);
-        for (int j=0;j<nn;j++) _exams[j].saveExam(fd);
+        for (int j=0;j<=nn;j++) _exams[j].saveExam(fd);
         fclose(fd);
         
     }
@@ -152,7 +152,7 @@ int main(int argc, const char * argv[])
 {
     while(true)
     {
-        cout << "\na(dd),v(iew),l(oad),s(ave)\nwhat to do" << endl;
+        cout << "\na(dd),v(iew),l(oad),s(ave),c(ompare),e(xit)\nwhat to do" << endl;
         char t;
         cin >> t;
         switch (t) {
@@ -180,7 +180,14 @@ int main(int argc, const char * argv[])
             case 's':
             {
                 cout << "s(ave) mode" << endl;
-                TT.saveTable("sample.txt");
+                TT.saveTable("file.txt");
+            }
+                case 'e':
+            {
+                cout << "Press enter to exit:" << endl;
+                getchar();
+                getchar();
+                return 0;
             }
                 break;
                 
