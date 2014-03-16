@@ -58,6 +58,32 @@ struct exam
                     marks[j] = temp; // LOL
                 }
     }
+    float GetMiddle()
+    {
+        int s =0;
+        for(int i=0;i<np;i++)
+        {
+            s+=marks[i];
+        }
+        return s/np;
+    }
+    void GetCountMarks()
+    {
+        int one = 0,two = 0, three = 0,four = 0, five = 0;
+        for(int i = 0;i<np;i++)
+        {
+            if(marks[i]==1) one++;
+            if(marks[i]==2) two++;
+            if(marks[i]==3) three++;
+            if(marks[i]==4) four++;
+            if(marks[i]==5) five++;
+        }
+        cout << "Кол-во колов  " << one << endl;
+        cout << "Кол-во двоек  " << two << endl;
+        cout << "Кол-во троек  " << three << endl;
+        cout << "Кол-во четверок  " << four << endl;
+        cout << "Кол-во пятерок  " << five << endl;
+    }
     void saveMarks(FILE *fd)
     {
         fprintf(fd, "%d ",np);
@@ -112,6 +138,18 @@ struct exam
             fprintf(fd, "%s %s ",name,profName);
             _date.saveDate(fd);
             saveMarks(fd);
+        }
+    }
+    void specFunc(int func)
+    {
+        switch(func)
+        {
+            case 1:
+            {
+                
+            }
+                break;
+            default: break;
         }
     }
 };
@@ -220,6 +258,32 @@ struct table
                 break;
         }
     }
+    void specFunc(int func)
+    {
+        switch(func)
+        {
+            case 1:
+            {
+                for(int i = 0;i<nn;i++)
+                {
+                    _exams[i].showExam();
+                    cout << "Среднее значение оценок" << _exams[i].GetMiddle() << endl;
+                }
+            }
+                break;
+            case 2:
+            {
+                cout << "Статистика оценок(кол-во)" << endl;
+                for(int i = 0;i<nn;i++)
+                {
+                    _exams[i].showExam();
+                    _exams[i].GetCountMarks();
+                }
+            }
+                break;
+            default: break;
+        }
+    }
     
     void viewExams()
     {
@@ -228,7 +292,7 @@ struct table
     }
     void saveTable(char nm[])
     {
-        FILE *fd=fopen(nm,"w+");
+        FILE *fd=fopen(nm,"wb+");
         if (fd==NULL) return;
         cout << " Write " << nn << " exams into file. Begin" << endl;
         fprintf(fd, "%d\n",nn);
@@ -243,14 +307,14 @@ int main(int argc, const char * argv[])
 {
     while(true)
     {
-        cout << "\na(dd),v(iew),l(oad),E(dit),s(ave),d(elete),S(ort),c(ompare),e(xit)\nwhat to do" << endl;
+        cout << "\na(dd),v(iew),l(oad),E(dit),s(ave),d(elete),S(ort),c(ompare),f(unctions),e(xit)\nwhat to do" << endl;
         char t;
         cin >> t;
         switch (t) {
             case 'a':
             {
                 cout << "a(dd) mode" << endl;
-                cout << "Введите имя преподавателя и название экзамена" << endl;
+                cout << "Введите название экзамена и фамилию преподавателя" << endl;
                 char name[32],name2[32];
                 cin >> name >> name2;
                 TT.addExam(name, name2);
@@ -260,6 +324,7 @@ int main(int argc, const char * argv[])
             {
                 cout << "v(iew) mode" << endl;
                 TT.viewExams();
+                break;
             }
                 break;
             case 'l':
@@ -267,6 +332,7 @@ int main(int argc, const char * argv[])
                 cout << "l(oad) mode" << endl;
                 TT.loadTable("file.txt");
             }
+                break;
                 case 'E':
             {
                 cout << "E(dit) mode " << endl;
@@ -274,6 +340,26 @@ int main(int argc, const char * argv[])
                 char name[32]; cin >> name;
                 TT.editExam(name);
                 
+            }
+                break;
+                case 'f':
+            {
+                cout << "special final f(unctions)\n1 - Средняя оценка за экзамен\n2 - общее кол - во оценок " << endl;
+                int mode; cin >> mode;
+                switch (mode) {
+                    case 1:
+                    {
+                        TT.specFunc(1);
+                    }
+                        break;
+                        case 2:
+                    {
+                        TT.specFunc(2);
+                    }
+                        break;
+                    default:
+                        break;
+                }
             }
                 break;
             case 'S':
@@ -326,6 +412,7 @@ int main(int argc, const char * argv[])
                 }
                 //TT.saveTable("file.txt");
             }
+                break;
                 case 'e':
             {
                 cout << "Press enter to exit:" << endl;
