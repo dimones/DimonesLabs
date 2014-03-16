@@ -48,7 +48,15 @@ struct exam
     }
     void sortMarks()
     {
-        
+        //для упрощения взята сама тупая сортировка, пузырьком
+        for(int i=0;i<np;i++)
+            for(int j=i;j<np;j++)
+                if(marks[i]>marks[j])
+                {
+                    int temp = marks[i];
+                    marks[i] = marks[j];
+                    marks[j] = temp; // LOL
+                }
     }
     void saveMarks(FILE *fd)
     {
@@ -141,6 +149,36 @@ struct table
         }
         
     }
+    void sortMarks(char name[])
+    {
+        for(int i=0;i<nn;i++)
+        {
+            if(strcmp(_exams[i].name, name)==0)
+            {
+                _exams[i].sortMarks();
+                break;
+            }
+        }
+    }
+    void sortTable(int mode)
+    {
+        switch(mode)
+        {
+            case 1:
+            {
+                //для упрощения взята сама тупая сортировка, пузырьком
+                for(int i=0;i<nn;i++)
+                    for(int j=i;j<nn;j++)
+                        if(_exams[i].np>_exams[j].np)
+                        {
+                            exam temp = _exams[i];
+                            _exams[i] = _exams[j];
+                            _exams[j] = temp; // LOL
+                        }
+            }
+                break;
+        }
+    }
     
     void viewExams()
     {
@@ -164,7 +202,7 @@ int main(int argc, const char * argv[])
 {
     while(true)
     {
-        cout << "\na(dd),v(iew),l(oad),s(ave),d(elete),c(ompare),e(xit)\nwhat to do" << endl;
+        cout << "\na(dd),v(iew),l(oad),s(ave),d(elete),S(ort),c(ompare),e(xit)\nwhat to do" << endl;
         char t;
         cin >> t;
         switch (t) {
@@ -187,6 +225,29 @@ int main(int argc, const char * argv[])
             {
                 cout << "l(oad) mode" << endl;
                 TT.loadTable("file.txt");
+            }
+                break;
+            case 'S':
+            {
+                cout << "S(ort) mode " << endl;
+                cout << "Сортировка по:\n 1 - кол-ву оценок\n 2 - внутри экзамена будут сортиоваться оценки" << endl;
+                int mode; cin >> mode;
+                switch (mode) {
+                    case 1:
+                    {
+                        TT.sortTable(1);
+                    }
+                        break;
+                    case 2:
+                    {
+                        cout << "Введите имя экзамена" << endl;
+                        char name[32]; cin >> name;
+                        TT.sortMarks(name);
+                    }
+                        break;
+                    default:
+                        break;
+                }
             }
                 break;
                 case 'd':
@@ -214,7 +275,7 @@ int main(int argc, const char * argv[])
                     default:
                         break;
                 }
-                TT.saveTable("file.txt");
+                //TT.saveTable("file.txt");
             }
                 case 'e':
             {
@@ -239,9 +300,9 @@ int main(int argc, const char * argv[])
 ·        ввод записи таблицы с клавиатуры; // done
 ·        загрузка и сохранение  таблицы в текстовом файле; //done
 ·        просмотр таблицы; // done
-·        сортировка таблицы в порядке возрастания заданного поля;
+·        сортировка таблицы в порядке возрастания заданного поля;// all done
 ·        поиск в таблице элемента с заданным значением поля или с наиболее близким к нему по значению;
-·        удаление записи;
+·        удаление записи;//done
 ·        изменение (редактирование) записи;
 ·        вычисление с проверкой и использованием всех pfgbctq по заданному условию и формуле (например, общая сумма на всех счетах).
 Перечень полей структурированной переменной:
