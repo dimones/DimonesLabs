@@ -127,6 +127,20 @@ struct table
         nn++;
         
     }
+    void deleteExam(char name[])
+    {
+        for(int i=0;i<nn;i++)
+        {
+            if(strcmp(_exams[i].name, name)==0)
+            {
+                for(int j=i;j<nn-1;j++)
+                    _exams[j]= _exams[j+1];
+                nn--;
+                break;
+            }
+        }
+        
+    }
     
     void viewExams()
     {
@@ -141,9 +155,7 @@ struct table
         fprintf(fd, "%d\n",nn);
         for (int j=0;j<nn;j++) _exams[j].saveExam(fd);
         fclose(fd);
-        
     }
-    
 };
 
 table TT;
@@ -152,7 +164,7 @@ int main(int argc, const char * argv[])
 {
     while(true)
     {
-        cout << "\na(dd),v(iew),l(oad),s(ave),c(ompare),e(xit)\nwhat to do" << endl;
+        cout << "\na(dd),v(iew),l(oad),s(ave),d(elete),c(ompare),e(xit)\nwhat to do" << endl;
         char t;
         cin >> t;
         switch (t) {
@@ -175,6 +187,16 @@ int main(int argc, const char * argv[])
             {
                 cout << "l(oad) mode" << endl;
                 TT.loadTable("file.txt");
+            }
+                break;
+                case 'd':
+            {
+                cout << "d(elete) mode" << endl;
+                cout << "Введите название экзамена для удаления" << endl;
+                char name[32];
+                cin >>name;
+                TT.deleteExam(name);
+                
             }
                 break;
             case 's':
@@ -215,7 +237,7 @@ int main(int argc, const char * argv[])
 /*
 Определить структурированный тип и набор  функций для работы с таблицей записей, реализованной в массиве структур. В перечень функций входят:
 ·        ввод записи таблицы с клавиатуры; // done
-·        загрузка и сохранение  таблицы в текстовом файле; //half part
+·        загрузка и сохранение  таблицы в текстовом файле; //done
 ·        просмотр таблицы; // done
 ·        сортировка таблицы в порядке возрастания заданного поля;
 ·        поиск в таблице элемента с заданным значением поля или с наиболее близким к нему по значению;
