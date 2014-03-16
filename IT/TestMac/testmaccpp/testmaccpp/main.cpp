@@ -58,14 +58,14 @@ struct exam
                     marks[j] = temp; // LOL
                 }
     }
-    float GetMiddle()
+    double GetMiddle()
     {
         int s =0;
         for(int i=0;i<np;i++)
         {
             s+=marks[i];
         }
-        return s/np;
+        return (s/np);
     }
     void GetCountMarks()
     {
@@ -157,13 +157,15 @@ struct table
 {
     exam _exams[N];
     int nn = 0;
+    int curInFile = 0;
     void loadTable(char nm[]){
         FILE *fd=fopen(nm,"rw+");
         if (fd==NULL) return;
-        fscanf(fd,"%d",&nn);
-        cout << "in file " << nn << " exams" << endl;
+        fscanf(fd,"%d",&curInFile);
+        cout << "in file " << nn+curInFile << " exams" << endl;
         if (nn>=N) return;
-        for (int i=0;i<nn;i++) _exams[i].loadExam(fd);
+        for (int i=nn;i<nn+curInFile;i++) _exams[i].loadExam(fd);
+        nn+=curInFile;
         fclose(fd);
     }
     void addExam(char name[],char profName[])
@@ -267,7 +269,7 @@ struct table
                 for(int i = 0;i<nn;i++)
                 {
                     _exams[i].showExam();
-                    cout << "Среднее значение оценок" << _exams[i].GetMiddle() << endl;
+                    printf("%s  %d.2  ","Среднее значение оценок ",_exams[i].GetMiddle());
                 }
             }
                 break;
@@ -398,7 +400,7 @@ int main(int argc, const char * argv[])
             case 's':
             {
                 cout << "s(ave) mode" << endl;
-                cout << "r(ewrite) or a(ppend)?" << endl;
+                cout << "r(ewrite) or w(rite) file with another name?" << endl;
                 char c; cin >> c;
                 switch (c) {
                     case 'r':
@@ -406,7 +408,12 @@ int main(int argc, const char * argv[])
                         TT.saveTable("file.txt");
                     }
                         break;
-                        
+                        case 'a':
+                    {
+                        cout << "Введите имя файла,на английском" <<  endl;
+                        char name[32]; cin >> name;
+                        TT.saveTable(name);
+                    }
                     default:
                         break;
                 }
