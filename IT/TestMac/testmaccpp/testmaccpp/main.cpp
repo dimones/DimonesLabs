@@ -135,11 +135,11 @@ struct table
     }
     void saveTable(char nm[])
     {
-        FILE *fd=fopen(nm,"w");
+        FILE *fd=fopen(nm,"w+");
         if (fd==NULL) return;
         cout << " Write " << nn << " exams into file. Begin" << endl;
         fprintf(fd, "%d\n",nn);
-        for (int j=0;j<=nn;j++) _exams[j].saveExam(fd);
+        for (int j=0;j<nn;j++) _exams[j].saveExam(fd);
         fclose(fd);
         
     }
@@ -180,6 +180,18 @@ int main(int argc, const char * argv[])
             case 's':
             {
                 cout << "s(ave) mode" << endl;
+                cout << "r(ewrite) or a(ppend)?" << endl;
+                char c; cin >> c;
+                switch (c) {
+                    case 'r':
+                    {
+                        TT.saveTable("file.txt");
+                    }
+                        break;
+                        
+                    default:
+                        break;
+                }
                 TT.saveTable("file.txt");
             }
                 case 'e':
