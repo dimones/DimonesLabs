@@ -27,7 +27,7 @@ struct date{
         if (mm!=T.mm) return mm-T.mm;
         return dd-T.dd;
     }                                               // встроенные функции работы с файлом
-    void loadDate(FILE *fd){ fscanf(fd,"%d%d%d",&dd,&mm,&yy); cout << "Date: " << dd << "." << mm << "." << yy << endl;  }
+    void loadDate(FILE *fd){ fscanf(fd,"%d%d%d",&dd,&mm,&yy); }
     void saveDate(FILE *fd){ fprintf(fd,"%d %d %d ",dd,mm,yy); }
     void showDate(){ printf("%02d.%02d.%04d ",dd,mm,yy); }
 };
@@ -38,47 +38,112 @@ struct exam
     char name[32],profName[32];
     date _date;
     int marks[NP];
-    void loadMarks(FILE *fd,int i)
+    int np;
+    void loadMark(FILE *fd,int i)
     {
         int temp;
         fscanf(fd,"%d",&temp);
         marks[i] = temp;
-        cout << marks[i] << ",";
+    }
+    void sortMarks()
+    {
+        
+    }
+    void saveMarks(FILE *fd)
+    {
+        fprintf(fd, "%d ",np);
+        for(int i=0;i<np;i++)
+            fprintf(fd, "%d ",marks[i]);
+        fprintf(fd, "\n");
+    }
+    void showMarks()
+    {
+        for(int i = 0;i<np;i++)
+            cout << marks[i]<< " ";
+    }
+    void getMarks(int n)
+    {
+        np = n;
+        for(int i = 0;i < np;i++)
+            cin >> marks[i];
+    }
+    void showExam()
+    {
+        cout << "Имя преподавателя: " << profName << ", имя экзамена: " << name << ", дата экзамена: ";
+        _date.showDate();
+        cout << ", кол-во оценок: " << np << ", оценки: ";
+        showMarks();
+        cout << endl;
     }
     void addExam(char name0[],char profName0[])
     {
-        strcpy(name0,name);
-        strcpy(profName0, profName);// profName = profName0;
-        cout << "You type name exam:" << name0 << " Имя преподавателя:" << profName0 << endl;
+        strcpy(name,name0);
+        strcpy(profName, profName0);// profName = profName0;
+        //cout << "You type name exam:" << name0 << " Имя преподавателя:" << profName0 << endl;
+        _date.getDate();
+        cout << "Введи кол-во оценок у преподавателя: ";
+        int temp;
+        cin >> temp;
+        getMarks(temp);
     }
     void loadExam(FILE *fd)
     {
-        int np;
         fscanf(fd,"%s %s",profName,name);
-        cout << "Имя экзамена:" << name << "  Имя преподавалеля " << profName << "  ";
         _date.loadDate(fd);        // вызов встроенной функции для поля birth
         fscanf(fd,"%d",&np);
-        cout << "Кол-во оценок: " << np << " Оценки: ";
         for (int i=0;i<np;i++)
         {
-            loadMarks(fd,i);
+            loadMark(fd,i);
         }
-        cout << endl;
+    }
+    void saveExam(FILE *fd)
+    {
+        for(int i=0;i<np;i++)
+        {
+            fprintf(fd, "%s %s ",name,profName);
+            _date.saveDate(fd);
+            saveMarks(fd);
+            fclose(fd);
+        }
     }
 };
 struct table
 {
     exam _exams[N];
-    int nn;
-    void loadTable(char nm[]){           // встроенная функция загрузки из файла
+    int nn = 0;
+    void loadTable(char nm[]){
         FILE *fd=fopen(nm,"rw+");
         if (fd==NULL) return;
         fscanf(fd,"%d",&nn);
         cout << "in file " << nn << " exams" << endl;
-        if (nn>=N) return;            // вызов встроенной функции для поля TBL[i]
+        if (nn>=N) return;
         for (int i=0;i<nn;i++) _exams[i].loadExam(fd);
         fclose(fd);
     }
+    void addExam(char name[],char profName[])
+    {
+        
+        _exams[nn].addExam(name, profName);
+        nn++;
+        
+    }
+    
+    void viewExams()
+    {
+        for(int i = 0;i < nn;i++)
+            _exams[i].showExam();
+    }
+    void saveTable(char nm[])
+    {
+        FILE *fd=fopen(nm,"wb");
+        if (fd==NULL) return;
+        cout << " Write " << nn << " exams into file. Begin" << endl;
+        fprintf(fd, "%d\n",nn);
+        for (int j=0;j<nn;j++) _exams[j].saveExam(fd);
+        fclose(fd);
+        
+    }
+    
 };
 
 table TT;
@@ -94,23 +159,28 @@ int main(int argc, const char * argv[])
             case 'a':
             {
                 cout << "a(dd) mode" << endl;
+                cout << "Введите имя преподавателя и название экзамена" << endl;
+                char name[32],name2[32];
+                cin >> name >> name2;
+                TT.addExam(name, name2);
             }
                 break;
             case 'v':
             {
                 cout << "v(iew) mode" << endl;
-                TT.loadTable("file.txt");
+                TT.viewExams();
             }
                 break;
             case 'l':
             {
                 cout << "l(oad) mode" << endl;
-               
+                TT.loadTable("file.txt");
             }
                 break;
             case 's':
             {
                 cout << "s(ave) mode" << endl;
+                TT.saveTable("sample.txt");
             }
                 break;
                 
@@ -125,9 +195,9 @@ int main(int argc, const char * argv[])
 }
 /*
 Определить структурированный тип и набор  функций для работы с таблицей записей, реализованной в массиве структур. В перечень функций входят:
-·        ввод записи таблицы с клавиатуры;
-·        загрузка и сохранение  таблицы в текстовом файле;
-·        просмотр таблицы;
+·        ввод записи таблицы с клавиатуры; // done
+·        загрузка и сохранение  таблицы в текстовом файле; //half part
+·        просмотр таблицы; // done
 ·        сортировка таблицы в порядке возрастания заданного поля;
 ·        поиск в таблице элемента с заданным значением поля или с наиболее близким к нему по значению;
 ·        удаление записи;
