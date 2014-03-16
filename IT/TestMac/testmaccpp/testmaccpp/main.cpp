@@ -18,9 +18,9 @@ struct date{
         cout << dd << " " << mm <<" " << yy << endl;
     }
     void getDate(){                                       // встроенная функция чтения даты
-        printf("\nday:"); scanf("%d",&dd);
-        printf("month:"); scanf("%d",&mm);
-        printf("year:"); scanf("%d",&yy);   // непосредственный доступ по имени поля
+        printf("\nДень:"); scanf("%d",&dd);
+        printf("Месяц:"); scanf("%d",&mm);
+        printf("Год:"); scanf("%d",&yy);   // непосредственный доступ по имени поля
     }
     int cmpDate(date &T){                            // встроенная функция сравнения дат
         if (yy!=T.yy) return yy-T.yy;
@@ -149,6 +149,47 @@ struct table
         }
         
     }
+    void editExam(char name[])
+    {
+        for(int i=0;i<nn;i++)
+        {
+            if(strcmp(_exams[i].name, name)==0)
+            {
+                cout << "Я нашел вашу запись =3, что хотите отредактировать?\n 1 - имя преподавателя\n2 - имя экзамена,\n3 - изменить дату экзамена\n4-изменить оценки" << endl;
+                int mode; cin >> mode;
+                switch(mode)
+                {
+                    case 1:
+                    {
+                        cout << "Введите имя преподавателя" << endl;
+                        cin >> _exams[i].profName;
+                    }
+                        break;
+                    case 2:
+                    {
+                        cout << "Введите имя экзамена" << endl;
+                        cin >> _exams[i].name;
+                    }
+                        break;
+                    case 3:
+                    {
+                        cout << "Введите дату" << endl;
+                        _exams[i]._date.getDate();
+                    }
+                        break;
+                    case 4:
+                    {
+                        cout << "Введите кол-во оценок" << endl;
+                        int count; cin >> count;
+                        cout << "Вы молодец, теперь введите ваши оценки через пробел или каждую через enter" << endl;
+                        _exams[i].getMarks(count);
+                    }
+                        break;
+                }
+                break;
+            }
+        }
+    }
     void sortMarks(char name[])
     {
         for(int i=0;i<nn;i++)
@@ -202,7 +243,7 @@ int main(int argc, const char * argv[])
 {
     while(true)
     {
-        cout << "\na(dd),v(iew),l(oad),s(ave),d(elete),S(ort),c(ompare),e(xit)\nwhat to do" << endl;
+        cout << "\na(dd),v(iew),l(oad),E(dit),s(ave),d(elete),S(ort),c(ompare),e(xit)\nwhat to do" << endl;
         char t;
         cin >> t;
         switch (t) {
@@ -225,6 +266,14 @@ int main(int argc, const char * argv[])
             {
                 cout << "l(oad) mode" << endl;
                 TT.loadTable("file.txt");
+            }
+                case 'E':
+            {
+                cout << "E(dit) mode " << endl;
+                cout << "Вы можете изменить поле экзамена по имени,введите его" << endl;
+                char name[32]; cin >> name;
+                TT.editExam(name);
+                
             }
                 break;
             case 'S':
@@ -303,8 +352,8 @@ int main(int argc, const char * argv[])
 ·        сортировка таблицы в порядке возрастания заданного поля;// all done
 ·        поиск в таблице элемента с заданным значением поля или с наиболее близким к нему по значению;
 ·        удаление записи;//done
-·        изменение (редактирование) записи;
-·        вычисление с проверкой и использованием всех pfgbctq по заданному условию и формуле (например, общая сумма на всех счетах).
+·        изменение (редактирование) записи; // DONE!
+·        вычисление с проверкой и использованием всех pfgbctq по заданному условию и формуле (например, общая сумма на всех счетах).// непонятно...
 Перечень полей структурированной переменной:
 
     3. Название экзамена, дата экзамена, фамилия преподавателя,  количество оценок, оценки.*/
