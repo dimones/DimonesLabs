@@ -1,0 +1,16 @@
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\Lab1CC.exe.config
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\Lab1CC.exe
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\Lab1CC.pdb
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\OpenTK.Compatibility.dll
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\OpenTK.dll
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\OpenTK.GLControl.dll
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\OpenTK.pdb
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\OpenTK.xml
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\OpenTK.Compatibility.xml
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\bin\Debug\OpenTK.GLControl.xml
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\obj\Debug\Lab1CC.csprojResolveAssemblyReference.cache
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\obj\Debug\Lab1CC.Form1.resources
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\obj\Debug\Lab1CC.Properties.Resources.resources
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\obj\Debug\Lab1CC.csproj.GenerateResource.Cache
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\obj\Debug\Lab1CC.exe
+c:\users\dimones-dev\documents\visual studio 2012\Projects\Lab1CC\Lab1CC\obj\Debug\Lab1CC.pdb
