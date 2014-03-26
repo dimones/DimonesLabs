@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		250547822EFF41EAA277C573 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F373C4EB0734BC884C7F5B8 /* libPods.a */; };
+		466309D018DDA8F1002DE970 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466309CF18DDA8F1002DE970 /* Foundation.framework */; };
+		466309D218DDA8F1002DE970 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466309D118DDA8F1002DE970 /* CoreGraphics.framework */; };
+		466309D418DDA8F1002DE970 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466309D318DDA8F1002DE970 /* UIKit.framework */; };
+		466309DA18DDA8F1002DE970 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 466309D818DDA8F1002DE970 /* InfoPlist.strings */; };
+		466309DC18DDA8F1002DE970 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 466309DB18DDA8F1002DE970 /* main.m */; };
+		466309E018DDA8F1002DE970 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 466309DF18DDA8F1002DE970 /* AppDelegate.m */; };
+		466309E318DDA8F1002DE970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 466309E118DDA8F1002DE970 /* Main.storyboard */; };
+		466309E618DDA8F1002DE970 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466309E518DDA8F1002DE970 /* ViewController.m */; };
+		466309E818DDA8F1002DE970 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 466309E718DDA8F1002DE970 /* Images.xcassets */; };
+		466309EF18DDA8F1002DE970 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466309EE18DDA8F1002DE970 /* XCTest.framework */; };
+		466309F018DDA8F1002DE970 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466309CF18DDA8F1002DE970 /* Foundation.framework */; };
+		466309F118DDA8F1002DE970 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466309D318DDA8F1002DE970 /* UIKit.framework */; };
+		466309F918DDA8F1002DE970 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 466309F718DDA8F1002DE970 /* InfoPlist.strings */; };
+		466309FB18DDA8F1002DE970 /* vkMusicPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 466309FA18DDA8F1002DE970 /* vkMusicPlayerTests.m */; };
+		46630A0718DDA94E002DE970 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46630A0618DDA94E002DE970 /* QuartzCore.framework */; };
+		46B0F2C618DF2FFF006DCA33 /* MusicListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B0F2C518DF2FFF006DCA33 /* MusicListController.m */; };
+		46B0F2C918DF322E006DCA33 /* songCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B0F2C818DF322E006DCA33 /* songCell.m */; };
+		46B0F2CB18DF36DA006DCA33 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 46B0F2CA18DF36DA006DCA33 /* AppIcon.png */; };
+		46B0F2CE18DF3818006DCA33 /* settVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B0F2CD18DF3818006DCA33 /* settVIewController.m */; };
+		46D6129C18E1C7250075CDAB /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 46D6129B18E1C7250075CDAB /* blank.png */; };
+		46F358EC18DF4A8300201D0C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46F358EB18DF4A8300201D0C /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		466309F218DDA8F1002DE970 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 466309C418DDA8F1002DE970 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466309CB18DDA8F1002DE970;
+			remoteInfo = vkMusicPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F373C4EB0734BC884C7F5B8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		466309CC18DDA8F1002DE970 /* vkMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		466309CF18DDA8F1002DE970 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		466309D118DDA8F1002DE970 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		466309D318DDA8F1002DE970 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		466309D718DDA8F1002DE970 /* vkMusicPlayer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vkMusicPlayer-Info.plist"; sourceTree = "<group>"; };
+		466309D918DDA8F1002DE970 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		466309DB18DDA8F1002DE970 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		466309DD18DDA8F1002DE970 /* vkMusicPlayer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vkMusicPlayer-Prefix.pch"; sourceTree = "<group>"; };
+		466309DE18DDA8F1002DE970 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		466309DF18DDA8F1002DE970 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		466309E218DDA8F1002DE970 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		466309E418DDA8F1002DE970 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		466309E518DDA8F1002DE970 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		466309E718DDA8F1002DE970 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		466309ED18DDA8F1002DE970 /* vkMusicPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vkMusicPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		466309EE18DDA8F1002DE970 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		466309F618DDA8F1002DE970 /* vkMusicPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vkMusicPlayerTests-Info.plist"; sourceTree = "<group>"; };
+		466309F818DDA8F1002DE970 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		466309FA18DDA8F1002DE970 /* vkMusicPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vkMusicPlayerTests.m; sourceTree = "<group>"; };
+		46630A0418DDA943002DE970 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		46630A0618DDA94E002DE970 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		46630A0818DDA956002DE970 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		46B0F2C418DF2FFF006DCA33 /* MusicListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListController.h; sourceTree = "<group>"; };
+		46B0F2C518DF2FFF006DCA33 /* MusicListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListController.m; sourceTree = "<group>"; };
+		46B0F2C718DF322E006DCA33 /* songCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = songCell.h; path = ../songCell.h; sourceTree = "<group>"; };
+		46B0F2C818DF322E006DCA33 /* songCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = songCell.m; path = ../songCell.m; sourceTree = "<group>"; };
+		46B0F2CA18DF36DA006DCA33 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = "../../../../../Volumes/Files[Dimones]/Torrent/AppIcon.png"; sourceTree = "<group>"; };
+		46B0F2CC18DF3818006DCA33 /* settVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settVIewController.h; sourceTree = "<group>"; };
+		46B0F2CD18DF3818006DCA33 /* settVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settVIewController.m; sourceTree = "<group>"; };
+		46D6129B18E1C7250075CDAB /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blank.png; path = "../../../../../Volumes/Files[Dimones]/Torrent/blank.png"; sourceTree = "<group>"; };
+		46F358EB18DF4A8300201D0C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		C1B1CAB41DAB480F93ADB8FB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		466309C918DDA8F1002DE970 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46F358EC18DF4A8300201D0C /* AVFoundation.framework in Frameworks */,
+				46630A0718DDA94E002DE970 /* QuartzCore.framework in Frameworks */,
+				466309D218DDA8F1002DE970 /* CoreGraphics.framework in Frameworks */,
+				466309D418DDA8F1002DE970 /* UIKit.framework in Frameworks */,
+				466309D018DDA8F1002DE970 /* Foundation.framework in Frameworks */,
+				250547822EFF41EAA277C573 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466309EA18DDA8F1002DE970 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466309EF18DDA8F1002DE970 /* XCTest.framework in Frameworks */,
+				466309F118DDA8F1002DE970 /* UIKit.framework in Frameworks */,
+				466309F018DDA8F1002DE970 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		466309C318DDA8F1002DE970 = {
+			isa = PBXGroup;
+			children = (
+				466309D518DDA8F1002DE970 /* vkMusicPlayer */,
+				466309F418DDA8F1002DE970 /* vkMusicPlayerTests */,
+				466309CE18DDA8F1002DE970 /* Frameworks */,
+				466309CD18DDA8F1002DE970 /* Products */,
+				C1B1CAB41DAB480F93ADB8FB /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		466309CD18DDA8F1002DE970 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				466309CC18DDA8F1002DE970 /* vkMusicPlayer.app */,
+				466309ED18DDA8F1002DE970 /* vkMusicPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		466309CE18DDA8F1002DE970 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46F358EB18DF4A8300201D0C /* AVFoundation.framework */,
+				46630A0818DDA956002DE970 /* CoreData.framework */,
+				46630A0618DDA94E002DE970 /* QuartzCore.framework */,
+				46630A0418DDA943002DE970 /* SenTestingKit.framework */,
+				466309CF18DDA8F1002DE970 /* Foundation.framework */,
+				466309D118DDA8F1002DE970 /* CoreGraphics.framework */,
+				466309D318DDA8F1002DE970 /* UIKit.framework */,
+				466309EE18DDA8F1002DE970 /* XCTest.framework */,
+				1F373C4EB0734BC884C7F5B8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		466309D518DDA8F1002DE970 /* vkMusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				46D6129B18E1C7250075CDAB /* blank.png */,
+				46B0F2C718DF322E006DCA33 /* songCell.h */,
+				46B0F2C818DF322E006DCA33 /* songCell.m */,
+				46A4E8F718DF0CA2009DF63E /* iPad */,
+				466309DE18DDA8F1002DE970 /* AppDelegate.h */,
+				466309DF18DDA8F1002DE970 /* AppDelegate.m */,
+				466309E118DDA8F1002DE970 /* Main.storyboard */,
+				466309E418DDA8F1002DE970 /* ViewController.h */,
+				466309E518DDA8F1002DE970 /* ViewController.m */,
+				466309E718DDA8F1002DE970 /* Images.xcassets */,
+				46B0F2CA18DF36DA006DCA33 /* AppIcon.png */,
+				466309D618DDA8F1002DE970 /* Supporting Files */,
+				46B0F2C418DF2FFF006DCA33 /* MusicListController.h */,
+				46B0F2C518DF2FFF006DCA33 /* MusicListController.m */,
+				46B0F2CC18DF3818006DCA33 /* settVIewController.h */,
+				46B0F2CD18DF3818006DCA33 /* settVIewController.m */,
+			);
+			path = vkMusicPlayer;
+			sourceTree = "<group>";
+		};
+		466309D618DDA8F1002DE970 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				466309D718DDA8F1002DE970 /* vkMusicPlayer-Info.plist */,
+				466309D818DDA8F1002DE970 /* InfoPlist.strings */,
+				466309DB18DDA8F1002DE970 /* main.m */,
+				466309DD18DDA8F1002DE970 /* vkMusicPlayer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		466309F418DDA8F1002DE970 /* vkMusicPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				466309FA18DDA8F1002DE970 /* vkMusicPlayerTests.m */,
+				466309F518DDA8F1002DE970 /* Supporting Files */,
+			);
+			path = vkMusicPlayerTests;
+			sourceTree = "<group>";
+		};
+		466309F518DDA8F1002DE970 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				466309F618DDA8F1002DE970 /* vkMusicPlayerTests-Info.plist */,
+				466309F718DDA8F1002DE970 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46A4E8F718DF0CA2009DF63E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		466309CB18DDA8F1002DE970 /* vkMusicPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 466309FE18DDA8F1002DE970 /* Build configuration list for PBXNativeTarget "vkMusicPlayer" */;
+			buildPhases = (
+				0E268F13B3ED494D89240E27 /* Check Pods Manifest.lock */,
+				466309C818DDA8F1002DE970 /* Sources */,
+				466309C918DDA8F1002DE970 /* Frameworks */,
+				466309CA18DDA8F1002DE970 /* Resources */,
+				FF7E7EF558994FF79C01D258 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vkMusicPlayer;
+			productName = vkMusicPlayer;
+			productReference = 466309CC18DDA8F1002DE970 /* vkMusicPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		466309EC18DDA8F1002DE970 /* vkMusicPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46630A0118DDA8F1002DE970 /* Build configuration list for PBXNativeTarget "vkMusicPlayerTests" */;
+			buildPhases = (
+				466309E918DDA8F1002DE970 /* Sources */,
+				466309EA18DDA8F1002DE970 /* Frameworks */,
+				466309EB18DDA8F1002DE970 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				466309F318DDA8F1002DE970 /* PBXTargetDependency */,
+			);
+			name = vkMusicPlayerTests;
+			productName = vkMusicPlayerTests;
+			productReference = 466309ED18DDA8F1002DE970 /* vkMusicPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		466309C418DDA8F1002DE970 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Dimones;
+				TargetAttributes = {
+					466309EC18DDA8F1002DE970 = {
+						TestTargetID = 466309CB18DDA8F1002DE970;
+					};
+				};
+			};
+			buildConfigurationList = 466309C718DDA8F1002DE970 /* Build configuration list for PBXProject "vkMusicPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 466309C318DDA8F1002DE970;
+			productRefGroup = 466309CD18DDA8F1002DE970 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				466309CB18DDA8F1002DE970 /* vkMusicPlayer */,
+				466309EC18DDA8F1002DE970 /* vkMusicPlayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		466309CA18DDA8F1002DE970 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46D6129C18E1C7250075CDAB /* blank.png in Resources */,
+				466309E818DDA8F1002DE970 /* Images.xcassets in Resources */,
+				46B0F2CB18DF36DA006DCA33 /* AppIcon.png in Resources */,
+				466309DA18DDA8F1002DE970 /* InfoPlist.strings in Resources */,
+				466309E318DDA8F1002DE970 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466309EB18DDA8F1002DE970 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466309F918DDA8F1002DE970 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E268F13B3ED494D89240E27 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF7E7EF558994FF79C01D258 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		466309C818DDA8F1002DE970 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46B0F2CE18DF3818006DCA33 /* settVIewController.m in Sources */,
+				46B0F2C918DF322E006DCA33 /* songCell.m in Sources */,
+				466309E618DDA8F1002DE970 /* ViewController.m in Sources */,
+				46B0F2C618DF2FFF006DCA33 /* MusicListController.m in Sources */,
+				466309E018DDA8F1002DE970 /* AppDelegate.m in Sources */,
+				466309DC18DDA8F1002DE970 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466309E918DDA8F1002DE970 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466309FB18DDA8F1002DE970 /* vkMusicPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		466309F318DDA8F1002DE970 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466309CB18DDA8F1002DE970 /* vkMusicPlayer */;
+			targetProxy = 466309F218DDA8F1002DE970 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		466309D818DDA8F1002DE970 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				466309D918DDA8F1002DE970 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		466309E118DDA8F1002DE970 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				466309E218DDA8F1002DE970 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		466309F718DDA8F1002DE970 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				466309F818DDA8F1002DE970 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		466309FC18DDA8F1002DE970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		466309FD18DDA8F1002DE970 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		466309FF18DDA8F1002DE970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1B1CAB41DAB480F93ADB8FB /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vkMusicPlayer/vkMusicPlayer-Prefix.pch";
+				INFOPLIST_FILE = "vkMusicPlayer/vkMusicPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		46630A0018DDA8F1002DE970 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1B1CAB41DAB480F93ADB8FB /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vkMusicPlayer/vkMusicPlayer-Prefix.pch";
+				INFOPLIST_FILE = "vkMusicPlayer/vkMusicPlayer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		46630A0218DDA8F1002DE970 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/vkMusicPlayer.app/vkMusicPlayer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vkMusicPlayer/vkMusicPlayer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "vkMusicPlayerTests/vkMusicPlayerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		46630A0318DDA8F1002DE970 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/vkMusicPlayer.app/vkMusicPlayer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "vkMusicPlayer/vkMusicPlayer-Prefix.pch";
+				INFOPLIST_FILE = "vkMusicPlayerTests/vkMusicPlayerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		466309C718DDA8F1002DE970 /* Build configuration list for PBXProject "vkMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466309FC18DDA8F1002DE970 /* Debug */,
+				466309FD18DDA8F1002DE970 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		466309FE18DDA8F1002DE970 /* Build configuration list for PBXNativeTarget "vkMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466309FF18DDA8F1002DE970 /* Debug */,
+				46630A0018DDA8F1002DE970 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46630A0118DDA8F1002DE970 /* Build configuration list for PBXNativeTarget "vkMusicPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46630A0218DDA8F1002DE970 /* Debug */,
+				46630A0318DDA8F1002DE970 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 466309C418DDA8F1002DE970 /* Project object */;
+}

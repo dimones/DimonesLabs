@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>AB058C9A-5D09-4453-AC32-A037651FE1DF</string>
+	<string>E6B5BB3E-A505-44B7-94AA-9B850571AB74</string>
 	<key>IDESourceControlProjectName</key>
 	<string>testmaccpp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>8A15A558-0D80-45E0-ACBC-3F21ED359A57</key>
+		<key>A71EFEEB-753B-43C7-B7EB-2DFA634C74A9</key>
 		<string>https://github.com/dimones/DimonesLabs.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>IT/TestMac/testmaccpp/testmaccpp.xcodeproj/project.xcworkspace</string>
+	<string>IT/Lab1/testmaccpp/testmaccpp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>8A15A558-0D80-45E0-ACBC-3F21ED359A57</key>
+		<key>A71EFEEB-753B-43C7-B7EB-2DFA634C74A9</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8A15A558-0D80-45E0-ACBC-3F21ED359A57</string>
+	<string>A71EFEEB-753B-43C7-B7EB-2DFA634C74A9</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>8A15A558-0D80-45E0-ACBC-3F21ED359A57</string>
+			<string>A71EFEEB-753B-43C7-B7EB-2DFA634C74A9</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DimonesLabs</string>
 		</dict>
