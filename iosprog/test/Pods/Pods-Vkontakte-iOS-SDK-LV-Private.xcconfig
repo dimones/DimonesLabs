@@ -1,0 +1,5 @@
+#include "Pods-Vkontakte-iOS-SDK-LV.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/Vkontakte-iOS-SDK-LV" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Vkontakte-iOS-SDK-LV"
+OTHER_LDFLAGS = -ObjC ${PODS_VKONTAKTE_IOS_SDK_LV_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}

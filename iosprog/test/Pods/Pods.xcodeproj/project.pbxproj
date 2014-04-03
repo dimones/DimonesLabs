@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0764E524384B4E62B9E83051 /* VKRequestManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B73ED8CCBC0847F4B2E204FC /* VKRequestManager.h */; };
+		09D60B0B59524A8AA0390355 /* NSString+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C86B52278254C16B6E9CB4A /* NSString+Utilities.h */; };
+		14A23149B8AF4132BAF2CD35 /* VKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 20807973FD484F6E93F9CE50 /* VKRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		1E6538013C8446038C571FF4 /* libPods-Vkontakte-iOS-SDK-LV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EF55A8818714B74BBA5E5BC /* libPods-Vkontakte-iOS-SDK-LV.a */; };
+		23B144F284144537B4DE0D4E /* VKStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 534D29DD5808495793CFFD15 /* VKStorage.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		269EAA94A112453B99B15E11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428E13B1C65A48568AB9D5D3 /* Foundation.framework */; };
+		3339B6A7BC1F4D0FB7293401 /* VKStorageItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 59AAE8D3948D4AAF87D4C767 /* VKStorageItem.h */; };
+		3CB8D9F1530541D68B08F66D /* VKMethods.h in Headers */ = {isa = PBXBuildFile; fileRef = DA99BF6D33ED485989A7EA96 /* VKMethods.h */; };
+		412DC98172484B8CB48109DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428E13B1C65A48568AB9D5D3 /* Foundation.framework */; };
+		469CAB7418EAB824007F1B77 /* YandexSpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469CAB7318EAB824007F1B77 /* YandexSpeechKit.framework */; };
+		5E9CEA1412D4492EAF2E1EF4 /* VKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DC0A3D98094E769741DABD /* VKCache.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		6977E14EDAAB4F82BD2C04B7 /* VKStorageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F30CA171346A45AA8EEC49BD /* VKStorageItem.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		76AD1ACCC1984D6FBD248D77 /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7600CFEC7DE6459999173E9D /* VKAccessToken.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		7DCEBA762B924B0B85E66D5E /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C800481A89D54BBD8F8139BB /* Pods-dummy.m */; };
+		897B6BAC023C44A19D49971B /* VKConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 066EE9445E1B4693AA38F7EA /* VKConnector.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		92968A7980054525805B695D /* Pods-Vkontakte-iOS-SDK-LV-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9195B82CBC994FEBAD076A45 /* Pods-Vkontakte-iOS-SDK-LV-dummy.m */; };
+		9FABAB94328B472F87BF889E /* VKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 010288E064F747AF82581EA4 /* VKRequestManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		A3A08748CD9245E59C75D2A9 /* NSData+toBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = F82F5C0E38E94EA1B18B9116 /* NSData+toBase64.h */; };
+		B2C6B35A52A44B4C9EDE8FF6 /* VKAccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 022AE9F7766D438D8DE1F140 /* VKAccessToken.h */; };
+		C476BFAD987146FABFFB0DBF /* VKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 546FFA7044BD42E7B50B11B9 /* VKRequest.h */; };
+		D00AD9A6369F4694BB2E71D2 /* VKCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 179BA249560545E1AA5CAEB6 /* VKCache.h */; };
+		D8934A8F754444C09D1BCC8A /* VKStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 217C76ECABEB45F39BEB7BB6 /* VKStorage.h */; };
+		DABE0CB425FA4E7EA20EA7C7 /* NSString+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = FD56C59BB69E49518E87E327 /* NSString+Utilities.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		DD472C10B54A4441AE5BB387 /* VkontakteSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B857A143071432DA90FE45D /* VkontakteSDK.h */; };
+		E00E30CF9D8B419AB8866C62 /* VKUser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C9ADB08329D4A6ABE4A846B /* VKUser.h */; };
+		E2522CB29A90436E9820EEFD /* VKConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BB4B73717FB48AB97DBC894 /* VKConnector.h */; };
+		E875DE167637408B9A281023 /* NSData+toBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F7330C9089B497EB89D09F8 /* NSData+toBase64.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+		F7CB576966D141908FCEBFC4 /* VkontakteSDK_Logger.h in Headers */ = {isa = PBXBuildFile; fileRef = E4519310FDAA41E993B16CFC /* VkontakteSDK_Logger.h */; };
+		FBC247E05DB2415E8DD152B0 /* VKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA7EDE01A5D4175AB269F6B /* VKUser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3A65CE450DB4633808CB777 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6AE9A8774DB24CDCB2DD0FBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1F24422BD5640F2B8B0C90F;
+			remoteInfo = "Pods-Vkontakte-iOS-SDK-LV";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		010288E064F747AF82581EA4 /* VKRequestManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKRequestManager.m; path = "Project/Vkontakte-iOS-SDK-LV/VKRequestManager/VKRequestManager.m"; sourceTree = "<group>"; };
+		022AE9F7766D438D8DE1F140 /* VKAccessToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKAccessToken.h; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorageItem/VKAccessToken/VKAccessToken.h"; sourceTree = "<group>"; };
+		066EE9445E1B4693AA38F7EA /* VKConnector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKConnector.m; path = "Project/Vkontakte-iOS-SDK-LV/VKConnector/VKConnector.m"; sourceTree = "<group>"; };
+		0BB4B73717FB48AB97DBC894 /* VKConnector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKConnector.h; path = "Project/Vkontakte-iOS-SDK-LV/VKConnector/VKConnector.h"; sourceTree = "<group>"; };
+		0C9ADB08329D4A6ABE4A846B /* VKUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKUser.h; path = "Project/Vkontakte-iOS-SDK-LV/VKUser/VKUser.h"; sourceTree = "<group>"; };
+		179BA249560545E1AA5CAEB6 /* VKCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKCache.h; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorageItem/VKCache/VKCache.h"; sourceTree = "<group>"; };
+		20807973FD484F6E93F9CE50 /* VKRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKRequest.m; path = "Project/Vkontakte-iOS-SDK-LV/VKRequestManager/VKRequest/VKRequest.m"; sourceTree = "<group>"; };
+		217C76ECABEB45F39BEB7BB6 /* VKStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKStorage.h; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorage.h"; sourceTree = "<group>"; };
+		2955B64C51CD4561AE01E9F6 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		2EF55A8818714B74BBA5E5BC /* libPods-Vkontakte-iOS-SDK-LV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Vkontakte-iOS-SDK-LV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FC9B0B01C83447AACD4954E /* Pods-Vkontakte-iOS-SDK-LV.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vkontakte-iOS-SDK-LV.xcconfig"; sourceTree = "<group>"; };
+		428E13B1C65A48568AB9D5D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		449A48C1F08E4BBC88478F79 /* Pods-Vkontakte-iOS-SDK-LV-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Vkontakte-iOS-SDK-LV-prefix.pch"; sourceTree = "<group>"; };
+		469CAB7318EAB824007F1B77 /* YandexSpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexSpeechKit.framework; path = "../../../../../Documents/YandexSpeechKit-2.0-ios 2/YandexSpeechKit.framework"; sourceTree = "<group>"; };
+		534D29DD5808495793CFFD15 /* VKStorage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKStorage.m; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorage.m"; sourceTree = "<group>"; };
+		53999DBF5A7C4C6A8E1BB97A /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		546FFA7044BD42E7B50B11B9 /* VKRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKRequest.h; path = "Project/Vkontakte-iOS-SDK-LV/VKRequestManager/VKRequest/VKRequest.h"; sourceTree = "<group>"; };
+		59AAE8D3948D4AAF87D4C767 /* VKStorageItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKStorageItem.h; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorageItem/VKStorageItem/VKStorageItem.h"; sourceTree = "<group>"; };
+		5B857A143071432DA90FE45D /* VkontakteSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VkontakteSDK.h; path = "Project/Vkontakte-iOS-SDK-LV/VkontakteSDK.h"; sourceTree = "<group>"; };
+		5C86B52278254C16B6E9CB4A /* NSString+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Utilities.h"; path = "Project/Vkontakte-iOS-SDK-LV/Helpers/NSString+Utilities.h"; sourceTree = "<group>"; };
+		61DE180C46F142E38FA6B117 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		66EFAADCE3574E7AAADD3E10 /* Pods-Vkontakte-iOS-SDK-LV-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Vkontakte-iOS-SDK-LV-Private.xcconfig"; sourceTree = "<group>"; };
+		7600CFEC7DE6459999173E9D /* VKAccessToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKAccessToken.m; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorageItem/VKAccessToken/VKAccessToken.m"; sourceTree = "<group>"; };
+		9195B82CBC994FEBAD076A45 /* Pods-Vkontakte-iOS-SDK-LV-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Vkontakte-iOS-SDK-LV-dummy.m"; sourceTree = "<group>"; };
+		9F7330C9089B497EB89D09F8 /* NSData+toBase64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+toBase64.m"; path = "Project/Vkontakte-iOS-SDK-LV/Helpers/NSData+toBase64.m"; sourceTree = "<group>"; };
+		A5DC0A3D98094E769741DABD /* VKCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKCache.m; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorageItem/VKCache/VKCache.m"; sourceTree = "<group>"; };
+		B1A7AF0572134CB99D22C37E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B73ED8CCBC0847F4B2E204FC /* VKRequestManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKRequestManager.h; path = "Project/Vkontakte-iOS-SDK-LV/VKRequestManager/VKRequestManager.h"; sourceTree = "<group>"; };
+		C800481A89D54BBD8F8139BB /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		DA99BF6D33ED485989A7EA96 /* VKMethods.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VKMethods.h; path = "Project/Vkontakte-iOS-SDK-LV/VKRequestManager/VKRequest/VKMethods.h"; sourceTree = "<group>"; };
+		E43A2FD9B32A4853B72B0B26 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		E4519310FDAA41E993B16CFC /* VkontakteSDK_Logger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = VkontakteSDK_Logger.h; path = "Project/Vkontakte-iOS-SDK-LV/VkontakteSDK_Logger.h"; sourceTree = "<group>"; };
+		E6AB80173AAF464BB6D7AFFB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30CA171346A45AA8EEC49BD /* VKStorageItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKStorageItem.m; path = "Project/Vkontakte-iOS-SDK-LV/VKStorage/VKStorageItem/VKStorageItem/VKStorageItem.m"; sourceTree = "<group>"; };
+		F82F5C0E38E94EA1B18B9116 /* NSData+toBase64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+toBase64.h"; path = "Project/Vkontakte-iOS-SDK-LV/Helpers/NSData+toBase64.h"; sourceTree = "<group>"; };
+		FD56C59BB69E49518E87E327 /* NSString+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Utilities.m"; path = "Project/Vkontakte-iOS-SDK-LV/Helpers/NSString+Utilities.m"; sourceTree = "<group>"; };
+		FDBB4E748E104C33A77C5E6E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = "<group>"; };
+		FFA7EDE01A5D4175AB269F6B /* VKUser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = VKUser.m; path = "Project/Vkontakte-iOS-SDK-LV/VKUser/VKUser.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55B71FF591DC4241A5849FBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269EAA94A112453B99B15E11 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6DB89A749D9491F858D879E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				469CAB7418EAB824007F1B77 /* YandexSpeechKit.framework in Frameworks */,
+				412DC98172484B8CB48109DB /* Foundation.framework in Frameworks */,
+				1E6538013C8446038C571FF4 /* libPods-Vkontakte-iOS-SDK-LV.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FE9719DCEC8459AA7953506 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D4B326C024EF7911B0BB2 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		18A1B7ACB8914A7AB805FB8C = {
+			isa = PBXGroup;
+			children = (
+				61DE180C46F142E38FA6B117 /* Podfile */,
+				6A524DFA63454F1081646165 /* Frameworks */,
+				DEC870E6CA4347F697C54197 /* Pods */,
+				8D8E27F3024D4084A4314BCC /* Products */,
+				0FE9719DCEC8459AA7953506 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		2DEC4A5634834A428BA56BD9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FC9B0B01C83447AACD4954E /* Pods-Vkontakte-iOS-SDK-LV.xcconfig */,
+				66EFAADCE3574E7AAADD3E10 /* Pods-Vkontakte-iOS-SDK-LV-Private.xcconfig */,
+				9195B82CBC994FEBAD076A45 /* Pods-Vkontakte-iOS-SDK-LV-dummy.m */,
+				449A48C1F08E4BBC88478F79 /* Pods-Vkontakte-iOS-SDK-LV-prefix.pch */,
+			);
+			name = "Support Files";
+			sourceTree = SOURCE_ROOT;
+		};
+		6A524DFA63454F1081646165 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				469CAB7318EAB824007F1B77 /* YandexSpeechKit.framework */,
+				95A416CB768B41D89CC5529E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D8E27F3024D4084A4314BCC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E6AB80173AAF464BB6D7AFFB /* libPods.a */,
+				2EF55A8818714B74BBA5E5BC /* libPods-Vkontakte-iOS-SDK-LV.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95A416CB768B41D89CC5529E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				428E13B1C65A48568AB9D5D3 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CAA3FD6C07DD4B3494C7DBE7 /* Vkontakte-iOS-SDK-LV */ = {
+			isa = PBXGroup;
+			children = (
+				F82F5C0E38E94EA1B18B9116 /* NSData+toBase64.h */,
+				9F7330C9089B497EB89D09F8 /* NSData+toBase64.m */,
+				5C86B52278254C16B6E9CB4A /* NSString+Utilities.h */,
+				FD56C59BB69E49518E87E327 /* NSString+Utilities.m */,
+				022AE9F7766D438D8DE1F140 /* VKAccessToken.h */,
+				7600CFEC7DE6459999173E9D /* VKAccessToken.m */,
+				179BA249560545E1AA5CAEB6 /* VKCache.h */,
+				A5DC0A3D98094E769741DABD /* VKCache.m */,
+				0BB4B73717FB48AB97DBC894 /* VKConnector.h */,
+				066EE9445E1B4693AA38F7EA /* VKConnector.m */,
+				DA99BF6D33ED485989A7EA96 /* VKMethods.h */,
+				546FFA7044BD42E7B50B11B9 /* VKRequest.h */,
+				20807973FD484F6E93F9CE50 /* VKRequest.m */,
+				B73ED8CCBC0847F4B2E204FC /* VKRequestManager.h */,
+				010288E064F747AF82581EA4 /* VKRequestManager.m */,
+				217C76ECABEB45F39BEB7BB6 /* VKStorage.h */,
+				534D29DD5808495793CFFD15 /* VKStorage.m */,
+				59AAE8D3948D4AAF87D4C767 /* VKStorageItem.h */,
+				F30CA171346A45AA8EEC49BD /* VKStorageItem.m */,
+				0C9ADB08329D4A6ABE4A846B /* VKUser.h */,
+				FFA7EDE01A5D4175AB269F6B /* VKUser.m */,
+				5B857A143071432DA90FE45D /* VkontakteSDK.h */,
+				E4519310FDAA41E993B16CFC /* VkontakteSDK_Logger.h */,
+				2DEC4A5634834A428BA56BD9 /* Support Files */,
+			);
+			path = "Vkontakte-iOS-SDK-LV";
+			sourceTree = "<group>";
+		};
+		CE0D4B326C024EF7911B0BB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDBB4E748E104C33A77C5E6E /* Pods.xcconfig */,
+				B1A7AF0572134CB99D22C37E /* Pods-acknowledgements.markdown */,
+				2955B64C51CD4561AE01E9F6 /* Pods-acknowledgements.plist */,
+				C800481A89D54BBD8F8139BB /* Pods-dummy.m */,
+				E43A2FD9B32A4853B72B0B26 /* Pods-environment.h */,
+				53999DBF5A7C4C6A8E1BB97A /* Pods-resources.sh */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DEC870E6CA4347F697C54197 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CAA3FD6C07DD4B3494C7DBE7 /* Vkontakte-iOS-SDK-LV */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE58F295AAA54388A86E3A1C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3A08748CD9245E59C75D2A9 /* NSData+toBase64.h in Headers */,
+				09D60B0B59524A8AA0390355 /* NSString+Utilities.h in Headers */,
+				B2C6B35A52A44B4C9EDE8FF6 /* VKAccessToken.h in Headers */,
+				D00AD9A6369F4694BB2E71D2 /* VKCache.h in Headers */,
+				E2522CB29A90436E9820EEFD /* VKConnector.h in Headers */,
+				3CB8D9F1530541D68B08F66D /* VKMethods.h in Headers */,
+				C476BFAD987146FABFFB0DBF /* VKRequest.h in Headers */,
+				0764E524384B4E62B9E83051 /* VKRequestManager.h in Headers */,
+				D8934A8F754444C09D1BCC8A /* VKStorage.h in Headers */,
+				3339B6A7BC1F4D0FB7293401 /* VKStorageItem.h in Headers */,
+				E00E30CF9D8B419AB8866C62 /* VKUser.h in Headers */,
+				DD472C10B54A4441AE5BB387 /* VkontakteSDK.h in Headers */,
+				F7CB576966D141908FCEBFC4 /* VkontakteSDK_Logger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		583AAA1A4CD244F8835474AE /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 677FE1A265EC4E4E81FCEB79 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				A9C3F91D88E0401CB8ADE8C1 /* Sources */,
+				A6DB89A749D9491F858D879E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3D04F5959B547F9A7D58B8B /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = E6AB80173AAF464BB6D7AFFB /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		A1F24422BD5640F2B8B0C90F /* Pods-Vkontakte-iOS-SDK-LV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F3E58497417406996487469 /* Build configuration list for PBXNativeTarget "Pods-Vkontakte-iOS-SDK-LV" */;
+			buildPhases = (
+				1D6DD62ECAAB46F4A3F40880 /* Sources */,
+				55B71FF591DC4241A5849FBB /* Frameworks */,
+				AE58F295AAA54388A86E3A1C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Vkontakte-iOS-SDK-LV";
+			productName = "Pods-Vkontakte-iOS-SDK-LV";
+			productReference = 2EF55A8818714B74BBA5E5BC /* libPods-Vkontakte-iOS-SDK-LV.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6AE9A8774DB24CDCB2DD0FBA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 32D3A1A96CC24CC8A29F02A1 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18A1B7ACB8914A7AB805FB8C;
+			productRefGroup = 8D8E27F3024D4084A4314BCC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				583AAA1A4CD244F8835474AE /* Pods */,
+				A1F24422BD5640F2B8B0C90F /* Pods-Vkontakte-iOS-SDK-LV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D6DD62ECAAB46F4A3F40880 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E875DE167637408B9A281023 /* NSData+toBase64.m in Sources */,
+				DABE0CB425FA4E7EA20EA7C7 /* NSString+Utilities.m in Sources */,
+				92968A7980054525805B695D /* Pods-Vkontakte-iOS-SDK-LV-dummy.m in Sources */,
+				76AD1ACCC1984D6FBD248D77 /* VKAccessToken.m in Sources */,
+				5E9CEA1412D4492EAF2E1EF4 /* VKCache.m in Sources */,
+				897B6BAC023C44A19D49971B /* VKConnector.m in Sources */,
+				14A23149B8AF4132BAF2CD35 /* VKRequest.m in Sources */,
+				9FABAB94328B472F87BF889E /* VKRequestManager.m in Sources */,
+				23B144F284144537B4DE0D4E /* VKStorage.m in Sources */,
+				6977E14EDAAB4F82BD2C04B7 /* VKStorageItem.m in Sources */,
+				FBC247E05DB2415E8DD152B0 /* VKUser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9C3F91D88E0401CB8ADE8C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DCEBA762B924B0B85E66D5E /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3D04F5959B547F9A7D58B8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1F24422BD5640F2B8B0C90F /* Pods-Vkontakte-iOS-SDK-LV */;
+			targetProxy = F3A65CE450DB4633808CB777 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09D3CBE2B71342E3809D7142 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+			};
+			name = Debug;
+		};
+		293B16060F144370840063F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B8AC18CECF649BAAA44FB44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EFAADCE3574E7AAADD3E10 /* Pods-Vkontakte-iOS-SDK-LV-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Vkontakte-iOS-SDK-LV-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A2EB449321874068ACF71B14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66EFAADCE3574E7AAADD3E10 /* Pods-Vkontakte-iOS-SDK-LV-Private.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-Vkontakte-iOS-SDK-LV-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E07789739078463DB6E2CF79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDBB4E748E104C33A77C5E6E /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/dimones-dev/Documents/YandexSpeechKit-2.0-ios",
+					2,
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0B1592EEF9C4B5487CB71C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDBB4E748E104C33A77C5E6E /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/dimones-dev/Documents/YandexSpeechKit-2.0-ios",
+					2,
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F3E58497417406996487469 /* Build configuration list for PBXNativeTarget "Pods-Vkontakte-iOS-SDK-LV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B8AC18CECF649BAAA44FB44 /* Debug */,
+				A2EB449321874068ACF71B14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32D3A1A96CC24CC8A29F02A1 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09D3CBE2B71342E3809D7142 /* Debug */,
+				293B16060F144370840063F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		677FE1A265EC4E4E81FCEB79 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0B1592EEF9C4B5487CB71C0 /* Debug */,
+				E07789739078463DB6E2CF79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6AE9A8774DB24CDCB2DD0FBA /* Project object */;
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>613FE10C-FB45-45CA-BEB8-C0AD8510C032</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KR2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E8AF1177-B02F-4E69-8E6B-AA76E0CC592C</key>
+		<string>https://github.com/dimones/DimonesLabs.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IT/KR2/KR2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E8AF1177-B02F-4E69-8E6B-AA76E0CC592C</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dimones/DimonesLabs.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E8AF1177-B02F-4E69-8E6B-AA76E0CC592C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E8AF1177-B02F-4E69-8E6B-AA76E0CC592C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DimonesLabs</string>
+		</dict>
+	</array>
+</dict>
+</plist>

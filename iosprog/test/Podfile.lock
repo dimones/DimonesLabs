@@ -1,0 +1,10 @@
+PODS:
+  - Vkontakte-iOS-SDK-LV (4.7.0)
+
+DEPENDENCIES:
+  - Vkontakte-iOS-SDK-LV
+
+SPEC CHECKSUMS:
+  Vkontakte-iOS-SDK-LV: bb4b138c400302fe58c2ab78cdd5b2182aebb92a
+
+COCOAPODS: 0.29.0
