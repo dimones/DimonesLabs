@@ -18,7 +18,7 @@ char** getWords(char *stroke, int &count)
     stroke = strcat(stroke, " ");
 	char **output = new char*[N];
 	output = (char**)malloc(N);
-	while (*stroke != '\0')
+	while (isalnum(*stroke))// != '\0')
 	{
 		if (*stroke != ' '){
 			n++;
@@ -27,13 +27,11 @@ char** getWords(char *stroke, int &count)
 		{
 			stroke -= n;
 			char *temp = new char[n];
-			temp = (char*)malloc(n);
 			for (int j = 0; j<n; j++, stroke++)
 			{
 				temp[j] = *stroke;
 			}
 			n = 0;
-			
 			output[count] = temp;
 			count++;
 		}

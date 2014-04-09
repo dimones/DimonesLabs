@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B9CAECBA-DBD4-4899-AB35-E5BF8CF661C3</string>
+	<string>7BB97402-1BA0-4AC2-85D2-2435D99BB789</string>
 	<key>IDESourceControlProjectName</key>
-	<string>vkMusicPlayerSpeech</string>
+	<string>vkMusicPlayer</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>A71EFEEB-753B-43C7-B7EB-2DFA634C74A9</key>
 		<string>https://github.com/dimones/DimonesLabs.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>iosprog/vkMusicPlayerSpeech/vkMusicPlayerSpeech.xcworkspace</string>
+	<string>IT/vkMusicPlayer/vkMusicPlayer.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A71EFEEB-753B-43C7-B7EB-2DFA634C74A9</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/dimones/DimonesLabs.git</string>
