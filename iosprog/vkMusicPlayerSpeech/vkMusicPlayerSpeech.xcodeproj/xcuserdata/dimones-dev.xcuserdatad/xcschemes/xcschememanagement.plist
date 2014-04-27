@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>testteas.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>vkMusicPlayerSpeech.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>463F854D1902E61D008E94F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>463F856E1902E61D008E94F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>4699849A18E9CAF100959E53</key>
 		<dict>
 			<key>primary</key>

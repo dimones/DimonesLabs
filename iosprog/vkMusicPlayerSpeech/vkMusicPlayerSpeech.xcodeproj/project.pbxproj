@@ -7,233 +7,204 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16748CA83A0E4FDCB3CB2234 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A1307D8FA854B6893ADBFEA /* libPods.a */; };
-		4699849F18E9CAF100959E53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4699849E18E9CAF100959E53 /* Foundation.framework */; };
-		469984A118E9CAF100959E53 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469984A018E9CAF100959E53 /* CoreGraphics.framework */; };
-		469984A318E9CAF100959E53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469984A218E9CAF100959E53 /* UIKit.framework */; };
-		469984A918E9CAF100959E53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 469984A718E9CAF100959E53 /* InfoPlist.strings */; };
-		469984AB18E9CAF100959E53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 469984AA18E9CAF100959E53 /* main.m */; };
-		469984AF18E9CAF100959E53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 469984AE18E9CAF100959E53 /* AppDelegate.m */; };
-		469984B518E9CAF100959E53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469984B418E9CAF100959E53 /* ViewController.m */; };
-		469984B718E9CAF100959E53 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469984B618E9CAF100959E53 /* Images.xcassets */; };
-		469984BE18E9CAF200959E53 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469984BD18E9CAF200959E53 /* XCTest.framework */; };
-		469984BF18E9CAF200959E53 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4699849E18E9CAF100959E53 /* Foundation.framework */; };
-		469984C018E9CAF200959E53 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469984A218E9CAF100959E53 /* UIKit.framework */; };
-		469984C818E9CAF200959E53 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 469984C618E9CAF200959E53 /* InfoPlist.strings */; };
-		469984CA18E9CAF200959E53 /* vkMusicPlayerSpeechTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 469984C918E9CAF200959E53 /* vkMusicPlayerSpeechTests.m */; };
-		469984D418E9CB2A00959E53 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469984D318E9CB2A00959E53 /* QuartzCore.framework */; };
-		469984D618E9CB3500959E53 /* YandexSpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469984D518E9CB3500959E53 /* YandexSpeechKit.framework */; };
-		469984DA18E9CB6400959E53 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 469984D918E9CB6400959E53 /* ODRefreshControl.m */; };
-		469984DD18E9CBAD00959E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469984DB18E9CBAD00959E53 /* Main.storyboard */; };
+		463F85521902E61D008E94F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463F85511902E61D008E94F4 /* Foundation.framework */; };
+		463F85541902E61D008E94F4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463F85531902E61D008E94F4 /* CoreGraphics.framework */; };
+		463F85561902E61D008E94F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463F85551902E61D008E94F4 /* UIKit.framework */; };
+		463F855C1902E61D008E94F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 463F855A1902E61D008E94F4 /* InfoPlist.strings */; };
+		463F855E1902E61D008E94F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 463F855D1902E61D008E94F4 /* main.m */; };
+		463F85621902E61D008E94F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 463F85611902E61D008E94F4 /* AppDelegate.m */; };
+		463F85651902E61D008E94F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463F85631902E61D008E94F4 /* Main.storyboard */; };
+		463F85681902E61D008E94F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 463F85671902E61D008E94F4 /* ViewController.m */; };
+		463F856A1902E61D008E94F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 463F85691902E61D008E94F4 /* Images.xcassets */; };
+		463F85711902E61D008E94F4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463F85701902E61D008E94F4 /* XCTest.framework */; };
+		463F85721902E61D008E94F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463F85511902E61D008E94F4 /* Foundation.framework */; };
+		463F85731902E61D008E94F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 463F85551902E61D008E94F4 /* UIKit.framework */; };
+		463F857B1902E61D008E94F4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 463F85791902E61D008E94F4 /* InfoPlist.strings */; };
+		463F857D1902E61D008E94F4 /* testteasTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 463F857C1902E61D008E94F4 /* testteasTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		469984C118E9CAF200959E53 /* PBXContainerItemProxy */ = {
+		463F85741902E61D008E94F4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 4699849318E9CAF100959E53 /* Project object */;
+			containerPortal = 463F85461902E61D008E94F4 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4699849A18E9CAF100959E53;
-			remoteInfo = vkMusicPlayerSpeech;
+			remoteGlobalIDString = 463F854D1902E61D008E94F4;
+			remoteInfo = testteas;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		068450F49D144189B3936D99 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		4699849B18E9CAF100959E53 /* vkMusicPlayerSpeech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkMusicPlayerSpeech.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4699849E18E9CAF100959E53 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		469984A018E9CAF100959E53 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		469984A218E9CAF100959E53 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		469984A618E9CAF100959E53 /* vkMusicPlayerSpeech-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vkMusicPlayerSpeech-Info.plist"; sourceTree = "<group>"; };
-		469984A818E9CAF100959E53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		469984AA18E9CAF100959E53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		469984AC18E9CAF100959E53 /* vkMusicPlayerSpeech-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "vkMusicPlayerSpeech-Prefix.pch"; sourceTree = "<group>"; };
-		469984AD18E9CAF100959E53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		469984AE18E9CAF100959E53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		469984B318E9CAF100959E53 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		469984B418E9CAF100959E53 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		469984B618E9CAF100959E53 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		469984BC18E9CAF200959E53 /* vkMusicPlayerSpeechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vkMusicPlayerSpeechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		469984BD18E9CAF200959E53 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		469984C518E9CAF200959E53 /* vkMusicPlayerSpeechTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "vkMusicPlayerSpeechTests-Info.plist"; sourceTree = "<group>"; };
-		469984C718E9CAF200959E53 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		469984C918E9CAF200959E53 /* vkMusicPlayerSpeechTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vkMusicPlayerSpeechTests.m; sourceTree = "<group>"; };
-		469984D318E9CB2A00959E53 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		469984D518E9CB3500959E53 /* YandexSpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexSpeechKit.framework; path = "../../../../Documents/YandexSpeechKit-2.0-ios 2/YandexSpeechKit.framework"; sourceTree = "<group>"; };
-		469984D818E9CB6400959E53 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ODRefreshControl.h; path = "../../../../../Documents/ODRefreshControl-master/ODRefreshControl/ODRefreshControl.h"; sourceTree = "<group>"; };
-		469984D918E9CB6400959E53 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ODRefreshControl.m; path = "../../../../../Documents/ODRefreshControl-master/ODRefreshControl/ODRefreshControl.m"; sourceTree = "<group>"; };
-		469984DC18E9CBAD00959E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../vkMusicPlayer/vkMusicPlayer/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A1307D8FA854B6893ADBFEA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		463F854E1902E61D008E94F4 /* testteas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testteas.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		463F85511902E61D008E94F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		463F85531902E61D008E94F4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		463F85551902E61D008E94F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		463F85591902E61D008E94F4 /* testteas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testteas-Info.plist"; sourceTree = "<group>"; };
+		463F855B1902E61D008E94F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		463F855D1902E61D008E94F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		463F855F1902E61D008E94F4 /* testteas-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "testteas-Prefix.pch"; sourceTree = "<group>"; };
+		463F85601902E61D008E94F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		463F85611902E61D008E94F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		463F85641902E61D008E94F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		463F85661902E61D008E94F4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		463F85671902E61D008E94F4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		463F85691902E61D008E94F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		463F856F1902E61D008E94F4 /* testteasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testteasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		463F85701902E61D008E94F4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		463F85781902E61D008E94F4 /* testteasTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "testteasTests-Info.plist"; sourceTree = "<group>"; };
+		463F857A1902E61D008E94F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		463F857C1902E61D008E94F4 /* testteasTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testteasTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4699849818E9CAF100959E53 /* Frameworks */ = {
+		463F854B1902E61D008E94F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469984D618E9CB3500959E53 /* YandexSpeechKit.framework in Frameworks */,
-				469984D418E9CB2A00959E53 /* QuartzCore.framework in Frameworks */,
-				469984A118E9CAF100959E53 /* CoreGraphics.framework in Frameworks */,
-				469984A318E9CAF100959E53 /* UIKit.framework in Frameworks */,
-				4699849F18E9CAF100959E53 /* Foundation.framework in Frameworks */,
-				16748CA83A0E4FDCB3CB2234 /* libPods.a in Frameworks */,
+				463F85541902E61D008E94F4 /* CoreGraphics.framework in Frameworks */,
+				463F85561902E61D008E94F4 /* UIKit.framework in Frameworks */,
+				463F85521902E61D008E94F4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		469984B918E9CAF200959E53 /* Frameworks */ = {
+		463F856C1902E61D008E94F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469984BE18E9CAF200959E53 /* XCTest.framework in Frameworks */,
-				469984C018E9CAF200959E53 /* UIKit.framework in Frameworks */,
-				469984BF18E9CAF200959E53 /* Foundation.framework in Frameworks */,
+				463F85711902E61D008E94F4 /* XCTest.framework in Frameworks */,
+				463F85731902E61D008E94F4 /* UIKit.framework in Frameworks */,
+				463F85721902E61D008E94F4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4699849218E9CAF100959E53 = {
+		463F85451902E61D008E94F4 = {
 			isa = PBXGroup;
 			children = (
-				469984A418E9CAF100959E53 /* vkMusicPlayerSpeech */,
-				469984C318E9CAF200959E53 /* vkMusicPlayerSpeechTests */,
-				4699849D18E9CAF100959E53 /* Frameworks */,
-				4699849C18E9CAF100959E53 /* Products */,
-				068450F49D144189B3936D99 /* Pods.xcconfig */,
+				463F85571902E61D008E94F4 /* testteas */,
+				463F85761902E61D008E94F4 /* testteasTests */,
+				463F85501902E61D008E94F4 /* Frameworks */,
+				463F854F1902E61D008E94F4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4699849C18E9CAF100959E53 /* Products */ = {
+		463F854F1902E61D008E94F4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4699849B18E9CAF100959E53 /* vkMusicPlayerSpeech.app */,
-				469984BC18E9CAF200959E53 /* vkMusicPlayerSpeechTests.xctest */,
+				463F854E1902E61D008E94F4 /* testteas.app */,
+				463F856F1902E61D008E94F4 /* testteasTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4699849D18E9CAF100959E53 /* Frameworks */ = {
+		463F85501902E61D008E94F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				469984D518E9CB3500959E53 /* YandexSpeechKit.framework */,
-				469984D318E9CB2A00959E53 /* QuartzCore.framework */,
-				4699849E18E9CAF100959E53 /* Foundation.framework */,
-				469984A018E9CAF100959E53 /* CoreGraphics.framework */,
-				469984A218E9CAF100959E53 /* UIKit.framework */,
-				469984BD18E9CAF200959E53 /* XCTest.framework */,
-				8A1307D8FA854B6893ADBFEA /* libPods.a */,
+				463F85511902E61D008E94F4 /* Foundation.framework */,
+				463F85531902E61D008E94F4 /* CoreGraphics.framework */,
+				463F85551902E61D008E94F4 /* UIKit.framework */,
+				463F85701902E61D008E94F4 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		469984A418E9CAF100959E53 /* vkMusicPlayerSpeech */ = {
+		463F85571902E61D008E94F4 /* testteas */ = {
 			isa = PBXGroup;
 			children = (
-				469984DB18E9CBAD00959E53 /* Main.storyboard */,
-				469984D718E9CB4B00959E53 /* PullToRefresh */,
-				469984AD18E9CAF100959E53 /* AppDelegate.h */,
-				469984AE18E9CAF100959E53 /* AppDelegate.m */,
-				469984B318E9CAF100959E53 /* ViewController.h */,
-				469984B418E9CAF100959E53 /* ViewController.m */,
-				469984B618E9CAF100959E53 /* Images.xcassets */,
-				469984A518E9CAF100959E53 /* Supporting Files */,
+				463F85601902E61D008E94F4 /* AppDelegate.h */,
+				463F85611902E61D008E94F4 /* AppDelegate.m */,
+				463F85631902E61D008E94F4 /* Main.storyboard */,
+				463F85661902E61D008E94F4 /* ViewController.h */,
+				463F85671902E61D008E94F4 /* ViewController.m */,
+				463F85691902E61D008E94F4 /* Images.xcassets */,
+				463F85581902E61D008E94F4 /* Supporting Files */,
 			);
-			path = vkMusicPlayerSpeech;
+			path = testteas;
 			sourceTree = "<group>";
 		};
-		469984A518E9CAF100959E53 /* Supporting Files */ = {
+		463F85581902E61D008E94F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				469984A618E9CAF100959E53 /* vkMusicPlayerSpeech-Info.plist */,
-				469984A718E9CAF100959E53 /* InfoPlist.strings */,
-				469984AA18E9CAF100959E53 /* main.m */,
-				469984AC18E9CAF100959E53 /* vkMusicPlayerSpeech-Prefix.pch */,
+				463F85591902E61D008E94F4 /* testteas-Info.plist */,
+				463F855A1902E61D008E94F4 /* InfoPlist.strings */,
+				463F855D1902E61D008E94F4 /* main.m */,
+				463F855F1902E61D008E94F4 /* testteas-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		469984C318E9CAF200959E53 /* vkMusicPlayerSpeechTests */ = {
+		463F85761902E61D008E94F4 /* testteasTests */ = {
 			isa = PBXGroup;
 			children = (
-				469984C918E9CAF200959E53 /* vkMusicPlayerSpeechTests.m */,
-				469984C418E9CAF200959E53 /* Supporting Files */,
+				463F857C1902E61D008E94F4 /* testteasTests.m */,
+				463F85771902E61D008E94F4 /* Supporting Files */,
 			);
-			path = vkMusicPlayerSpeechTests;
+			path = testteasTests;
 			sourceTree = "<group>";
 		};
-		469984C418E9CAF200959E53 /* Supporting Files */ = {
+		463F85771902E61D008E94F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				469984C518E9CAF200959E53 /* vkMusicPlayerSpeechTests-Info.plist */,
-				469984C618E9CAF200959E53 /* InfoPlist.strings */,
+				463F85781902E61D008E94F4 /* testteasTests-Info.plist */,
+				463F85791902E61D008E94F4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		469984D718E9CB4B00959E53 /* PullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				469984D818E9CB6400959E53 /* ODRefreshControl.h */,
-				469984D918E9CB6400959E53 /* ODRefreshControl.m */,
-			);
-			name = PullToRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4699849A18E9CAF100959E53 /* vkMusicPlayerSpeech */ = {
+		463F854D1902E61D008E94F4 /* testteas */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 469984CD18E9CAF200959E53 /* Build configuration list for PBXNativeTarget "vkMusicPlayerSpeech" */;
+			buildConfigurationList = 463F85801902E61D008E94F4 /* Build configuration list for PBXNativeTarget "testteas" */;
 			buildPhases = (
-				F31C2D75F8084AE584655B49 /* Check Pods Manifest.lock */,
-				4699849718E9CAF100959E53 /* Sources */,
-				4699849818E9CAF100959E53 /* Frameworks */,
-				4699849918E9CAF100959E53 /* Resources */,
-				7838713910A044D6AC6734D2 /* Copy Pods Resources */,
+				463F854A1902E61D008E94F4 /* Sources */,
+				463F854B1902E61D008E94F4 /* Frameworks */,
+				463F854C1902E61D008E94F4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = vkMusicPlayerSpeech;
-			productName = vkMusicPlayerSpeech;
-			productReference = 4699849B18E9CAF100959E53 /* vkMusicPlayerSpeech.app */;
+			name = testteas;
+			productName = testteas;
+			productReference = 463F854E1902E61D008E94F4 /* testteas.app */;
 			productType = "com.apple.product-type.application";
 		};
-		469984BB18E9CAF200959E53 /* vkMusicPlayerSpeechTests */ = {
+		463F856E1902E61D008E94F4 /* testteasTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 469984D018E9CAF200959E53 /* Build configuration list for PBXNativeTarget "vkMusicPlayerSpeechTests" */;
+			buildConfigurationList = 463F85831902E61D008E94F4 /* Build configuration list for PBXNativeTarget "testteasTests" */;
 			buildPhases = (
-				469984B818E9CAF200959E53 /* Sources */,
-				469984B918E9CAF200959E53 /* Frameworks */,
-				469984BA18E9CAF200959E53 /* Resources */,
+				463F856B1902E61D008E94F4 /* Sources */,
+				463F856C1902E61D008E94F4 /* Frameworks */,
+				463F856D1902E61D008E94F4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				469984C218E9CAF200959E53 /* PBXTargetDependency */,
+				463F85751902E61D008E94F4 /* PBXTargetDependency */,
 			);
-			name = vkMusicPlayerSpeechTests;
-			productName = vkMusicPlayerSpeechTests;
-			productReference = 469984BC18E9CAF200959E53 /* vkMusicPlayerSpeechTests.xctest */;
+			name = testteasTests;
+			productName = testteasTests;
+			productReference = 463F856F1902E61D008E94F4 /* testteasTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4699849318E9CAF100959E53 /* Project object */ = {
+		463F85461902E61D008E94F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Dimones;
 				TargetAttributes = {
-					469984BB18E9CAF200959E53 = {
-						TestTargetID = 4699849A18E9CAF100959E53;
+					463F856E1902E61D008E94F4 = {
+						TestTargetID = 463F854D1902E61D008E94F4;
 					};
 				};
 			};
-			buildConfigurationList = 4699849618E9CAF100959E53 /* Build configuration list for PBXProject "vkMusicPlayerSpeech" */;
+			buildConfigurationList = 463F85491902E61D008E94F4 /* Build configuration list for PBXProject "testteas" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -241,130 +212,96 @@
 				en,
 				Base,
 			);
-			mainGroup = 4699849218E9CAF100959E53;
-			productRefGroup = 4699849C18E9CAF100959E53 /* Products */;
+			mainGroup = 463F85451902E61D008E94F4;
+			productRefGroup = 463F854F1902E61D008E94F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4699849A18E9CAF100959E53 /* vkMusicPlayerSpeech */,
-				469984BB18E9CAF200959E53 /* vkMusicPlayerSpeechTests */,
+				463F854D1902E61D008E94F4 /* testteas */,
+				463F856E1902E61D008E94F4 /* testteasTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4699849918E9CAF100959E53 /* Resources */ = {
+		463F854C1902E61D008E94F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469984DD18E9CBAD00959E53 /* Main.storyboard in Resources */,
-				469984B718E9CAF100959E53 /* Images.xcassets in Resources */,
-				469984A918E9CAF100959E53 /* InfoPlist.strings in Resources */,
+				463F856A1902E61D008E94F4 /* Images.xcassets in Resources */,
+				463F855C1902E61D008E94F4 /* InfoPlist.strings in Resources */,
+				463F85651902E61D008E94F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		469984BA18E9CAF200959E53 /* Resources */ = {
+		463F856D1902E61D008E94F4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469984C818E9CAF200959E53 /* InfoPlist.strings in Resources */,
+				463F857B1902E61D008E94F4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		7838713910A044D6AC6734D2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F31C2D75F8084AE584655B49 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		4699849718E9CAF100959E53 /* Sources */ = {
+		463F854A1902E61D008E94F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469984DA18E9CB6400959E53 /* ODRefreshControl.m in Sources */,
-				469984B518E9CAF100959E53 /* ViewController.m in Sources */,
-				469984AF18E9CAF100959E53 /* AppDelegate.m in Sources */,
-				469984AB18E9CAF100959E53 /* main.m in Sources */,
+				463F85681902E61D008E94F4 /* ViewController.m in Sources */,
+				463F85621902E61D008E94F4 /* AppDelegate.m in Sources */,
+				463F855E1902E61D008E94F4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		469984B818E9CAF200959E53 /* Sources */ = {
+		463F856B1902E61D008E94F4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469984CA18E9CAF200959E53 /* vkMusicPlayerSpeechTests.m in Sources */,
+				463F857D1902E61D008E94F4 /* testteasTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		469984C218E9CAF200959E53 /* PBXTargetDependency */ = {
+		463F85751902E61D008E94F4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4699849A18E9CAF100959E53 /* vkMusicPlayerSpeech */;
-			targetProxy = 469984C118E9CAF200959E53 /* PBXContainerItemProxy */;
+			target = 463F854D1902E61D008E94F4 /* testteas */;
+			targetProxy = 463F85741902E61D008E94F4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		469984A718E9CAF100959E53 /* InfoPlist.strings */ = {
+		463F855A1902E61D008E94F4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				469984A818E9CAF100959E53 /* en */,
+				463F855B1902E61D008E94F4 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		469984C618E9CAF200959E53 /* InfoPlist.strings */ = {
+		463F85631902E61D008E94F4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				469984C718E9CAF200959E53 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		469984DB18E9CBAD00959E53 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				469984DC18E9CBAD00959E53 /* Base */,
+				463F85641902E61D008E94F4 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		463F85791902E61D008E94F4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				463F857A1902E61D008E94F4 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		469984CB18E9CAF200959E53 /* Debug */ = {
+		463F857E1902E61D008E94F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -402,7 +339,7 @@
 			};
 			name = Debug;
 		};
-		469984CC18E9CAF200959E53 /* Release */ = {
+		463F857F1902E61D008E94F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -434,102 +371,66 @@
 			};
 			name = Release;
 		};
-		469984CE18E9CAF200959E53 /* Debug */ = {
+		463F85811902E61D008E94F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 068450F49D144189B3936D99 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/dimones-dev/Documents/YandexSpeechKit-2.0-ios",
-					2,
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "vkMusicPlayerSpeech/vkMusicPlayerSpeech-Prefix.pch";
-				GENERATE_MASTER_OBJECT_FILE = NO;
-				INFOPLIST_FILE = "vkMusicPlayerSpeech/vkMusicPlayerSpeech-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				MACH_O_TYPE = mh_execute;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-framework",
-					Foundation,
-				);
+				GCC_PREFIX_HEADER = "testteas/testteas-Prefix.pch";
+				INFOPLIST_FILE = "testteas/testteas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		469984CF18E9CAF200959E53 /* Release */ = {
+		463F85821902E61D008E94F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 068450F49D144189B3936D99 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/dimones-dev/Documents/YandexSpeechKit-2.0-ios",
-					2,
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "vkMusicPlayerSpeech/vkMusicPlayerSpeech-Prefix.pch";
-				GENERATE_MASTER_OBJECT_FILE = NO;
-				INFOPLIST_FILE = "vkMusicPlayerSpeech/vkMusicPlayerSpeech-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				MACH_O_TYPE = mh_execute;
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-framework",
-					Foundation,
-				);
+				GCC_PREFIX_HEADER = "testteas/testteas-Prefix.pch";
+				INFOPLIST_FILE = "testteas/testteas-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
-				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
-		469984D118E9CAF200959E53 /* Debug */ = {
+		463F85841902E61D008E94F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/vkMusicPlayerSpeech.app/vkMusicPlayerSpeech";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/testteas.app/testteas";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "vkMusicPlayerSpeech/vkMusicPlayerSpeech-Prefix.pch";
+				GCC_PREFIX_HEADER = "testteas/testteas-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "vkMusicPlayerSpeechTests/vkMusicPlayerSpeechTests-Info.plist";
+				INFOPLIST_FILE = "testteasTests/testteasTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		469984D218E9CAF200959E53 /* Release */ = {
+		463F85851902E61D008E94F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/vkMusicPlayerSpeech.app/vkMusicPlayerSpeech";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/testteas.app/testteas";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "vkMusicPlayerSpeech/vkMusicPlayerSpeech-Prefix.pch";
-				INFOPLIST_FILE = "vkMusicPlayerSpeechTests/vkMusicPlayerSpeechTests-Info.plist";
+				GCC_PREFIX_HEADER = "testteas/testteas-Prefix.pch";
+				INFOPLIST_FILE = "testteasTests/testteasTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -539,34 +440,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4699849618E9CAF100959E53 /* Build configuration list for PBXProject "vkMusicPlayerSpeech" */ = {
+		463F85491902E61D008E94F4 /* Build configuration list for PBXProject "testteas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				469984CB18E9CAF200959E53 /* Debug */,
-				469984CC18E9CAF200959E53 /* Release */,
+				463F857E1902E61D008E94F4 /* Debug */,
+				463F857F1902E61D008E94F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		469984CD18E9CAF200959E53 /* Build configuration list for PBXNativeTarget "vkMusicPlayerSpeech" */ = {
+		463F85801902E61D008E94F4 /* Build configuration list for PBXNativeTarget "testteas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				469984CE18E9CAF200959E53 /* Debug */,
-				469984CF18E9CAF200959E53 /* Release */,
+				463F85811902E61D008E94F4 /* Debug */,
+				463F85821902E61D008E94F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
-		469984D018E9CAF200959E53 /* Build configuration list for PBXNativeTarget "vkMusicPlayerSpeechTests" */ = {
+		463F85831902E61D008E94F4 /* Build configuration list for PBXNativeTarget "testteasTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				469984D118E9CAF200959E53 /* Debug */,
-				469984D218E9CAF200959E53 /* Release */,
+				463F85841902E61D008E94F4 /* Debug */,
+				463F85851902E61D008E94F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4699849318E9CAF100959E53 /* Project object */;
+	rootObject = 463F85461902E61D008E94F4 /* Project object */;
 }

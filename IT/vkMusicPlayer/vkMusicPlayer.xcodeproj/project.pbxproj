@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4676D94618F51ADD00F1139C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4676D94418F51ADD00F1139C /* Main.storyboard */; };
+		4676D94918F5204F00F1139C /* settViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4676D94818F5204F00F1139C /* settViewController.m */; };
+		4676D94B18F5210000F1139C /* YandexSpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4676D94A18F5210000F1139C /* YandexSpeechKit.framework */; };
 		46AECE6318F43C78004AAC4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AECE6218F43C78004AAC4C /* Foundation.framework */; };
 		46AECE6518F43C78004AAC4C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AECE6418F43C78004AAC4C /* CoreGraphics.framework */; };
 		46AECE6718F43C78004AAC4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AECE6618F43C78004AAC4C /* UIKit.framework */; };
@@ -35,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		4676D94518F51ADD00F1139C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../vkMusicPlayer/vkMusicPlayer/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4676D94718F5204F00F1139C /* settViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settViewController.h; sourceTree = "<group>"; };
+		4676D94818F5204F00F1139C /* settViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = settViewController.m; sourceTree = "<group>"; };
+		4676D94A18F5210000F1139C /* YandexSpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YandexSpeechKit.framework; path = "../../../../Documents/YandexSpeechKit-2.0-ios 2/YandexSpeechKit.framework"; sourceTree = "<group>"; };
 		46AECE5F18F43C78004AAC4C /* vkMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vkMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AECE6218F43C78004AAC4C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		46AECE6418F43C78004AAC4C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +67,7 @@
 			files = (
 				46AECE6518F43C78004AAC4C /* CoreGraphics.framework in Frameworks */,
 				46AECE6718F43C78004AAC4C /* UIKit.framework in Frameworks */,
+				4676D94B18F5210000F1139C /* YandexSpeechKit.framework in Frameworks */,
 				46AECE6318F43C78004AAC4C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +107,7 @@
 		46AECE6118F43C78004AAC4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4676D94A18F5210000F1139C /* YandexSpeechKit.framework */,
 				46AECE6218F43C78004AAC4C /* Foundation.framework */,
 				46AECE6418F43C78004AAC4C /* CoreGraphics.framework */,
 				46AECE6618F43C78004AAC4C /* UIKit.framework */,
@@ -119,6 +126,8 @@
 				46AECE7818F43C78004AAC4C /* ViewController.m */,
 				46AECE7A18F43C78004AAC4C /* Images.xcassets */,
 				46AECE6918F43C78004AAC4C /* Supporting Files */,
+				4676D94718F5204F00F1139C /* settViewController.h */,
+				4676D94818F5204F00F1139C /* settViewController.m */,
 			);
 			path = vkMusicPlayer;
 			sourceTree = "<group>";
@@ -251,6 +260,7 @@
 			files = (
 				46AECE7918F43C78004AAC4C /* ViewController.m in Sources */,
 				46AECE7318F43C78004AAC4C /* AppDelegate.m in Sources */,
+				4676D94918F5204F00F1139C /* settViewController.m in Sources */,
 				46AECE6F18F43C78004AAC4C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,7 +386,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/dimones-dev/Documents/YandexSpeechKit-2.0-ios",
+					2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vkMusicPlayer/vkMusicPlayer-Prefix.pch";
 				INFOPLIST_FILE = "vkMusicPlayer/vkMusicPlayer-Info.plist";
@@ -392,7 +407,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/dimones-dev/Documents/YandexSpeechKit-2.0-ios",
+					2,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "vkMusicPlayer/vkMusicPlayer-Prefix.pch";
 				INFOPLIST_FILE = "vkMusicPlayer/vkMusicPlayer-Info.plist";

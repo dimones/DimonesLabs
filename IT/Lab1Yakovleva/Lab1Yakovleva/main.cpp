@@ -396,7 +396,7 @@ int main(int argc, const char * argv[])
             case 'v':
             {
                 cout << "v(iew) mode" << endl;
-                if(TT.nn!=0)
+if(TT.nn!=0)
                 TT.viewBooks();
                 else cout << "Нет ни одной записи но вы можете загрузить нажав 'l' или добавить нажав 'a'" << endl;
                 break;
