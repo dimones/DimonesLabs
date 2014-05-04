@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *durLabelCur;
 @property (weak, nonatomic) IBOutlet UILabel *durLabelMax;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImage;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel; 
 
 
 
