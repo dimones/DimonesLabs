@@ -21,6 +21,10 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_addItem_clicked();
+
+    void on_deleteItem_clicked();
+
 private:
     Ui::Lab4 *ui;
 };
