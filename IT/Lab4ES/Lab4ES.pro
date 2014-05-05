@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2014-05-04T11:40:18
+# Project created by QtCreator 2014-05-05T23:56:18
 #
 #-------------------------------------------------
 
@@ -8,16 +8,13 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Lab4
+TARGET = Lab4ES
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        lab4.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += lab4.h
 
-FORMS    += mainwindow.ui
-
-RESOURCES += \
-    res.qrc
+FORMS    += lab4.ui

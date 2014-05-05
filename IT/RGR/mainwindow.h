@@ -4,8 +4,6 @@
 #include <QMainWindow>
 #include <math.h>
 #include <QDebug>
-#include "functions.h"
-#include "func.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -33,6 +31,12 @@ private slots:
     void on_tableWidget_itemPressed(QTableWidgetItem *item);
 
     void on_tableWidget_itemEntered(QTableWidgetItem *item);
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;
