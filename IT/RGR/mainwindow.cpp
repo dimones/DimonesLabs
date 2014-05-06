@@ -108,99 +108,16 @@ double isValue(char* t)
       qDebug() << "ROW: "<< row<<"   COL: " << col;
       if(table[row-1][getPosFromChar(col)-1].value!=NULL)
         {
-          return atof(table[row-1][getPosFromChar(col)].value);
+          return atof(table[row][getPosFromChar(col)-1].value);
         }
     }
   return -1;
 }
-double isFuncSUM(char* t){
-  qDebug()<<"isFunc(atof test): " << atof(t);
-  qDebug() << endl;
-  if(atof(t)==0)
-    {
-      qDebug() << "isFunc: " << t;
-      qDebug() << endl;
-      if (QString(t).toLower().contains("abs"))
-        {
-          return (double)abs(atoi(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("asin"))
-        {
-          return asin(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("atan"))
-        {
-          return atan(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("cos"))
-        {
-          return cos(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("exp"))
-        {
-          return exp(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("floor"))
-        {
-          return floor(atof(getVariableBR(t)));
 
-        }
-      else if(QString(t).toLower().contains("log10"))
-        {
-          return log10(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("log"))
-        {
-          return log(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("max"))
-        {
-          //return (atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("min"))
-        {
-          //
-        }
-      else if(QString(t).toLower().contains("pow"))
-        {
-          //
-        }
-      else if(QString(t).toLower().contains("round"))
-        {
-          //
-        }
-      else if(QString(t).toLower().contains("sinh"))
-        {
-          return sinh(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("sin"))
-        {
-          return sin(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("sqrt"))
-        {
-          return sqrt(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("tanh"))
-        {
-          return tanh(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("tan"))
-        {
-          return tan(atof(getVariableBR(t)));
-        }
-    }
-  return -1;
-}
 void checkListItemsSUM(QStringList &list)
 {
   for(int i=0;i<list.count();i++)
     {
-      if(isFuncSUM(list[i].toUtf8().data())!=-1)
-        {
-          qDebug() << "FUNC BEFORE: " << list[i];
-          list.replace(i,QString::number(isFuncSUM(list[i].toUtf8().data())));
-        }
       if(isValue(list[i].toUtf8().data())!=-1)
         {
           list.replace(i,QString::number(isValue(list[i].toUtf8().data())));
@@ -213,7 +130,7 @@ double SUM(char* text)
   qDebug() <<"INPUT TEXT:" <<text;
   QStringList list = QString(text).split(";");
   qDebug() << "COUNT:" << list.count();
-  //checkListItemsSUM(list);
+  checkListItemsSUM(list);
   for(int i =0;i<list.count();i++)
     {
       out+=atof(list[i].toUtf8().constData());
@@ -526,13 +443,12 @@ void SUPERPARSER(QTableWidgetItem *item)
               item->setText(QString::number(isValue(tem)));
             }
         }*/
-
-  if(!haveBrackets(item->text().toUtf8().data()))
+  /*if(!haveBrackets(item->text().toUtf8().data()))
     {
       strcpy(functemp,QString("=(%1)").arg(temp).toUtf8().constData());
       temp = QString("%1").arg(temp);
     }
-  else strcpy(functemp,item->text().toUtf8().constData());
+  else strcpy(functemp,item->text().toUtf8().constData());*/
   temp.remove("=");
   qDebug() << temp;
   qDebug() << endl;
@@ -543,13 +459,13 @@ void SUPERPARSER(QTableWidgetItem *item)
   strcpy(out,temp.toUtf8().constData());
   if(list.count()==1)
     {
-
+/*
       if(isFunc(temp.toUtf8().data())!=-1)
         {
           qDebug()<<temp;
           strcpy(table[item->row()][item->column()].func,temp.toUtf8().constData());
-          item->setText(QString::number(isFunc(temp.toUtf8().data())));
-        }
+          item->setText(QString::number(isFunc(getVariable(temp.toUtf8().data()))));
+        }*/
       if(isValue(temp.toUtf8().data())!=-1)
         {
           strcpy(table[item->row()][item->column()].func,temp.toUtf8().constData());
