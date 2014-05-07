@@ -11,6 +11,15 @@ namespace Ui {
 class MainWindow;
 }
 
+
+char colNames[25] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','V','X','Y','Z'};
+struct elem{
+  int type;
+  int X,Y;
+  char func[256];
+  char value[256];
+};
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -18,6 +27,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+     elem table[30][24];
 
 private slots:
     void on_tableWidget_itemChanged(QTableWidgetItem *item);

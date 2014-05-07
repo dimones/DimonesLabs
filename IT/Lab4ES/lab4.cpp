@@ -46,20 +46,6 @@ void Lab4::on_pushButton_clicked()
     }
 }
 
-void Lab4::on_pushButton_2_clicked()
-{
-    ui->listWidget->clear();
-    int tempRazm = atoi(ui->lineEdit_3->text().toUtf8().data());
-    for(int i = iteratorI;i<iteratorI+atoi(ui->lineEdit_3->text().toUtf8().data());i++)
-    {
-        int temp = abs(rand()%77-rand()%22);
-        QListWidgetItem *item = new QListWidgetItem(temp/10>=1?QString("%1 | %2").arg(QString::number(temp/10)).arg(temp%10):QString("0 | %1").arg(QString::number(temp)));
-        A[i] = temp;
-        ui->listWidget->addItem(item);
-    }
-    iteratorI+=atoi(ui->lineEdit_3->text().toUtf8().data());
-
-}
 
 void Lab4::on_addItem_clicked()
 {

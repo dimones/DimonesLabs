@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>273</width>
-    <height>481</height>
+    <width>270</width>
+    <height>422</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>130</y>
+      <y>70</y>
       <width>101</width>
       <height>341</height>
      </rect>
@@ -28,7 +28,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>130</y>
+      <y>70</y>
       <width>101</width>
       <height>341</height>
      </rect>
@@ -38,7 +38,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>280</y>
+      <y>220</y>
       <width>31</width>
       <height>32</height>
      </rect>
@@ -47,47 +47,11 @@
      <string>-&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>101</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Кол-во костей:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>10</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>60</y>
-      <width>111</width>
-      <height>32</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>getRandom()</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEdit_2">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>100</y>
+      <y>40</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -97,7 +61,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>150</y>
+      <y>90</y>
       <width>31</width>
       <height>32</height>
      </rect>
@@ -110,7 +74,7 @@
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>200</y>
+      <y>140</y>
       <width>31</width>
       <height>32</height>
      </rect>
@@ -123,36 +87,13 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>70</y>
+      <y>10</y>
       <width>101</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Добавить:</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>40</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Рандомное кол-во:</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>40</y>
-      <width>113</width>
-      <height>21</height>
-     </rect>
     </property>
    </widget>
   </widget>

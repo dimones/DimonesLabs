@@ -4,15 +4,8 @@
 
 
 using namespace std;
-char colNames[25] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','V','X','Y','Z'};
-struct item{
-  int type;
-  int X,Y;
-  char func[256];
-  char value[256];
-};
 
-item table[24][30];
+
 
 MainWindow::MainWindow(QWidget *parent) :
   QMainWindow(parent),
@@ -28,9 +21,9 @@ MainWindow::MainWindow(QWidget *parent) :
       for(int j=0;j<30;j++)
         {
           ui->tableWidget->setRowHeight(i,20);
-          table[i][j].type = 1;
-          table[i][j].X = j;
-          table[i][j].Y = i;
+          MainWindow::table[i][j].type = 1;
+          MainWindow::table[i][j].X = j;
+          MainWindow::table[i][j].Y = i;
         }
     }
 }
@@ -57,7 +50,7 @@ int getPosFromChar(char c)
 char* getValueFromItem(int row,char col)
 {
   char* out = new char[100];
-  strcpy(out,table[row][getPosFromChar(col)].value);
+  strcpy(out,MainWindow::table[row][getPosFromChar(col)].value);
   return out;
 }
 
@@ -106,9 +99,9 @@ double isValue(char* t)
     {
       int row = strlen(t)!=2?((t[1]-'0')*10+(t[2]-'0')):(t[1]-'0'); char col = t[0];
       qDebug() << "ROW: "<< row<<"   COL: " << col;
-      if(table[row-1][getPosFromChar(col)-1].value!=NULL)
+      if(MainWindow::table[row][getPosFromChar(col)].value!=NULL)
         {
-          return atof(table[row][getPosFromChar(col)-1].value);
+          return atof(MainWindow::table[row][getPosFromChar(col)].value);
         }
     }
   return -1;
@@ -468,12 +461,12 @@ void SUPERPARSER(QTableWidgetItem *item)
         }*/
       if(isValue(temp.toUtf8().data())!=-1)
         {
-          strcpy(table[item->row()][item->column()].func,temp.toUtf8().constData());
+          strcpy(MainWindow::table[item->row()][item->column()].func,temp.toUtf8().constData());
           item->setText(QString::number(isValue(temp.toUtf8().data())));
           /*
           char* tem = new char[100]; char* tem2 = new char[100];
           strcpy(tem,temp.toUtf8().constData()); strcpy(tem2,item->text().toUtf8().constData());
-          strcpy(table[item->row()][item->column()].func,tem2);
+          strcpy(MainWindow::table[item->row()][item->column()].func,tem2);
           item->setText(QString::number(isValue(tem)));*/
         }
     }
@@ -493,7 +486,7 @@ void SUPERPARSER(QTableWidgetItem *item)
           strcpy(out,t2);
         }
       item->setText(out);
-      strcpy(table[item->row()][item->column()].func,functemp);
+      strcpy(MainWindow::table[item->row()][item->column()].func,functemp);
     }
 }
 
@@ -650,8 +643,8 @@ void Parser(QTableWidgetItem *item)
   else {
       char* temp = new char[100];
       strcpy(temp,item->text().toUtf8().constData());
-      strcpy(table[item->row()][item->column()].func,temp);
-      strcpy(table[item->row()][item->column()].value,temp);
+      strcpy(MainWindow::table[item->row()][item->column()].func,temp);
+      strcpy(MainWindow::table[item->row()][item->column()].value,temp);
     }
 }
 
@@ -663,9 +656,9 @@ void MainWindow::on_tableWidget_itemChanged(QTableWidgetItem *item)
 
 void MainWindow::on_tableWidget_itemClicked(QTableWidgetItem *item)
 {
-  if(table[item->row()][item->column()].func[0]!='\0')
+  if(MainWindow::table[item->row()][item->column()].func[0]!='\0')
     {
-      ui->lineEdit->setText(table[item->row()][item->column()].func);
+      ui->lineEdit->setText(MainWindow::table[item->row()][item->column()].func);
     }else ui->lineEdit->setText("");
 }
 
@@ -675,30 +668,29 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_tableWidget_itemDoubleClicked(QTableWidgetItem *item)
 {
-  item->setText(table[item->row()][item->column()].func);
+  item->setText(MainWindow::table[item->row()][item->column()].func);
 }
 
 void MainWindow::on_tableWidget_itemPressed(QTableWidgetItem *item)
 {
-  item->setText(table[item->row()][item->column()].func);
+  item->setText(MainWindow::table[item->row()][item->column()].func);
 }
 
 void MainWindow::on_tableWidget_itemEntered(QTableWidgetItem *item)
 {
-  item->setText(table[item->row()][item->column()].func);
+  item->setText(MainWindow::table[item->row()][item->column()].func);
 }
 
 void MainWindow::on_pushButton_3_clicked()
 {
   QString path = QFileDialog::getSaveFileName();
   FILE *fd = fopen(path.toUtf8().constData(),"wb+");
-  fwrite(&table,sizeof(table),1,fd);
+  fwrite(&MainWindow::table,sizeof(MainWindow::table),1,fd);
   fclose(fd);
 }
 
 void MainWindow::on_pushButton_2_clicked()
 {
-  item temp[24][30];
   QString path = QFileDialog::getOpenFileName();
   if(path!=NULL)
     {
@@ -706,28 +698,28 @@ void MainWindow::on_pushButton_2_clicked()
         {
           for(int j=0;j<30;j++)
             {
-              strcpy(table[i][j].func,"");
-              strcpy(table[i][j].value,"");
-              table[i][j].type = 1;
-              table[i][j].X = i;
-              table[i][j].Y = j;
+              strcpy(MainWindow::table[i][j].func,"");
+              strcpy(MainWindow::table[i][j].value,"");
+              MainWindow::table[i][j].type = 1;
+              MainWindow::table[i][j].X = i;
+              MainWindow::table[i][j].Y = j;
             }
         }
       FILE *fd = fopen(path.toUtf8().constData(),"r");
-      fread(&table,sizeof(table),1,fd);
+      fread(&MainWindow::table,sizeof(MainWindow::table),1,fd);
       ui->tableWidget->clear();
       for(int i=0;i<24;i++)
         {
           ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(QChar(colNames[i])));
           for(int j=0;j<30;j++)
             {
-              /*strcpy(table[i][j].value,"");
+              /*strcpy(MainWindow::table[i][j].value,"");
 
-              table[i][j].value = temp[i][j].value;
-              table[i][j].func = temp[i][j].func;
-              table[i][j].type = temp[i][j].type;
-              table[i][j].X = temp[i][j].X;*/
-              QTableWidgetItem *item = new QTableWidgetItem(QString(table[i][j].value));
+              MainWindow::table[i][j].value = temp[i][j].value;
+              MainWindow::table[i][j].func = temp[i][j].func;
+              MainWindow::table[i][j].type = temp[i][j].type;
+              MainWindow::table[i][j].X = temp[i][j].X;*/
+              QTableWidgetItem *item = new QTableWidgetItem(QString(MainWindow::table[i][j].value));
               ui->tableWidget->setItem(i,j,item);
             }
         }
