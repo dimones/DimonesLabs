@@ -39,7 +39,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>PATH</string>
+    <string>Путь</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit">
@@ -82,7 +82,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>140</y>
+     <y>120</y>
      <width>351</width>
      <height>23</height>
     </rect>
@@ -95,7 +95,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>100</y>
+     <y>90</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -108,7 +108,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>220</y>
+     <y>190</y>
      <width>351</width>
      <height>23</height>
     </rect>
@@ -121,7 +121,7 @@
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>180</y>
+     <y>150</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -134,7 +134,7 @@
    <property name="geometry">
     <rect>
      <x>600</x>
-     <y>100</y>
+     <y>90</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -147,23 +147,35 @@
    <property name="geometry">
     <rect>
      <x>610</x>
-     <y>180</y>
-     <width>121</width>
-     <height>16</height>
+     <y>145</y>
+     <width>191</width>
+     <height>31</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
    </property>
    <property name="text">
     <string/>
    </property>
-   <property name="wordWrap">
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+   <property name="scaledContents">
     <bool>false</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
    </property>
   </widget>
   <widget class="QPushButton" name="downButton">
    <property name="geometry">
     <rect>
      <x>460</x>
-     <y>250</y>
+     <y>220</y>
      <width>351</width>
      <height>41</height>
     </rect>
@@ -175,8 +187,8 @@
   <widget class="QSlider" name="horizontalSlider">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>330</y>
+     <x>280</x>
+     <y>410</y>
      <width>160</width>
      <height>22</height>
     </rect>
@@ -191,8 +203,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>300</y>
+     <x>470</x>
+     <y>270</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -204,8 +216,8 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>330</y>
+     <x>200</x>
+     <y>410</y>
      <width>71</width>
      <height>16</height>
     </rect>
@@ -214,24 +226,11 @@
     <string>Volume</string>
    </property>
   </widget>
-  <widget class="QProgressBar" name="progressBar_3">
-   <property name="geometry">
-    <rect>
-     <x>460</x>
-     <y>360</y>
-     <width>351</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="value">
-    <number>0</number>
-   </property>
-  </widget>
   <widget class="QLabel" name="currentSongSpeed">
    <property name="geometry">
     <rect>
      <x>580</x>
-     <y>220</y>
+     <y>190</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -241,6 +240,92 @@
    </property>
    <property name="wordWrap">
     <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QSlider" name="curPlayer">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>380</y>
+     <width>351</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+   <property name="sliderPosition">
+    <number>0</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="curPlaySong">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>290</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::PlainText</enum>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="textInteractionFlags">
+    <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="previous">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>330</y>
+     <width>31</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="play_pause">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>330</y>
+     <width>31</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="next">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>330</y>
+     <width>31</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
    </property>
   </widget>
  </widget>

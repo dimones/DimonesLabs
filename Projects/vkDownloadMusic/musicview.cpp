@@ -10,6 +10,7 @@ QUrlQuery query("https://api.vk.com/method/audio.get"); //base query
 QStringList name,urls; //list of songs and urls
 QMediaPlayer *player;
 int curSong,count,maxCount;
+bool playing;
 
 MusicView::MusicView(QWidget *parent, QString token) :
     QWidget(parent),
@@ -18,7 +19,6 @@ MusicView::MusicView(QWidget *parent, QString token) :
     tok = token;
     ui->setupUi(this);
     query.addQueryItem("access_token",tok);
-    qDebug() << "QUERY" << query.toString();
     QByteArray t = GET(QUrl(query.toString().replace("&","?")));
     QVariantList list = parse(QString(t)).toMap().value("response").toList();
     for(int i = 0;i<list.size();i++)
@@ -61,6 +61,9 @@ void MusicView::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     player->setMedia(QUrl(urls[ui->listWidget->row(item)]));
     player->setVolume(ui->horizontalSlider->value());
     player->play();
+    connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
+    connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
+    connect(player,SIGNAL(bufferStatusChanged(int)),this,SLOT(bufferStatusChangedH(int)));
     // connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(percentage(quint64)));
 }
 
@@ -89,8 +92,6 @@ void MusicView::on_downButton_clicked()
 {
     append(urls);
 }
-
-
 
 void MusicView::append(const QStringList &urlList)
 {
@@ -183,3 +184,32 @@ void MusicView::downloadFinished()
 void MusicView::downloadReadyRead()
 {output.write(currentDownload->readAll());}
 
+void MusicView::stateChangedH(QMediaPlayer::State state)
+{
+    if(state == QMediaPlayer::PlayingState)
+        playing = true;
+    else playing  = false;
+}
+
+
+void MusicView::on_play_pause_clicked()
+{
+    if(playing)
+        player->pause();
+    else player->play();
+}
+
+void MusicView::positionChangedH(qint64 pos)
+{
+    qDebug() << "ga" << (double)pos/player->duration()*100;
+    if(player->duration()>1)
+    ui->curPlayer->setValue((double)pos/player->duration()*100);
+    //ui->songCur->update();
+}
+
+
+
+void MusicView::on_curPlayer_sliderMoved(int position)
+{
+    player->setPosition(player->duration()/position);
+}

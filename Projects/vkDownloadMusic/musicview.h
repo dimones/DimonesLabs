@@ -46,6 +46,10 @@ private slots:
     void downloadProgress(qint64 bytesReceived, qint64 bytesTotal);
     void downloadFinished();
     void downloadReadyRead();
+    void stateChangedH(QMediaPlayer::State state);
+    void on_play_pause_clicked();
+    void positionChangedH(qint64 pos);
+    void on_curPlayer_sliderMoved(int position);
 
 private:
     Ui::MusicView *ui;
