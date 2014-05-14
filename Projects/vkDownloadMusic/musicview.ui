@@ -264,7 +264,7 @@
   <widget class="QLabel" name="curPlaySong">
    <property name="geometry">
     <rect>
-     <x>510</x>
+     <x>530</x>
      <y>290</y>
      <width>191</width>
      <height>31</height>
@@ -292,40 +292,81 @@
   <widget class="QPushButton" name="previous">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>470</x>
      <y>330</y>
-     <width>31</width>
+     <width>91</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>back</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>../../../../Downloads/1400113331_icon-ios7-arrow-back.png</normalon>
+    </iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="play_pause">
    <property name="geometry">
     <rect>
-     <x>600</x>
+     <x>590</x>
      <y>330</y>
-     <width>31</width>
+     <width>101</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>play</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../Downloads/1400113310_icon-play.png</normaloff>../../../../Downloads/1400113310_icon-play.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="next">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>720</x>
      <y>330</y>
-     <width>31</width>
+     <width>91</width>
      <height>32</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>next</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normalon>../../../../Downloads/1400113325_icon-ios7-arrow-forward.png</normalon>
+    </iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>48</width>
+     <height>48</height>
+    </size>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

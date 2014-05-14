@@ -9,7 +9,7 @@ QString tok,path; //temp token
 QUrlQuery query("https://api.vk.com/method/audio.get"); //base query
 QStringList name,urls; //list of songs and urls
 QMediaPlayer *player;
-int curSong,count,maxCount;
+int curSong,count,maxCount,currentPlay;
 bool playing;
 
 MusicView::MusicView(QWidget *parent, QString token) :
@@ -64,7 +64,8 @@ void MusicView::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
     connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
     connect(player,SIGNAL(bufferStatusChanged(int)),this,SLOT(bufferStatusChangedH(int)));
-    // connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(percentage(quint64)));
+    currentPlay = ui->listWidget->row(item);
+    ui->curPlaySong->setText(name[currentPlay]);
 }
 
 void MusicView::on_horizontalSlider_sliderMoved(int position)
@@ -188,7 +189,16 @@ void MusicView::stateChangedH(QMediaPlayer::State state)
 {
     if(state == QMediaPlayer::PlayingState)
         playing = true;
-    else playing  = false;
+    else playing  = false;/*
+    if (state == QMediaPlayer::StoppedState)
+    {
+        currentPlay++;
+        player->setMedia(QUrl(urls[currentPlay]));
+        player->play();
+        connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
+        connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
+        connect(player,SIGNAL(bufferStatusChanged(int)),this,SLOT(bufferStatusChangedH(int)));
+    }*/
 }
 
 
@@ -203,7 +213,8 @@ void MusicView::positionChangedH(qint64 pos)
 {
     qDebug() << "ga" << (double)pos/player->duration()*100;
     if(player->duration()>1)
-    ui->curPlayer->setValue((double)pos/player->duration()*100);
+        if(player->isSeekable())
+            ui->curPlayer->setValue((double)pos/player->duration()*100);
     //ui->songCur->update();
 }
 
@@ -212,4 +223,24 @@ void MusicView::positionChangedH(qint64 pos)
 void MusicView::on_curPlayer_sliderMoved(int position)
 {
     player->setPosition(player->duration()/position);
+}
+
+void MusicView::on_next_clicked()
+{
+    currentPlay++;
+    player->setMedia(QUrl(urls[currentPlay]));
+    player->play();
+    connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
+    connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
+    ui->curPlaySong->setText(name[currentPlay]);
+}
+
+void MusicView::on_previous_clicked()
+{
+    currentPlay--;
+    player->setMedia(QUrl(urls[currentPlay]));
+    player->play();
+    connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
+    connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
+    ui->curPlaySong->setText(name[currentPlay]);
 }

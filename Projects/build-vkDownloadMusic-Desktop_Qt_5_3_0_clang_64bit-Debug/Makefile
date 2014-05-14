@@ -48,12 +48,14 @@ OBJECTS_DIR   = ./
 SOURCES       = ../vkDownloadMusic/main.cpp \
 		../vkDownloadMusic/mainwindow.cpp \
 		../vkDownloadMusic/musicview.cpp \
-		../vkDownloadMusic/json.cpp moc_mainwindow.cpp \
+		../vkDownloadMusic/json.cpp qrc_default.cpp \
+		moc_mainwindow.cpp \
 		moc_musicview.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		musicview.o \
 		json.o \
+		qrc_default.o \
 		moc_mainwindow.o \
 		moc_musicview.o
 DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
@@ -336,6 +338,7 @@ Makefile: ../vkDownloadMusic/vkDownloadMusic.pro ../../../../Qt/5.3/clang_64/mks
 		../../../../Qt/5.3/clang_64/mkspecs/features/yacc.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/lex.prf \
 		../vkDownloadMusic/vkDownloadMusic.pro \
+		../vkDownloadMusic/default.qrc \
 		/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/QtWebKitWidgets.prl \
 		/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKit.framework/QtWebKit.prl \
 		/Users/dimones-dev/Qt/5.3/clang_64/lib/QtNetwork.framework/QtNetwork.prl \
@@ -468,6 +471,7 @@ Makefile: ../vkDownloadMusic/vkDownloadMusic.pro ../../../../Qt/5.3/clang_64/mks
 ../../../../Qt/5.3/clang_64/mkspecs/features/yacc.prf:
 ../../../../Qt/5.3/clang_64/mkspecs/features/lex.prf:
 ../vkDownloadMusic/vkDownloadMusic.pro:
+../vkDownloadMusic/default.qrc:
 /Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/QtWebKitWidgets.prl:
 /Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKit.framework/QtWebKit.prl:
 /Users/dimones-dev/Qt/5.3/clang_64/lib/QtNetwork.framework/QtNetwork.prl:
@@ -501,7 +505,7 @@ vkDownloadMusic.app/Contents/Info.plist:
 	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@BUNDLEIDENTIFIER@,dimonesvkDownloadMusic,g" -e "s,@EXECUTABLE@,vkDownloadMusic,g" -e "s,@TYPEINFO@,????,g" ../../../../Qt/5.3/clang_64/mkspecs/macx-clang/Info.plist.app >vkDownloadMusic.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/vkDownloadMusic1.0.0 || mkdir -p .tmp/vkDownloadMusic1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/vkDownloadMusic1.0.0/ && $(COPY_FILE) --parents ../vkDownloadMusic/mainwindow.h ../vkDownloadMusic/musicview.h ../vkDownloadMusic/json.h .tmp/vkDownloadMusic1.0.0/ && $(COPY_FILE) --parents ../vkDownloadMusic/main.cpp ../vkDownloadMusic/mainwindow.cpp ../vkDownloadMusic/musicview.cpp ../vkDownloadMusic/json.cpp .tmp/vkDownloadMusic1.0.0/ && $(COPY_FILE) --parents ../vkDownloadMusic/mainwindow.ui ../vkDownloadMusic/musicview.ui .tmp/vkDownloadMusic1.0.0/ && (cd `dirname .tmp/vkDownloadMusic1.0.0` && $(TAR) vkDownloadMusic1.0.0.tar vkDownloadMusic1.0.0 && $(COMPRESS) vkDownloadMusic1.0.0.tar) && $(MOVE) `dirname .tmp/vkDownloadMusic1.0.0`/vkDownloadMusic1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/vkDownloadMusic1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/vkDownloadMusic1.0.0/ && $(COPY_FILE) --parents ../vkDownloadMusic/default.qrc .tmp/vkDownloadMusic1.0.0/ && $(COPY_FILE) --parents ../vkDownloadMusic/mainwindow.h ../vkDownloadMusic/musicview.h ../vkDownloadMusic/json.h .tmp/vkDownloadMusic1.0.0/ && $(COPY_FILE) --parents ../vkDownloadMusic/main.cpp ../vkDownloadMusic/mainwindow.cpp ../vkDownloadMusic/musicview.cpp ../vkDownloadMusic/json.cpp .tmp/vkDownloadMusic1.0.0/ && $(COPY_FILE) --parents ../vkDownloadMusic/mainwindow.ui ../vkDownloadMusic/musicview.ui .tmp/vkDownloadMusic1.0.0/ && (cd `dirname .tmp/vkDownloadMusic1.0.0` && $(TAR) vkDownloadMusic1.0.0.tar vkDownloadMusic1.0.0 && $(COMPRESS) vkDownloadMusic1.0.0.tar) && $(MOVE) `dirname .tmp/vkDownloadMusic1.0.0`/vkDownloadMusic1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/vkDownloadMusic1.0.0
 
 
 clean:compiler_clean 
@@ -524,8 +528,15 @@ check: first
 
 compiler_objective_c_make_all:
 compiler_objective_c_clean:
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_default.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_default.cpp
+qrc_default.cpp: ../vkDownloadMusic/default.qrc \
+		../vkDownloadMusic/1400113331_icon-ios7-arrow-back.png \
+		../vkDownloadMusic/1400113310_icon-play.png \
+		../vkDownloadMusic/1400113324_icon-ios7-arrow-forward.svg
+	/Users/dimones-dev/Qt/5.3/clang_64/bin/rcc -name default ../vkDownloadMusic/default.qrc -o qrc_default.cpp
+
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_musicview.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp moc_musicview.cpp
@@ -550,6 +561,21 @@ moc_mainwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qeventloop.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QMap \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QMediaPlayer \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QListWidgetItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistwidget.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../vkDownloadMusic/json.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		../vkDownloadMusic/mainwindow.h
 	/Users/dimones-dev/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/dimones-dev/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/dimones-dev/Desktop/DimonesLabs/Projects/vkDownloadMusic -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtQuick.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtOpenGL.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtPrintSupport.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtQml.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtMultimedia.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtPositioning.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtSensors.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtCore.framework/Headers -I. -F/Users/dimones-dev/Qt/5.3/clang_64/lib ../vkDownloadMusic/mainwindow.h -o moc_mainwindow.cpp
 
@@ -569,6 +595,23 @@ moc_musicview.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qeventloop.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QMap \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QMediaPlayer \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QListWidgetItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistwidget.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../vkDownloadMusic/json.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		../vkDownloadMusic/musicview.h
 	/Users/dimones-dev/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/dimones-dev/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/dimones-dev/Desktop/DimonesLabs/Projects/vkDownloadMusic -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtQuick.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtOpenGL.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtPrintSupport.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtQml.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtMultimedia.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtPositioning.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtSensors.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtCore.framework/Headers -I. -F/Users/dimones-dev/Qt/5.3/clang_64/lib ../vkDownloadMusic/musicview.h -o moc_musicview.cpp
 
@@ -591,7 +634,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -617,6 +660,21 @@ main.o: ../vkDownloadMusic/main.cpp ../vkDownloadMusic/mainwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qeventloop.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QMap \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QMediaPlayer \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QListWidgetItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistwidget.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../vkDownloadMusic/json.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../vkDownloadMusic/main.cpp
@@ -643,6 +701,21 @@ mainwindow.o: ../vkDownloadMusic/mainwindow.cpp ../vkDownloadMusic/mainwindow.h 
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qeventloop.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QMap \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QMediaPlayer \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QListWidgetItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistwidget.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../vkDownloadMusic/json.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../vkDownloadMusic/mainwindow.cpp
 
@@ -663,6 +736,23 @@ musicview.o: ../vkDownloadMusic/musicview.cpp ../vkDownloadMusic/musicview.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qeventloop.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QTimer \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qtimer.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QMap \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/QMediaPlayer \
+		../../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QListWidgetItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistwidget.h \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QFileDialog \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../vkDownloadMusic/json.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		ui_musicview.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o musicview.o ../vkDownloadMusic/musicview.cpp
 
@@ -674,6 +764,9 @@ json.o: ../vkDownloadMusic/json.cpp ../../../../Qt/5.3/clang_64/lib/QtCore.frame
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o json.o ../vkDownloadMusic/json.cpp
+
+qrc_default.o: qrc_default.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_default.o qrc_default.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

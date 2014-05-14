@@ -122,7 +122,7 @@ public:
         curPlayer->setOrientation(Qt::Horizontal);
         curPlaySong = new QLabel(MusicView);
         curPlaySong->setObjectName(QStringLiteral("curPlaySong"));
-        curPlaySong->setGeometry(QRect(510, 290, 191, 31));
+        curPlaySong->setGeometry(QRect(530, 290, 191, 31));
         curPlaySong->setAutoFillBackground(true);
         curPlaySong->setTextFormat(Qt::PlainText);
         curPlaySong->setScaledContents(false);
@@ -130,13 +130,28 @@ public:
         curPlaySong->setTextInteractionFlags(Qt::NoTextInteraction);
         previous = new QPushButton(MusicView);
         previous->setObjectName(QStringLiteral("previous"));
-        previous->setGeometry(QRect(540, 330, 31, 32));
+        previous->setGeometry(QRect(470, 330, 91, 32));
+        QIcon icon;
+        icon.addFile(QStringLiteral("../../../../Downloads/1400113331_icon-ios7-arrow-back.png"), QSize(), QIcon::Normal, QIcon::On);
+        previous->setIcon(icon);
+        previous->setIconSize(QSize(48, 48));
+        previous->setFlat(true);
         play_pause = new QPushButton(MusicView);
         play_pause->setObjectName(QStringLiteral("play_pause"));
-        play_pause->setGeometry(QRect(600, 330, 31, 32));
+        play_pause->setGeometry(QRect(590, 330, 101, 32));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral("../../../../Downloads/1400113310_icon-play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        play_pause->setIcon(icon1);
+        play_pause->setIconSize(QSize(48, 48));
+        play_pause->setFlat(true);
         next = new QPushButton(MusicView);
         next->setObjectName(QStringLiteral("next"));
-        next->setGeometry(QRect(660, 330, 31, 32));
+        next->setGeometry(QRect(720, 330, 91, 32));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral("../../../../Downloads/1400113325_icon-ios7-arrow-forward.png"), QSize(), QIcon::Normal, QIcon::On);
+        next->setIcon(icon2);
+        next->setIconSize(QSize(48, 48));
+        next->setFlat(true);
 
         retranslateUi(MusicView);
 
@@ -158,9 +173,9 @@ public:
         label_5->setText(QApplication::translate("MusicView", "Volume", 0));
         currentSongSpeed->setText(QString());
         curPlaySong->setText(QString());
-        previous->setText(QApplication::translate("MusicView", "PushButton", 0));
-        play_pause->setText(QApplication::translate("MusicView", "PushButton", 0));
-        next->setText(QApplication::translate("MusicView", "PushButton", 0));
+        previous->setText(QApplication::translate("MusicView", "back", 0));
+        play_pause->setText(QApplication::translate("MusicView", "play", 0));
+        next->setText(QApplication::translate("MusicView", "next", 0));
     } // retranslateUi
 
 };

@@ -23,3 +23,6 @@ HEADERS  += mainwindow.h \
 
 FORMS    += mainwindow.ui \
     musicview.ui
+
+RESOURCES += \
+    default.qrc

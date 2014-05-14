@@ -51,6 +51,10 @@ private slots:
     void positionChangedH(qint64 pos);
     void on_curPlayer_sliderMoved(int position);
 
+    void on_next_clicked();
+
+    void on_previous_clicked();
+
 private:
     Ui::MusicView *ui;
     void append(const QUrl &url);
