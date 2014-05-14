@@ -48,6 +48,7 @@ public:
     QPushButton *previous;
     QPushButton *play_pause;
     QPushButton *next;
+    QLabel *curSongTime;
 
     void setupUi(QWidget *MusicView)
     {
@@ -152,6 +153,9 @@ public:
         next->setIcon(icon2);
         next->setIconSize(QSize(48, 48));
         next->setFlat(true);
+        curSongTime = new QLabel(MusicView);
+        curSongTime->setObjectName(QStringLiteral("curSongTime"));
+        curSongTime->setGeometry(QRect(590, 370, 121, 16));
 
         retranslateUi(MusicView);
 
@@ -176,6 +180,7 @@ public:
         previous->setText(QApplication::translate("MusicView", "back", 0));
         play_pause->setText(QApplication::translate("MusicView", "play", 0));
         next->setText(QApplication::translate("MusicView", "next", 0));
+        curSongTime->setText(QString());
     } // retranslateUi
 
 };
