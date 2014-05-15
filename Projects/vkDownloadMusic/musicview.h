@@ -55,6 +55,8 @@ private slots:
     void on_next_clicked();
     void on_previous_clicked();
 
+    void on_listWidget_itemClicked(QListWidgetItem *item);
+
 private:
     Ui::MusicView *ui;
     void append(const QUrl &url);

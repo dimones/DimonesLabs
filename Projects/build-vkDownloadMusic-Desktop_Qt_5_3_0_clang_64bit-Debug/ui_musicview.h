@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QColumnView>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -50,17 +49,26 @@ public:
     QSlider *horizontalSlider;
     QLabel *curSongTime;
     QLabel *curPlaySong;
-    QColumnView *columnView;
 
     void setupUi(QWidget *MusicView)
     {
         if (MusicView->objectName().isEmpty())
             MusicView->setObjectName(QStringLiteral("MusicView"));
-        MusicView->resize(1330, 426);
+        MusicView->resize(844, 426);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MusicView->sizePolicy().hasHeightForWidth());
+        MusicView->setSizePolicy(sizePolicy);
+        MusicView->setMinimumSize(QSize(844, 426));
+        MusicView->setMaximumSize(QSize(844, 426));
         listWidget = new QListWidget(MusicView);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(10, 40, 431, 371));
         listWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
+        listWidget->setTextElideMode(Qt::ElideLeft);
+        listWidget->setProperty("isWrapping", QVariant(false));
+        listWidget->setLayoutMode(QListView::SinglePass);
         listWidget->setModelColumn(0);
         setPath = new QPushButton(MusicView);
         setPath->setObjectName(QStringLiteral("setPath"));
@@ -162,9 +170,6 @@ public:
         curPlaySong->setObjectName(QStringLiteral("curPlaySong"));
         curPlaySong->setGeometry(QRect(20, 20, 351, 31));
         curPlaySong->setTextFormat(Qt::PlainText);
-        columnView = new QColumnView(MusicView);
-        columnView->setObjectName(QStringLiteral("columnView"));
-        columnView->setGeometry(QRect(840, 20, 471, 391));
 
         retranslateUi(MusicView);
 
@@ -173,7 +178,7 @@ public:
 
     void retranslateUi(QWidget *MusicView)
     {
-        MusicView->setWindowTitle(QApplication::translate("MusicView", "Form", 0));
+        MusicView->setWindowTitle(QApplication::translate("MusicView", "vkDownloader", 0));
         setPath->setText(QApplication::translate("MusicView", "\320\237\321\203\321\202\321\214", 0));
         label->setText(QApplication::translate("MusicView", "\320\232\320\276\320\273-\320\262\320\276 \320\277\320\265\321\201\320\265\320\275", 0));
         countSongs->setText(QString());

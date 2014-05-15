@@ -10,8 +10,8 @@ QUrlQuery query("https://api.vk.com/method/audio.get"); //base query
 QStringList name,urls,durations; //list of songs and urls
 QList<QListWidgetItem*> checkedList;
 QMediaPlayer *player;
-int curSong,count,maxCount,currentPlay;
-bool playing;
+int curSong,count,maxCount,currentPlay = 0,countPlayed = 0,indexLastPlayed = 0;
+bool playing,downloading;
 
 MusicView::MusicView(QWidget *parent, QString token) :
     QWidget(parent),
@@ -27,7 +27,6 @@ MusicView::MusicView(QWidget *parent, QString token) :
         QVariantMap cur = list[i].toMap();
         name.push_back(QString(cur.value("artist").toString() + " - " +cur.value("title").toString()));
         urls.push_back(QString(cur.value("url").toString().split("?")[0]));
-        durations.push_back(GetTime(cur.value("duration").toString().toInt()));
     }
     ui->listWidget->addItems(name);
     player = new QMediaPlayer();
@@ -67,6 +66,7 @@ void MusicView::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
     currentPlay = ui->listWidget->row(item);
     ui->curPlaySong->setText(name[currentPlay]);
+    indexLastPlayed = ui->listWidget->row(item);
 }
 
 void MusicView::on_horizontalSlider_sliderMoved(int position)
@@ -76,7 +76,20 @@ void MusicView::on_horizontalSlider_sliderMoved(int position)
 
 void MusicView::on_listWidget_itemSelectionChanged()
 {
+    if(downloading) return;
     checkedList =  ui->listWidget->selectedItems();
+    if(checkedList.count()!=name.count()&&checkedList.count()!=1)
+    {
+        maxCount = count = checkedList.count();
+        ui->label->setText("Выделено");
+        ui->countSongs->setText(QString::number(checkedList.count()));
+    }
+    else
+    {
+        count = name.count();
+        ui->label->setText("Кол-во песен");
+        ui->countSongs->setText(QString::number(name.count()));
+    }
 }
 
 void MusicView::on_setPath_clicked()
@@ -92,17 +105,23 @@ void MusicView::on_lineEdit_editingFinished()
 
 void MusicView::on_downButton_clicked()
 {
-    if(checkedList.count()!=0)
-    {
-        QStringList tempL;
-        for(int i = 0;i<ui->listWidget->selectedItems().count();i++)
+    if(!downloading){
+        ui->allProgress->reset();
+        ui->allProgress->update();
+        downloadedCount = 0;
+        totalCount = 0;
+        if(checkedList.count()!=0)
         {
-            tempL.push_back(urls[ui->listWidget->row(checkedList.at(i))]);
-            //  urls[ui->listWidget->row(ui->listWidget->selectedItems()[i])];
+            QStringList tempL;
+            for(int i = 0;i<maxCount;i++)
+            {
+                tempL.push_back(urls[ui->listWidget->row(checkedList.at(i))]);
+            }
+            append(tempL);
         }
-        append(tempL);
+        else append(urls);
+        downloading = true;
     }
-    else append(urls);
 }
 
 void MusicView::append(const QStringList &urlList)
@@ -125,26 +144,32 @@ void MusicView::startNextDownload()
 {
     //UI BLOCK
     ui->allProgress->setValue((double)downloadedCount/maxCount*100);
-    if(checkedList.count()<=1)
-        ui->currentSong->setText(name[downloadedCount]);
-    else
-        ui->currentSong->setText(name[ui->listWidget->row(checkedList.at(downloadedCount))]);
-
-
     ui->current->setText(QString::number(downloadedCount));
+
     if (downloadQueue.isEmpty()) {
         printf("%d/%d files downloaded successfully\n", downloadedCount, maxCount);
+        downloading = false;
         emit finished();
         return;
     }
 
+    if(downloadedCount==maxCount) {downloading = false; return;}
+
+    if(checkedList.count()<=1)
+        ui->currentSong->setText(name[ui->listWidget->row(checkedList.at(0))]);
+    else
+        ui->currentSong->setText(name[ui->listWidget->row(checkedList.at(downloadedCount))]);
+
     QUrl url = downloadQueue.dequeue();
     QString filename;
+
     if(checkedList.count()<=1)
-        filename = name[downloadedCount]+".mp3";
+        filename = name[ui->listWidget->row(checkedList.at(0))]+".mp3";
     else
         filename = name[ui->listWidget->row(checkedList.at(downloadedCount))] + ".mp3";
+
     output.setFileName(path+"/"+filename);
+
     if (!output.open(QIODevice::WriteOnly)) {
         fprintf(stderr, "Problem opening save file '%s' for download '%s': %s\n",
                 qPrintable(filename), url.toEncoded().constData(),
@@ -161,7 +186,6 @@ void MusicView::startNextDownload()
             SLOT(downloadFinished()));
     connect(currentDownload, SIGNAL(readyRead()),
             SLOT(downloadReadyRead()));
-    // prepare the output
     printf("Downloading %s...\n", url.toEncoded().constData());
     downloadTime.start();
 }
@@ -208,26 +232,41 @@ void MusicView::stateChangedH(QMediaPlayer::State state)
     if(state == QMediaPlayer::PlayingState)
         playing = true;
     else playing  = false;
+    /*
+    if(!playing)
+    if(player->isAvailable())
     if (state == QMediaPlayer::StoppedState)
     {
-        if(ui->curPlayer->value()>95)
-        {
-            currentPlay++;
-            player->setMedia(QUrl(urls[currentPlay]));
-            player->play();
-            connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
-            connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
-            ui->curPlaySong->setText(name[currentPlay]);
-        }
-    }
+        if(indexLastPlayed == ui->listWidget->row(ui->listWidget->selectedItems()[0])) return;
+        ++currentPlay;
+        player->setMedia(QUrl(urls[currentPlay]));
+        player->play();
+        connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
+        connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
+        ui->curPlaySong->setText(name[currentPlay]);
+    }*/
 }
-
 
 void MusicView::on_play_pause_clicked()
 {
     if(playing)
         player->pause();
-    else player->play();
+    else
+        if(player->state() == QMediaPlayer::StoppedState)
+        {
+            if(countPlayed==0)
+            {
+                currentPlay = 0;
+                player->setMedia(QUrl(urls[currentPlay]));
+                player->setVolume(ui->horizontalSlider->value());
+                player->play();
+                connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
+                connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
+                ui->curPlaySong->setText(name[currentPlay]);
+                countPlayed++;
+            }
+        }
+        else player->play();
 }
 
 void MusicView::positionChangedH(qint64 pos)
@@ -237,6 +276,15 @@ void MusicView::positionChangedH(qint64 pos)
             ui->curPlayer->setValue((double)pos/player->duration()*100);
     QDateTime time;
     ui->curSongTime->setText(QString("%1/%2").arg(GetTime(pos/1000)).arg(GetTime(player->duration()/1000)));
+    if(pos>player->duration()-500)
+    {
+        ++currentPlay;
+        player->setMedia(QUrl(urls[currentPlay]));
+        player->play();
+        connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
+        connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
+        ui->curPlaySong->setText(name[currentPlay]);
+    }
     // ui->curSongTime->setText(QString("%1.%2/%3.%4").arg(QString::number((double)pos/60000==0?0:(int)(double)(pos/60000))).arg("qf").arg("qf").arg("qf"));
 }
 
@@ -264,7 +312,7 @@ void MusicView::on_curPlayer_sliderMoved(int position)
 
 void MusicView::on_next_clicked()
 {
-    currentPlay++;
+    ++currentPlay;
     player->setMedia(QUrl(urls[currentPlay]));
     player->play();
     connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
@@ -274,10 +322,15 @@ void MusicView::on_next_clicked()
 
 void MusicView::on_previous_clicked()
 {
-    currentPlay--;
+    --currentPlay;
     player->setMedia(QUrl(urls[currentPlay]));
     player->play();
     connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
     connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
     ui->curPlaySong->setText(name[currentPlay]);
+}
+
+void MusicView::on_listWidget_itemClicked(QListWidgetItem *item)
+{
+
 }
