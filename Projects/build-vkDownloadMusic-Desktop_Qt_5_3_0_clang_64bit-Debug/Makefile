@@ -532,9 +532,11 @@ compiler_rcc_make_all: qrc_default.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_default.cpp
 qrc_default.cpp: ../vkDownloadMusic/default.qrc \
-		../vkDownloadMusic/1400113331_icon-ios7-arrow-back.png \
+		../vkDownloadMusic/1400157620_icon-pause.png \
+		../vkDownloadMusic/1400113325_icon-ios7-arrow-forward.png \
 		../vkDownloadMusic/1400113310_icon-play.png \
-		../vkDownloadMusic/1400113324_icon-ios7-arrow-forward.svg
+		../vkDownloadMusic/1400113331_icon-ios7-arrow-back.png \
+		../vkDownloadMusic/1400157672_vk.com.png
 	/Users/dimones-dev/Qt/5.3/clang_64/bin/rcc -name default ../vkDownloadMusic/default.qrc -o qrc_default.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_musicview.cpp
@@ -571,6 +573,13 @@ moc_mainwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QShortcut \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qshortcut.h \
 		../vkDownloadMusic/json.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
@@ -607,6 +616,13 @@ moc_musicview.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QShortcut \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qshortcut.h \
 		../vkDownloadMusic/json.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
@@ -670,6 +686,13 @@ main.o: ../vkDownloadMusic/main.cpp ../vkDownloadMusic/mainwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QShortcut \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qshortcut.h \
 		../vkDownloadMusic/json.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
@@ -711,6 +734,13 @@ mainwindow.o: ../vkDownloadMusic/mainwindow.cpp ../vkDownloadMusic/mainwindow.h 
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QShortcut \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qshortcut.h \
 		../vkDownloadMusic/json.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
@@ -748,6 +778,13 @@ musicview.o: ../vkDownloadMusic/musicview.cpp ../vkDownloadMusic/musicview.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItemModel \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qstandarditemmodel.h \
+		../../../../Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QStandardItem \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QShortcut \
+		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qshortcut.h \
 		../vkDownloadMusic/json.h \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
 		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \

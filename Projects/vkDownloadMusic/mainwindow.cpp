@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->webView->load(QUrl("https://oauth.vk.com/authorize?client_id=4258201&scope=offline,audio&redirect_uri=https://oauth.vk.com/blank.html&display=popup&v=5.21&response_type=token"));
     connect(ui->webView,SIGNAL(urlChanged(QUrl)),this,SLOT(check_url(QUrl)));
+    this->setWindowIcon(QIcon(":/new/prefix1/1400157672_vk.com.png"));
 }
 
 MainWindow::~MainWindow()

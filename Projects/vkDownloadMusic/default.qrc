@@ -1,7 +1,9 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>1400113310_icon-play.png</file>
-        <file>1400113324_icon-ios7-arrow-forward.svg</file>
         <file>1400113331_icon-ios7-arrow-back.png</file>
+        <file>1400157620_icon-pause.png</file>
+        <file>1400157672_vk.com.png</file>
+        <file>1400113325_icon-ios7-arrow-forward.png</file>
     </qresource>
 </RCC>

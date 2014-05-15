@@ -39,6 +39,8 @@ MusicView::MusicView(QWidget *parent, QString token) :
 
     QShortcut *shortcut = new QShortcut(QKeySequence("⌘S"), this);
     QObject::connect(shortcut, SIGNAL(activated()), this, SLOT(oneDownload()));
+
+    this->setWindowIcon(QIcon(":/new/prefix1/1400157672_vk.com.png"));
 }
 
 MusicView::~MusicView()
@@ -70,6 +72,7 @@ void MusicView::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
     currentPlay = ui->listWidget->row(item);
     ui->curPlaySong->setText(name[currentPlay]);
     indexLastPlayed = ui->listWidget->row(item);
+    countPlayed=1;
 }
 
 void MusicView::on_horizontalSlider_sliderMoved(int position)
@@ -233,8 +236,15 @@ void MusicView::downloadReadyRead()
 void MusicView::stateChangedH(QMediaPlayer::State state)
 {
     if(state == QMediaPlayer::PlayingState)
+    {
+        ui->play_pause->setIcon(QIcon(":/new/prefix1/1400157620_icon-pause.png"));
         playing = true;
-    else playing  = false;
+    }
+    else
+    {
+        ui->play_pause->setIcon(QIcon(":/new/prefix1/1400113310_icon-play.png"));
+        playing  = false;
+    }
 }
 
 void MusicView::on_play_pause_clicked()
@@ -266,7 +276,7 @@ void MusicView::positionChangedH(qint64 pos)
             ui->curPlayer->setValue((double)pos/player->duration()*100);
     QDateTime time;
     ui->curSongTime->setText(QString("%1/%2").arg(GetTime(pos/1000)).arg(GetTime(player->duration()/1000)));
-    if(pos>player->duration()-500)
+    if(pos>player->duration()-1000)
     {
         ++currentPlay;
         player->setMedia(QUrl(urls[currentPlay]));

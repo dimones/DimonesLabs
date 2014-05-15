@@ -38,6 +38,9 @@ public:
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(500, 400));
         MainWindow->setMaximumSize(QSize(500, 400));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/new/prefix1/1400157620_icon-pause.png"), QSize(), QIcon::Normal, QIcon::On);
+        MainWindow->setWindowIcon(icon);
         MainWindow->setDocumentMode(false);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));

@@ -31,6 +31,11 @@
   <property name="windowTitle">
    <string>vkDownloader</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/new/prefix1/1400157620_icon-pause.png</normalon>
+   </iconset>
+  </property>
   <widget class="QListWidget" name="listWidget">
    <property name="geometry">
     <rect>
@@ -44,7 +49,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Это список ваших треков. Если там пусто,а у вас есть треки, просто подождите пока они загрузятся.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 13pt &quot;Helvetica&quot;;</string>
+    <string notr="true"/>
    </property>
    <property name="selectionMode">
     <enum>QAbstractItemView::ExtendedSelection</enum>
@@ -254,6 +259,9 @@
     <string>Player</string>
    </property>
    <widget class="QSlider" name="curPlayer">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -351,9 +359,8 @@
      <string/>
     </property>
     <property name="icon">
-     <iconset>
-      <normalon>:/new/prefix1/1400113324_icon-ios7-arrow-forward.svg</normalon>
-     </iconset>
+     <iconset resource="default.qrc">
+      <normaloff>:/new/prefix1/1400113325_icon-ios7-arrow-forward.png</normaloff>:/new/prefix1/1400113325_icon-ios7-arrow-forward.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -406,14 +413,14 @@
       <x>20</x>
       <y>20</y>
       <width>351</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="textFormat">
-     <enum>Qt::PlainText</enum>
+     <enum>Qt::AutoText</enum>
     </property>
    </widget>
   </widget>
@@ -458,6 +465,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="default.qrc"/>
+ </resources>
  <connections/>
 </ui>
