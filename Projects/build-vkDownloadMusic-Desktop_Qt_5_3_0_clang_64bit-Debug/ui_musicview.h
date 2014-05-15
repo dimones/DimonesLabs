@@ -28,6 +28,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MusicView
 {
 public:
+    QAction *action;
     QListWidget *listWidget;
     QPushButton *setPath;
     QLineEdit *lineEdit;
@@ -49,6 +50,8 @@ public:
     QSlider *horizontalSlider;
     QLabel *curSongTime;
     QLabel *curPlaySong;
+    QGroupBox *groupBox_2;
+    QLabel *label_4;
 
     void setupUi(QWidget *MusicView)
     {
@@ -62,9 +65,13 @@ public:
         MusicView->setSizePolicy(sizePolicy);
         MusicView->setMinimumSize(QSize(844, 426));
         MusicView->setMaximumSize(QSize(844, 426));
+        action = new QAction(MusicView);
+        action->setObjectName(QStringLiteral("action"));
+        action->setCheckable(false);
         listWidget = new QListWidget(MusicView);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(10, 40, 431, 371));
+        listWidget->setStyleSheet(QStringLiteral("font: 13pt \"Helvetica\";"));
         listWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
         listWidget->setTextElideMode(Qt::ElideLeft);
         listWidget->setProperty("isWrapping", QVariant(false));
@@ -170,6 +177,12 @@ public:
         curPlaySong->setObjectName(QStringLiteral("curPlaySong"));
         curPlaySong->setGeometry(QRect(20, 20, 351, 31));
         curPlaySong->setTextFormat(Qt::PlainText);
+        groupBox_2 = new QGroupBox(MusicView);
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+        groupBox_2->setGeometry(QRect(450, 170, 391, 80));
+        label_4 = new QLabel(groupBox_2);
+        label_4->setObjectName(QStringLiteral("label_4"));
+        label_4->setGeometry(QRect(10, 20, 381, 51));
 
         retranslateUi(MusicView);
 
@@ -179,6 +192,14 @@ public:
     void retranslateUi(QWidget *MusicView)
     {
         MusicView->setWindowTitle(QApplication::translate("MusicView", "vkDownloader", 0));
+        action->setText(QApplication::translate("MusicView", "\320\241\320\272\320\260\321\207\320\272\320\260 \320\276\320\264\320\275\320\276\320\271", 0));
+#ifndef QT_NO_TOOLTIP
+        action->setToolTip(QApplication::translate("MusicView", "\320\221\321\203\320\264\320\265\321\202 \321\201\320\272\320\260\321\207\320\270\320\262\320\260\321\202\321\214\321\201\321\217 \320\276\320\264\320\275\320\260 \320\277\320\265\321\201\320\275\321\217", 0));
+#endif // QT_NO_TOOLTIP
+        action->setShortcut(QApplication::translate("MusicView", "Ctrl+S, Meta+S, Meta+\320\253", 0));
+#ifndef QT_NO_WHATSTHIS
+        listWidget->setWhatsThis(QApplication::translate("MusicView", "<html><head/><body><p>\320\255\321\202\320\276 \321\201\320\277\320\270\321\201\320\276\320\272 \320\262\320\260\321\210\320\270\321\205 \321\202\321\200\320\265\320\272\320\276\320\262. \320\225\321\201\320\273\320\270 \321\202\320\260\320\274 \320\277\321\203\321\201\321\202\320\276,\320\260 \321\203 \320\262\320\260\321\201 \320\265\321\201\321\202\321\214 \321\202\321\200\320\265\320\272\320\270, \320\277\321\200\320\276\321\201\321\202\320\276 \320\277\320\276\320\264\320\276\320\266\320\264\320\270\321\202\320\265 \320\277\320\276\320\272\320\260 \320\276\320\275\320\270 \320\267\320\260\320\263\321\200\321\203\320\267\321\217\321\202\321\201\321\217.</p></body></html>", 0));
+#endif // QT_NO_WHATSTHIS
         setPath->setText(QApplication::translate("MusicView", "\320\237\321\203\321\202\321\214", 0));
         label->setText(QApplication::translate("MusicView", "\320\232\320\276\320\273-\320\262\320\276 \320\277\320\265\321\201\320\265\320\275", 0));
         countSongs->setText(QString());
@@ -194,6 +215,8 @@ public:
         next->setText(QString());
         curSongTime->setText(QString());
         curPlaySong->setText(QString());
+        groupBox_2->setTitle(QApplication::translate("MusicView", "\320\237\320\276\320\274\320\276\321\211\321\214", 0));
+        label_4->setText(QApplication::translate("MusicView", "<html><head/><body><p>\320\241\320\272\320\260\321\207\320\270\320\262\320\260\320\275\320\270\320\265 \320\276\320\264\320\275\320\276\320\263\320\276 \321\202\321\200\320\265\320\272\320\260: \320\262\321\213\320\264\320\265\320\273\320\270\321\202\321\214 \320\265\320\263\320\276 \320\270 \320\275\320\260\320\266\320\260\321\202\321\214 Cmd+S</p><p>\320\224\320\273\321\217 \320\276\321\201\321\202\320\260\320\273\321\214\320\275\321\213\321\205 \320\277\321\200\320\276\321\201\321\202\320\276 \320\262\321\213\320\264\320\265\320\273\320\270\321\202\321\214 \320\270 \320\275\320\260\320\266\320\260\321\202\321\214 DOWNLOAD</p></body></html>", 0));
     } // retranslateUi
 
 };

@@ -36,6 +36,9 @@ MusicView::MusicView(QWidget *parent, QString token) :
         QDir().mkdir("/Users/"+QString(getenv("USER"))+"/vkMusicDownloader");
     ui->lineEdit->setText(QString(path));
     maxCount = urls.count();
+
+    QShortcut *shortcut = new QShortcut(QKeySequence("⌘S"), this);
+    QObject::connect(shortcut, SIGNAL(activated()), this, SLOT(oneDownload()));
 }
 
 MusicView::~MusicView()
@@ -232,19 +235,6 @@ void MusicView::stateChangedH(QMediaPlayer::State state)
     if(state == QMediaPlayer::PlayingState)
         playing = true;
     else playing  = false;
-    /*
-    if(!playing)
-    if(player->isAvailable())
-    if (state == QMediaPlayer::StoppedState)
-    {
-        if(indexLastPlayed == ui->listWidget->row(ui->listWidget->selectedItems()[0])) return;
-        ++currentPlay;
-        player->setMedia(QUrl(urls[currentPlay]));
-        player->play();
-        connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
-        connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
-        ui->curPlaySong->setText(name[currentPlay]);
-    }*/
 }
 
 void MusicView::on_play_pause_clicked()
@@ -330,7 +320,19 @@ void MusicView::on_previous_clicked()
     ui->curPlaySong->setText(name[currentPlay]);
 }
 
-void MusicView::on_listWidget_itemClicked(QListWidgetItem *item)
+void MusicView::oneDownload()
 {
-
+    qDebug() << "HUI";
+    if(!downloading){
+        ui->label->setText("Один трек"); ui->countSongs->setText("1");
+        ui->allProgress->reset();
+        ui->allProgress->update();
+        downloadedCount = 0;
+        totalCount = 0;
+        maxCount = 1;
+        append(urls[ui->listWidget->row(ui->listWidget->selectedItems()[0])]);
+        downloading = true;
+    }
 }
+
+

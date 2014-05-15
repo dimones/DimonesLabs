@@ -18,7 +18,9 @@
 #include <QDateTime>
 #include <QStandardItemModel>
 #include <QStandardItem>
-#include "json.h"
+#include <QShortcut>
+#include <json.h>
+
 namespace Ui {
 class MusicView;
 }
@@ -54,8 +56,7 @@ private slots:
     void on_curPlayer_sliderMoved(int position);
     void on_next_clicked();
     void on_previous_clicked();
-
-    void on_listWidget_itemClicked(QListWidgetItem *item);
+    void oneDownload();
 
 private:
     Ui::MusicView *ui;

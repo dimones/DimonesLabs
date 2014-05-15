@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MusicView_t {
     QByteArrayData data[28];
-    char stringdata[484];
+    char stringdata[470];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -56,7 +56,7 @@ QT_MOC_LITERAL(23, 393, 3),
 QT_MOC_LITERAL(24, 397, 24),
 QT_MOC_LITERAL(25, 422, 15),
 QT_MOC_LITERAL(26, 438, 19),
-QT_MOC_LITERAL(27, 458, 25)
+QT_MOC_LITERAL(27, 458, 11)
     },
     "MusicView\0finished\0\0on_listWidget_itemDoubleClicked\0"
     "QListWidgetItem*\0item\0"
@@ -71,7 +71,7 @@ QT_MOC_LITERAL(27, 458, 25)
     "on_play_pause_clicked\0positionChangedH\0"
     "pos\0on_curPlayer_sliderMoved\0"
     "on_next_clicked\0on_previous_clicked\0"
-    "on_listWidget_itemClicked"
+    "oneDownload"
 };
 #undef QT_MOC_LITERAL
 
@@ -108,7 +108,7 @@ static const uint qt_meta_data_MusicView[] = {
       24,    1,  130,    2, 0x08 /* Private */,
       25,    0,  133,    2, 0x08 /* Private */,
       26,    0,  134,    2, 0x08 /* Private */,
-      27,    1,  135,    2, 0x08 /* Private */,
+      27,    0,  135,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -130,7 +130,7 @@ static const uint qt_meta_data_MusicView[] = {
     QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 4,    5,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -157,7 +157,7 @@ void MusicView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 14: _t->on_curPlayer_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 15: _t->on_next_clicked(); break;
         case 16: _t->on_previous_clicked(); break;
-        case 17: _t->on_listWidget_itemClicked((*reinterpret_cast< QListWidgetItem*(*)>(_a[1]))); break;
+        case 17: _t->oneDownload(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
