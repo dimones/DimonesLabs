@@ -13,6 +13,8 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QColumnView>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -39,22 +41,22 @@ public:
     QLabel *current;
     QLabel *currentSong;
     QPushButton *downButton;
-    QSlider *horizontalSlider;
-    QLabel *label_4;
-    QLabel *label_5;
     QLabel *currentSongSpeed;
+    QGroupBox *groupBox;
     QSlider *curPlayer;
-    QLabel *curPlaySong;
     QPushButton *previous;
     QPushButton *play_pause;
     QPushButton *next;
+    QSlider *horizontalSlider;
     QLabel *curSongTime;
+    QLabel *curPlaySong;
+    QColumnView *columnView;
 
     void setupUi(QWidget *MusicView)
     {
         if (MusicView->objectName().isEmpty())
             MusicView->setObjectName(QStringLiteral("MusicView"));
-        MusicView->resize(841, 428);
+        MusicView->resize(1330, 426);
         listWidget = new QListWidget(MusicView);
         listWidget->setObjectName(QStringLiteral("listWidget"));
         listWidget->setGeometry(QRect(10, 40, 431, 371));
@@ -68,30 +70,30 @@ public:
         lineEdit->setGeometry(QRect(10, 10, 581, 21));
         label = new QLabel(MusicView);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(460, 60, 91, 16));
+        label->setGeometry(QRect(460, 40, 91, 16));
         countSongs = new QLabel(MusicView);
         countSongs->setObjectName(QStringLiteral("countSongs"));
-        countSongs->setGeometry(QRect(560, 60, 91, 16));
+        countSongs->setGeometry(QRect(560, 40, 61, 16));
         allProgress = new QProgressBar(MusicView);
         allProgress->setObjectName(QStringLiteral("allProgress"));
-        allProgress->setGeometry(QRect(460, 120, 351, 23));
+        allProgress->setGeometry(QRect(460, 70, 361, 23));
         allProgress->setValue(0);
         label_2 = new QLabel(MusicView);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(460, 90, 121, 16));
+        label_2->setGeometry(QRect(640, 40, 121, 16));
         curProgBar = new QProgressBar(MusicView);
         curProgBar->setObjectName(QStringLiteral("curProgBar"));
-        curProgBar->setGeometry(QRect(460, 190, 351, 23));
+        curProgBar->setGeometry(QRect(460, 150, 111, 23));
         curProgBar->setValue(0);
         label_3 = new QLabel(MusicView);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(460, 150, 121, 16));
+        label_3->setGeometry(QRect(460, 110, 121, 16));
         current = new QLabel(MusicView);
         current->setObjectName(QStringLiteral("current"));
-        current->setGeometry(QRect(600, 90, 121, 16));
+        current->setGeometry(QRect(760, 40, 71, 16));
         currentSong = new QLabel(MusicView);
         currentSong->setObjectName(QStringLiteral("currentSong"));
-        currentSong->setGeometry(QRect(610, 145, 191, 31));
+        currentSong->setGeometry(QRect(620, 100, 191, 31));
         currentSong->setAutoFillBackground(true);
         currentSong->setTextFormat(Qt::PlainText);
         currentSong->setScaledContents(false);
@@ -99,63 +101,70 @@ public:
         currentSong->setTextInteractionFlags(Qt::NoTextInteraction);
         downButton = new QPushButton(MusicView);
         downButton->setObjectName(QStringLiteral("downButton"));
-        downButton->setGeometry(QRect(460, 220, 351, 41));
-        horizontalSlider = new QSlider(MusicView);
-        horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
-        horizontalSlider->setGeometry(QRect(280, 410, 160, 22));
-        horizontalSlider->setValue(50);
-        horizontalSlider->setOrientation(Qt::Horizontal);
-        label_4 = new QLabel(MusicView);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(470, 270, 121, 16));
-        label_5 = new QLabel(MusicView);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(200, 410, 71, 16));
+        downButton->setGeometry(QRect(620, 140, 181, 41));
         currentSongSpeed = new QLabel(MusicView);
         currentSongSpeed->setObjectName(QStringLiteral("currentSongSpeed"));
-        currentSongSpeed->setGeometry(QRect(580, 190, 121, 16));
+        currentSongSpeed->setGeometry(QRect(460, 150, 101, 16));
+        QFont font;
+        font.setFamily(QStringLiteral("Helvetica"));
+        currentSongSpeed->setFont(font);
+        currentSongSpeed->setAlignment(Qt::AlignCenter);
         currentSongSpeed->setWordWrap(false);
-        curPlayer = new QSlider(MusicView);
+        groupBox = new QGroupBox(MusicView);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(450, 260, 381, 151));
+        curPlayer = new QSlider(groupBox);
         curPlayer->setObjectName(QStringLiteral("curPlayer"));
-        curPlayer->setGeometry(QRect(460, 380, 351, 21));
+        curPlayer->setGeometry(QRect(10, 130, 271, 21));
         curPlayer->setValue(0);
         curPlayer->setSliderPosition(0);
         curPlayer->setOrientation(Qt::Horizontal);
-        curPlaySong = new QLabel(MusicView);
-        curPlaySong->setObjectName(QStringLiteral("curPlaySong"));
-        curPlaySong->setGeometry(QRect(530, 290, 191, 31));
-        curPlaySong->setAutoFillBackground(true);
-        curPlaySong->setTextFormat(Qt::PlainText);
-        curPlaySong->setScaledContents(false);
-        curPlaySong->setWordWrap(true);
-        curPlaySong->setTextInteractionFlags(Qt::NoTextInteraction);
-        previous = new QPushButton(MusicView);
+        previous = new QPushButton(groupBox);
         previous->setObjectName(QStringLiteral("previous"));
-        previous->setGeometry(QRect(470, 330, 91, 32));
+        previous->setGeometry(QRect(20, 70, 111, 51));
         QIcon icon;
-        icon.addFile(QStringLiteral("../../../../Downloads/1400113331_icon-ios7-arrow-back.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon.addFile(QStringLiteral(":/new/prefix1/1400113331_icon-ios7-arrow-back.png"), QSize(), QIcon::Normal, QIcon::On);
         previous->setIcon(icon);
         previous->setIconSize(QSize(48, 48));
-        previous->setFlat(true);
-        play_pause = new QPushButton(MusicView);
+        previous->setAutoDefault(false);
+        previous->setDefault(false);
+        previous->setFlat(false);
+        play_pause = new QPushButton(groupBox);
         play_pause->setObjectName(QStringLiteral("play_pause"));
-        play_pause->setGeometry(QRect(590, 330, 101, 32));
+        play_pause->setGeometry(QRect(130, 70, 111, 51));
         QIcon icon1;
         icon1.addFile(QStringLiteral("../../../../Downloads/1400113310_icon-play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QStringLiteral(":/new/prefix1/1400113310_icon-play.png"), QSize(), QIcon::Normal, QIcon::On);
         play_pause->setIcon(icon1);
-        play_pause->setIconSize(QSize(48, 48));
-        play_pause->setFlat(true);
-        next = new QPushButton(MusicView);
+        play_pause->setIconSize(QSize(40, 45));
+        play_pause->setAutoDefault(false);
+        play_pause->setDefault(false);
+        play_pause->setFlat(false);
+        next = new QPushButton(groupBox);
         next->setObjectName(QStringLiteral("next"));
-        next->setGeometry(QRect(720, 330, 91, 32));
+        next->setGeometry(QRect(240, 70, 111, 51));
         QIcon icon2;
-        icon2.addFile(QStringLiteral("../../../../Downloads/1400113325_icon-ios7-arrow-forward.png"), QSize(), QIcon::Normal, QIcon::On);
+        icon2.addFile(QStringLiteral(":/new/prefix1/1400113324_icon-ios7-arrow-forward.svg"), QSize(), QIcon::Normal, QIcon::On);
         next->setIcon(icon2);
         next->setIconSize(QSize(48, 48));
-        next->setFlat(true);
-        curSongTime = new QLabel(MusicView);
+        next->setAutoDefault(false);
+        next->setDefault(false);
+        next->setFlat(false);
+        horizontalSlider = new QSlider(groupBox);
+        horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
+        horizontalSlider->setGeometry(QRect(300, 130, 71, 22));
+        horizontalSlider->setValue(50);
+        horizontalSlider->setOrientation(Qt::Horizontal);
+        curSongTime = new QLabel(groupBox);
         curSongTime->setObjectName(QStringLiteral("curSongTime"));
-        curSongTime->setGeometry(QRect(590, 370, 121, 16));
+        curSongTime->setGeometry(QRect(90, 120, 121, 16));
+        curPlaySong = new QLabel(groupBox);
+        curPlaySong->setObjectName(QStringLiteral("curPlaySong"));
+        curPlaySong->setGeometry(QRect(20, 20, 351, 31));
+        curPlaySong->setTextFormat(Qt::PlainText);
+        columnView = new QColumnView(MusicView);
+        columnView->setObjectName(QStringLiteral("columnView"));
+        columnView->setGeometry(QRect(840, 20, 471, 391));
 
         retranslateUi(MusicView);
 
@@ -173,14 +182,13 @@ public:
         current->setText(QString());
         currentSong->setText(QString());
         downButton->setText(QApplication::translate("MusicView", "DOWNLOAD", 0));
-        label_4->setText(QApplication::translate("MusicView", "Player", 0));
-        label_5->setText(QApplication::translate("MusicView", "Volume", 0));
         currentSongSpeed->setText(QString());
-        curPlaySong->setText(QString());
-        previous->setText(QApplication::translate("MusicView", "back", 0));
-        play_pause->setText(QApplication::translate("MusicView", "play", 0));
-        next->setText(QApplication::translate("MusicView", "next", 0));
+        groupBox->setTitle(QApplication::translate("MusicView", "Player", 0));
+        previous->setText(QString());
+        play_pause->setText(QString());
+        next->setText(QString());
         curSongTime->setText(QString());
+        curPlaySong->setText(QString());
     } // retranslateUi
 
 };

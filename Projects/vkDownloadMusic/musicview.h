@@ -15,6 +15,9 @@
 #include <QListWidgetItem>
 #include <QFileDialog>
 #include <QQueue>
+#include <QDateTime>
+#include <QStandardItemModel>
+#include <QStandardItem>
 #include "json.h"
 namespace Ui {
 class MusicView;
@@ -36,7 +39,6 @@ signals:
 
 private slots:
     void on_listWidget_itemDoubleClicked(QListWidgetItem *item);
-    // void percentage(quint64 i);
     void on_horizontalSlider_sliderMoved(int position);
     void on_listWidget_itemSelectionChanged();
     void on_setPath_clicked();
@@ -50,9 +52,7 @@ private slots:
     void on_play_pause_clicked();
     void positionChangedH(qint64 pos);
     void on_curPlayer_sliderMoved(int position);
-
     void on_next_clicked();
-
     void on_previous_clicked();
 
 private:
@@ -67,6 +67,7 @@ private:
     QTime downloadTime;
     int downloadedCount = 0;
     int totalCount;
+    QString GetTime(qint64 pos);
 };
 
 #endif // MUSICVIEW_H

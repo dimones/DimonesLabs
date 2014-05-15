@@ -7,7 +7,7 @@ using namespace QtJson;
 //Definitions
 QString tok,path; //temp token
 QUrlQuery query("https://api.vk.com/method/audio.get"); //base query
-QStringList name,urls; //list of songs and urls
+QStringList name,urls,durations; //list of songs and urls
 QList<QListWidgetItem*> checkedList;
 QMediaPlayer *player;
 int curSong,count,maxCount,currentPlay;
@@ -27,6 +27,7 @@ MusicView::MusicView(QWidget *parent, QString token) :
         QVariantMap cur = list[i].toMap();
         name.push_back(QString(cur.value("artist").toString() + " - " +cur.value("title").toString()));
         urls.push_back(QString(cur.value("url").toString().split("?")[0]));
+        durations.push_back(GetTime(cur.value("duration").toString().toInt()));
     }
     ui->listWidget->addItems(name);
     player = new QMediaPlayer();
@@ -97,7 +98,7 @@ void MusicView::on_downButton_clicked()
         for(int i = 0;i<ui->listWidget->selectedItems().count();i++)
         {
             tempL.push_back(urls[ui->listWidget->row(checkedList.at(i))]);
-                  //  urls[ui->listWidget->row(ui->listWidget->selectedItems()[i])];
+            //  urls[ui->listWidget->row(ui->listWidget->selectedItems()[i])];
         }
         append(tempL);
     }
@@ -127,7 +128,7 @@ void MusicView::startNextDownload()
     if(checkedList.count()<=1)
         ui->currentSong->setText(name[downloadedCount]);
     else
-         ui->currentSong->setText(name[ui->listWidget->row(checkedList.at(downloadedCount))]);
+        ui->currentSong->setText(name[ui->listWidget->row(checkedList.at(downloadedCount))]);
 
 
     ui->current->setText(QString::number(downloadedCount));
@@ -234,10 +235,27 @@ void MusicView::positionChangedH(qint64 pos)
     if(player->duration()>1)
         if(player->isSeekable())
             ui->curPlayer->setValue((double)pos/player->duration()*100);
-    //ui->curSongTime->setText(QString("%1.%2/%3.%4").arg());
+    QDateTime time;
+    ui->curSongTime->setText(QString("%1/%2").arg(GetTime(pos/1000)).arg(GetTime(player->duration()/1000)));
+    // ui->curSongTime->setText(QString("%1.%2/%3.%4").arg(QString::number((double)pos/60000==0?0:(int)(double)(pos/60000))).arg("qf").arg("qf").arg("qf"));
 }
 
 
+QString MusicView::GetTime(qint64 pos)
+{
+    QString res;
+    int seconds = (int) (pos % 60);
+    pos /= 60;
+    int minutes = (int) (pos % 60);
+    pos /= 60;
+    int hours = (int) (pos % 24);
+    int days = (int) (pos / 24);
+    if((hours == 0)&&(days == 0))
+        return res.sprintf("%02d:%02d", minutes, seconds);
+    if (days == 0)
+        return res.sprintf("%02d:%02d:%02d", hours, minutes, seconds);
+    return res.sprintf("%dd%02d:%02d:%02d", days, hours, minutes, seconds);
+}
 
 void MusicView::on_curPlayer_sliderMoved(int position)
 {
