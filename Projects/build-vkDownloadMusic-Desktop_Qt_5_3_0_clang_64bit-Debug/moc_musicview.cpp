@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MusicView_t {
-    QByteArrayData data[28];
-    char stringdata[470];
+    QByteArrayData data[27];
+    char stringdata[434];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,37 +41,34 @@ QT_MOC_LITERAL(8, 115, 34),
 QT_MOC_LITERAL(9, 150, 18),
 QT_MOC_LITERAL(10, 169, 27),
 QT_MOC_LITERAL(11, 197, 21),
-QT_MOC_LITERAL(12, 219, 17),
-QT_MOC_LITERAL(13, 237, 16),
-QT_MOC_LITERAL(14, 254, 13),
-QT_MOC_LITERAL(15, 268, 10),
-QT_MOC_LITERAL(16, 279, 16),
-QT_MOC_LITERAL(17, 296, 17),
-QT_MOC_LITERAL(18, 314, 13),
-QT_MOC_LITERAL(19, 328, 19),
-QT_MOC_LITERAL(20, 348, 5),
-QT_MOC_LITERAL(21, 354, 21),
-QT_MOC_LITERAL(22, 376, 16),
-QT_MOC_LITERAL(23, 393, 3),
-QT_MOC_LITERAL(24, 397, 24),
-QT_MOC_LITERAL(25, 422, 15),
-QT_MOC_LITERAL(26, 438, 19),
-QT_MOC_LITERAL(27, 458, 11)
+QT_MOC_LITERAL(12, 219, 13),
+QT_MOC_LITERAL(13, 233, 19),
+QT_MOC_LITERAL(14, 253, 5),
+QT_MOC_LITERAL(15, 259, 21),
+QT_MOC_LITERAL(16, 281, 16),
+QT_MOC_LITERAL(17, 298, 3),
+QT_MOC_LITERAL(18, 302, 24),
+QT_MOC_LITERAL(19, 327, 15),
+QT_MOC_LITERAL(20, 343, 19),
+QT_MOC_LITERAL(21, 363, 11),
+QT_MOC_LITERAL(22, 375, 8),
+QT_MOC_LITERAL(23, 384, 23),
+QT_MOC_LITERAL(24, 408, 12),
+QT_MOC_LITERAL(25, 421, 6),
+QT_MOC_LITERAL(26, 428, 5)
     },
     "MusicView\0finished\0\0on_listWidget_itemDoubleClicked\0"
     "QListWidgetItem*\0item\0"
     "on_horizontalSlider_sliderMoved\0"
     "position\0on_listWidget_itemSelectionChanged\0"
     "on_setPath_clicked\0on_lineEdit_editingFinished\0"
-    "on_downButton_clicked\0startNextDownload\0"
-    "downloadProgress\0bytesReceived\0"
-    "bytesTotal\0downloadFinished\0"
-    "downloadReadyRead\0stateChangedH\0"
+    "on_downButton_clicked\0stateChangedH\0"
     "QMediaPlayer::State\0state\0"
     "on_play_pause_clicked\0positionChangedH\0"
     "pos\0on_curPlayer_sliderMoved\0"
     "on_next_clicked\0on_previous_clicked\0"
-    "oneDownload"
+    "oneDownload\0setMusic\0on_downButton_2_clicked\0"
+    "getPartSongs\0offset\0count"
 };
 #undef QT_MOC_LITERAL
 
@@ -81,7 +78,7 @@ static const uint qt_meta_data_MusicView[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      17,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -89,26 +86,25 @@ static const uint qt_meta_data_MusicView[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  104,    2, 0x06 /* Public */,
+       1,    0,   99,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    1,  105,    2, 0x08 /* Private */,
-       6,    1,  108,    2, 0x08 /* Private */,
-       8,    0,  111,    2, 0x08 /* Private */,
-       9,    0,  112,    2, 0x08 /* Private */,
-      10,    0,  113,    2, 0x08 /* Private */,
-      11,    0,  114,    2, 0x08 /* Private */,
-      12,    0,  115,    2, 0x08 /* Private */,
-      13,    2,  116,    2, 0x08 /* Private */,
-      16,    0,  121,    2, 0x08 /* Private */,
-      17,    0,  122,    2, 0x08 /* Private */,
-      18,    1,  123,    2, 0x08 /* Private */,
-      21,    0,  126,    2, 0x08 /* Private */,
-      22,    1,  127,    2, 0x08 /* Private */,
-      24,    1,  130,    2, 0x08 /* Private */,
-      25,    0,  133,    2, 0x08 /* Private */,
-      26,    0,  134,    2, 0x08 /* Private */,
-      27,    0,  135,    2, 0x08 /* Private */,
+       3,    1,  100,    2, 0x08 /* Private */,
+       6,    1,  103,    2, 0x08 /* Private */,
+       8,    0,  106,    2, 0x08 /* Private */,
+       9,    0,  107,    2, 0x08 /* Private */,
+      10,    0,  108,    2, 0x08 /* Private */,
+      11,    0,  109,    2, 0x08 /* Private */,
+      12,    1,  110,    2, 0x08 /* Private */,
+      15,    0,  113,    2, 0x08 /* Private */,
+      16,    1,  114,    2, 0x08 /* Private */,
+      18,    1,  117,    2, 0x08 /* Private */,
+      19,    0,  120,    2, 0x08 /* Private */,
+      20,    0,  121,    2, 0x08 /* Private */,
+      21,    0,  122,    2, 0x08 /* Private */,
+      22,    0,  123,    2, 0x08 /* Private */,
+      23,    0,  124,    2, 0x08 /* Private */,
+      24,    2,  125,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -120,17 +116,16 @@ static const uint qt_meta_data_MusicView[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 13,   14,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::LongLong, QMetaType::LongLong,   14,   15,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 19,   20,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::LongLong,   23,
+    QMetaType::Void, QMetaType::LongLong,   17,
     QMetaType::Void, QMetaType::Int,    7,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   25,   26,
 
        0        // eod
 };
@@ -147,23 +142,22 @@ void MusicView::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 4: _t->on_setPath_clicked(); break;
         case 5: _t->on_lineEdit_editingFinished(); break;
         case 6: _t->on_downButton_clicked(); break;
-        case 7: _t->startNextDownload(); break;
-        case 8: _t->downloadProgress((*reinterpret_cast< qint64(*)>(_a[1])),(*reinterpret_cast< qint64(*)>(_a[2]))); break;
-        case 9: _t->downloadFinished(); break;
-        case 10: _t->downloadReadyRead(); break;
-        case 11: _t->stateChangedH((*reinterpret_cast< QMediaPlayer::State(*)>(_a[1]))); break;
-        case 12: _t->on_play_pause_clicked(); break;
-        case 13: _t->positionChangedH((*reinterpret_cast< qint64(*)>(_a[1]))); break;
-        case 14: _t->on_curPlayer_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->on_next_clicked(); break;
-        case 16: _t->on_previous_clicked(); break;
-        case 17: _t->oneDownload(); break;
+        case 7: _t->stateChangedH((*reinterpret_cast< QMediaPlayer::State(*)>(_a[1]))); break;
+        case 8: _t->on_play_pause_clicked(); break;
+        case 9: _t->positionChangedH((*reinterpret_cast< qint64(*)>(_a[1]))); break;
+        case 10: _t->on_curPlayer_sliderMoved((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->on_next_clicked(); break;
+        case 12: _t->on_previous_clicked(); break;
+        case 13: _t->oneDownload(); break;
+        case 14: _t->setMusic(); break;
+        case 15: _t->on_downButton_2_clicked(); break;
+        case 16: _t->getPartSongs((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 11:
+        case 7:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -208,13 +202,13 @@ int MusicView::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 17;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 17)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 17;
     }
     return _id;
 }

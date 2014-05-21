@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[4];
-    char stringdata[26];
+    char stringdata[25];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,11 +30,11 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10),
-QT_MOC_LITERAL(1, 11, 9),
-QT_MOC_LITERAL(2, 21, 0),
-QT_MOC_LITERAL(3, 22, 3)
+QT_MOC_LITERAL(1, 11, 8),
+QT_MOC_LITERAL(2, 20, 0),
+QT_MOC_LITERAL(3, 21, 3)
     },
-    "MainWindow\0check_url\0\0url"
+    "MainWindow\0checkUrl\0\0url"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +52,7 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   19,    2, 0x0a /* Public */,
+       1,    1,   19,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, QMetaType::QUrl,    3,
@@ -65,7 +65,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     if (_c == QMetaObject::InvokeMetaMethod) {
         MainWindow *_t = static_cast<MainWindow *>(_o);
         switch (_id) {
-        case 0: _t->check_url((*reinterpret_cast< QUrl(*)>(_a[1]))); break;
+        case 0: _t->checkUrl((*reinterpret_cast< QUrl(*)>(_a[1]))); break;
         default: ;
         }
     }

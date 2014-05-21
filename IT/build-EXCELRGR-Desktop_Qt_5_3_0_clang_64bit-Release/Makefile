@@ -46,11 +46,9 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../EXCELRGR/main.cpp \
-		../EXCELRGR/mainwindow.cpp \
-		../EXCELRGR/functions.cpp moc_mainwindow.cpp
+		../EXCELRGR/mainwindow.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
-		functions.o \
 		moc_mainwindow.o
 DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/qdevice.pri \
@@ -147,6 +145,7 @@ DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/spec_post.prf \
+		../EXCELRGR/.qmake.stash \
 		../../../../Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/default_pre.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -168,8 +167,7 @@ DIST          = ../../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/yacc.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/lex.prf \
 		../EXCELRGR/EXCELRGR.pro ../EXCELRGR/main.cpp \
-		../EXCELRGR/mainwindow.cpp \
-		../EXCELRGR/functions.cpp
+		../EXCELRGR/mainwindow.cpp
 QMAKE_TARGET  = EXCELRGR
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = EXCELRGR.app/Contents/MacOS/EXCELRGR
@@ -308,6 +306,7 @@ Makefile: ../EXCELRGR/EXCELRGR.pro ../../../../Qt/5.3/clang_64/mkspecs/macx-clan
 		../../../../Qt/5.3/clang_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/default_pre.prf \
 		../../../../Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -428,6 +427,7 @@ Makefile: ../EXCELRGR/EXCELRGR.pro ../../../../Qt/5.3/clang_64/mkspecs/macx-clan
 ../../../../Qt/5.3/clang_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/5.3/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.3/clang_64/mkspecs/features/default_pre.prf:
 ../../../../Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -468,10 +468,10 @@ EXCELRGR.app/Contents/Resources/empty.lproj:
 EXCELRGR.app/Contents/Info.plist: 
 	@test -d EXCELRGR.app/Contents || mkdir -p EXCELRGR.app/Contents
 	@$(DEL_FILE) EXCELRGR.app/Contents/Info.plist
-	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@BUNDLEIDENTIFIER@,com.yourcompany.EXCELRGR,g" -e "s,@EXECUTABLE@,EXCELRGR,g" -e "s,@TYPEINFO@,????,g" ../../../../Qt/5.3/clang_64/mkspecs/macx-clang/Info.plist.app >EXCELRGR.app/Contents/Info.plist
+	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@BUNDLEIDENTIFIER@,dimonesEXCELRGR,g" -e "s,@EXECUTABLE@,EXCELRGR,g" -e "s,@TYPEINFO@,????,g" ../../../../Qt/5.3/clang_64/mkspecs/macx-clang/Info.plist.app >EXCELRGR.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/EXCELRGR1.0.0 || mkdir -p .tmp/EXCELRGR1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/EXCELRGR1.0.0/ && $(COPY_FILE) --parents ../EXCELRGR/mainwindow.h ../EXCELRGR/functions.h .tmp/EXCELRGR1.0.0/ && $(COPY_FILE) --parents ../EXCELRGR/main.cpp ../EXCELRGR/mainwindow.cpp ../EXCELRGR/functions.cpp .tmp/EXCELRGR1.0.0/ && $(COPY_FILE) --parents ../EXCELRGR/mainwindow.ui .tmp/EXCELRGR1.0.0/ && (cd `dirname .tmp/EXCELRGR1.0.0` && $(TAR) EXCELRGR1.0.0.tar EXCELRGR1.0.0 && $(COMPRESS) EXCELRGR1.0.0.tar) && $(MOVE) `dirname .tmp/EXCELRGR1.0.0`/EXCELRGR1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/EXCELRGR1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/EXCELRGR1.0.0/ && $(COPY_FILE) --parents ../EXCELRGR/mainwindow.h .tmp/EXCELRGR1.0.0/ && $(COPY_FILE) --parents ../EXCELRGR/main.cpp ../EXCELRGR/mainwindow.cpp .tmp/EXCELRGR1.0.0/ && $(COPY_FILE) --parents ../EXCELRGR/mainwindow.ui .tmp/EXCELRGR1.0.0/ && (cd `dirname .tmp/EXCELRGR1.0.0` && $(TAR) EXCELRGR1.0.0.tar EXCELRGR1.0.0 && $(COMPRESS) EXCELRGR1.0.0.tar) && $(MOVE) `dirname .tmp/EXCELRGR1.0.0`/EXCELRGR1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/EXCELRGR1.0.0
 
 
 clean:compiler_clean 
@@ -501,13 +501,6 @@ compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
 moc_mainwindow.cpp: ../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
-		../EXCELRGR/functions.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QRegExp \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qregexp.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
 		../EXCELRGR/mainwindow.h
 	/Users/dimones-dev/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/dimones-dev/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/dimones-dev/Desktop/DimonesLabs/IT/EXCELRGR -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/dimones-dev/Qt/5.3/clang_64/lib/QtCore.framework/Headers -I. -F/Users/dimones-dev/Qt/5.3/clang_64/lib ../EXCELRGR/mainwindow.h -o moc_mainwindow.cpp
 
@@ -534,13 +527,6 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: ../EXCELRGR/main.cpp ../EXCELRGR/mainwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
-		../EXCELRGR/functions.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QRegExp \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qregexp.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../EXCELRGR/main.cpp
@@ -548,24 +534,8 @@ main.o: ../EXCELRGR/main.cpp ../EXCELRGR/mainwindow.h \
 mainwindow.o: ../EXCELRGR/mainwindow.cpp ../EXCELRGR/mainwindow.h \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
-		../EXCELRGR/functions.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QRegExp \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qregexp.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../EXCELRGR/mainwindow.cpp
-
-functions.o: ../EXCELRGR/functions.cpp ../EXCELRGR/functions.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QRegExp \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qregexp.h \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		../../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QTableWidgetItem \
-		../../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o functions.o ../EXCELRGR/functions.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

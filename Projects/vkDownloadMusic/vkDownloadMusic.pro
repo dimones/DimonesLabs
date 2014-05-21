@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     musicview.cpp \
-    json.cpp
+    json.cpp \
+    vkdownload.cpp
 
 HEADERS  += mainwindow.h \
     musicview.h \
-    json.h
+    json.h \
+    vkdownload.h
 
 FORMS    += mainwindow.ui \
     musicview.ui

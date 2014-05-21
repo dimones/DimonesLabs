@@ -21,6 +21,7 @@
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -52,19 +53,20 @@ public:
     QLabel *curPlaySong;
     QGroupBox *groupBox_2;
     QLabel *label_4;
+    QTableWidget *tableWidget;
+    QPushButton *downButton_2;
 
     void setupUi(QWidget *MusicView)
     {
         if (MusicView->objectName().isEmpty())
             MusicView->setObjectName(QStringLiteral("MusicView"));
-        MusicView->resize(844, 426);
+        MusicView->resize(1274, 768);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MusicView->sizePolicy().hasHeightForWidth());
         MusicView->setSizePolicy(sizePolicy);
         MusicView->setMinimumSize(QSize(844, 426));
-        MusicView->setMaximumSize(QSize(844, 426));
         QIcon icon;
         icon.addFile(QStringLiteral(":/new/prefix1/1400157620_icon-pause.png"), QSize(), QIcon::Normal, QIcon::On);
         MusicView->setWindowIcon(icon);
@@ -187,6 +189,12 @@ public:
         label_4 = new QLabel(groupBox_2);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setGeometry(QRect(10, 20, 381, 51));
+        tableWidget = new QTableWidget(MusicView);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(220, 460, 811, 271));
+        downButton_2 = new QPushButton(MusicView);
+        downButton_2->setObjectName(QStringLiteral("downButton_2"));
+        downButton_2->setGeometry(QRect(130, 410, 181, 41));
 
         retranslateUi(MusicView);
 
@@ -221,6 +229,7 @@ public:
         curPlaySong->setText(QString());
         groupBox_2->setTitle(QApplication::translate("MusicView", "\320\237\320\276\320\274\320\276\321\211\321\214", 0));
         label_4->setText(QApplication::translate("MusicView", "<html><head/><body><p>\320\241\320\272\320\260\321\207\320\270\320\262\320\260\320\275\320\270\320\265 \320\276\320\264\320\275\320\276\320\263\320\276 \321\202\321\200\320\265\320\272\320\260: \320\262\321\213\320\264\320\265\320\273\320\270\321\202\321\214 \320\265\320\263\320\276 \320\270 \320\275\320\260\320\266\320\260\321\202\321\214 Cmd+S</p><p>\320\224\320\273\321\217 \320\276\321\201\321\202\320\260\320\273\321\214\320\275\321\213\321\205 \320\277\321\200\320\276\321\201\321\202\320\276 \320\262\321\213\320\264\320\265\320\273\320\270\321\202\321\214 \320\270 \320\275\320\260\320\266\320\260\321\202\321\214 DOWNLOAD</p></body></html>", 0));
+        downButton_2->setText(QApplication::translate("MusicView", "DOWNLOAD", 0));
     } // retranslateUi
 
 };

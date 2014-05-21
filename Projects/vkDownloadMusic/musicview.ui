@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>844</width>
-    <height>426</height>
+    <width>1274</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,12 +17,6 @@
    </sizepolicy>
   </property>
   <property name="minimumSize">
-   <size>
-    <width>844</width>
-    <height>426</height>
-   </size>
-  </property>
-  <property name="maximumSize">
    <size>
     <width>844</width>
     <height>426</height>
@@ -450,6 +444,29 @@
     </property>
    </widget>
   </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>460</y>
+     <width>811</width>
+     <height>271</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="downButton_2">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>410</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DOWNLOAD</string>
+   </property>
+  </widget>
   <action name="action">
    <property name="checkable">
     <bool>false</bool>
@@ -469,4 +486,7 @@
   <include location="default.qrc"/>
  </resources>
  <connections/>
+ <slots>
+  <signal>signal1()</signal>
+ </slots>
 </ui>

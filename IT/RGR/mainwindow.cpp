@@ -50,7 +50,7 @@ int getPosFromChar(char c)
 char* getValueFromItem(int row,char col)
 {
   char* out = new char[100];
-  strcpy(out,MainWindow::table[row][getPosFromChar(col)].value);
+  strcpy(out,table[row][getPosFromChar(col)].value);
   return out;
 }
 
@@ -99,9 +99,9 @@ double isValue(char* t)
     {
       int row = strlen(t)!=2?((t[1]-'0')*10+(t[2]-'0')):(t[1]-'0'); char col = t[0];
       qDebug() << "ROW: "<< row<<"   COL: " << col;
-      if(MainWindow::table[row][getPosFromChar(col)].value!=NULL)
+      if(table[row][getPosFromChar(col)].value!=NULL)
         {
-          return atof(MainWindow::table[row][getPosFromChar(col)].value);
+          return atof(table[row][getPosFromChar(col)].value);
         }
     }
   return -1;
@@ -130,90 +130,6 @@ double SUM(char* text)
     }
   qDebug() << "SUM: "<< out;
   return out;
-}
-double isFuncEq(char* t)
-{
-  qDebug()<<"isFunc(atof test): " << atof(t);
-  qDebug() << endl;
-  if(atof(t)==0)
-    {
-      qDebug() << "isFunc: " << t;
-      qDebug() << endl;
-      if (QString(t).toLower().contains("=abs"))
-        {
-          return (double)abs(atoi(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=asin"))
-        {
-          return asin(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=atan"))
-        {
-          return atan(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=cos"))
-        {
-          return cos(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=exp"))
-        {
-          return exp(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=floor"))
-        {
-          return floor(atof(getVariableBR(t)));
-
-        }
-      else if(QString(t).toLower().contains("=log10"))
-        {
-          return log10(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=log"))
-        {
-          return log(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=max"))
-        {
-          //return (atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=min"))
-        {
-          //
-        }
-      else if(QString(t).toLower().contains("=pow"))
-        {
-          //
-        }
-      else if(QString(t).toLower().contains("=round"))
-        {
-          //
-        }
-      else if(QString(t).toLower().contains("=sinh"))
-        {
-          return sinh(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=sin"))
-        {
-          return sin(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=sqrt"))
-        {
-          return sqrt(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=tanh"))
-        {
-          return tanh(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=tan"))
-        {
-          return tan(atof(getVariableBR(t)));
-        }
-      else if(QString(t).toLower().contains("=sum"))
-        {
-          return SUM(getVariableBR(t));
-        }
-    }
-  return -1;
 }
 
 double isFunc(char* t){

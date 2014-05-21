@@ -1,52 +1,43 @@
-#include "musicview.h"
+ #include "musicview.h"
 #include "ui_musicview.h"
 
 using namespace QtJson;
 
 
 //Definitions
-QString tok,path; //temp token
-QUrlQuery query("https://api.vk.com/method/audio.get"); //base query
+QString tok,userId,path,methodUrl = "https://api.vk.com/method/"; //temp token
+QUrlQuery query; //base query
 QStringList name,urls,durations; //list of songs and urls
 QList<QListWidgetItem*> checkedList;
 QMediaPlayer *player;
-int curSong,count,maxCount,currentPlay = 0,countPlayed = 0,indexLastPlayed = 0;
+QTimer *timer;
+int curSong,count,maxCount,currentPlay = 0,countPlayed = 0,indexLastPlayed = 0,curOffset;
 bool playing,downloading;
 
-MusicView::MusicView(QWidget *parent, QString token) :
+MusicView::MusicView(QWidget *parent, QString token, QString user_id) :
     QWidget(parent),
     ui(new Ui::MusicView)
 {
     tok = token;
+    userId = user_id;
     ui->setupUi(this);
-    query.addQueryItem("access_token",tok);
-    QByteArray t = GET(QUrl(query.toString().replace("&","?")));
-    QVariantList list = parse(QString(t)).toMap().value("response").toList();
-    for(int i = 0;i<list.size();i++)
-    {
-        QVariantMap cur = list[i].toMap();
-        name.push_back(QString(cur.value("artist").toString() + " - " +cur.value("title").toString()));
-        urls.push_back(QString(cur.value("url").toString().split("?")[0]));
-    }
-    ui->listWidget->addItems(name);
-    player = new QMediaPlayer();
-    ui->countSongs->setText(QString::number(urls.count()));
     path = "/Users/"+QString(getenv("USER"))+"/vkMusicDownloader";
     if(!QDir(path).exists())
         QDir().mkdir("/Users/"+QString(getenv("USER"))+"/vkMusicDownloader");
-    ui->lineEdit->setText(QString(path));
-    maxCount = urls.count();
+    timer = new QTimer(this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(setMusic()));
+    timer->start(200);
+    //QShortcut *shortcut = new QShortcut(QKeySequence("⌘S"), this);
+   // QObject::connect(shortcut, SIGNAL(activated()), this, SLOT(oneDownload()));
 
-    QShortcut *shortcut = new QShortcut(QKeySequence("⌘S"), this);
-    QObject::connect(shortcut, SIGNAL(activated()), this, SLOT(oneDownload()));
-
-    this->setWindowIcon(QIcon(":/new/prefix1/1400157672_vk.com.png"));
 }
 
 MusicView::~MusicView()
 {
     delete ui;
 }
+
+
 
 QByteArray MusicView::GET(QUrl r)
 {
@@ -59,7 +50,43 @@ QByteArray MusicView::GET(QUrl r)
     await.exec();
     QByteArray req = reply->readAll();
     reply->deleteLater();
+    qDebug() << req;
     return req;
+}
+
+void MusicView::getSongs()
+{
+    QUrlQuery qurl(methodUrl+"audio.get?");
+    qurl.addQueryItem("access_token",tok);
+    QByteArray t = GET(qurl.toString());
+    qDebug() << "partMusic" << t;
+    QVariantList _count = parse(QString(t)).toMap().value("response").toList();
+}
+
+void MusicView::setMusic()
+{
+    int soundCount = getSoundCount(userId);
+    for(int i=0,temp = soundCount;temp>0;)
+    {
+        temp>100?i+=100:i = temp;
+        timer = new QTimer(this);
+        curOffset = i;
+        connect(timer,SIGNAL(timeout()),this,SLOT(getPartSongs(int,int)));
+        timer->start(1000);
+        qDebug() << "__________________________" <<endl;
+        temp-=100;
+    }
+}
+
+void MusicView::getPartSongs(int offset=0,int count = 100)
+{
+    QUrlQuery qurl(methodUrl+"audio.get?");
+    qurl.addQueryItem("access_token",tok);
+    qurl.addQueryItem("offset",QString::number(curOffset));
+    qurl.addQueryItem("count",QString::number(count));
+    QByteArray t = GET(qurl.toString());
+    qDebug() << "partMusic" << t;
+    QVariantList _count = parse(QString(t)).toMap().value("response").toList();
 }
 
 void MusicView::on_listWidget_itemDoubleClicked(QListWidgetItem *item)
@@ -110,12 +137,10 @@ void MusicView::on_lineEdit_editingFinished()
 }
 
 void MusicView::on_downButton_clicked()
-{
+{/*
     if(!downloading){
         ui->allProgress->reset();
         ui->allProgress->update();
-        downloadedCount = 0;
-        totalCount = 0;
         if(checkedList.count()!=0)
         {
             QStringList tempL;
@@ -127,111 +152,10 @@ void MusicView::on_downButton_clicked()
         }
         else append(urls);
         downloading = true;
-    }
+    }*/
 }
 
-void MusicView::append(const QStringList &urlList)
-{
-    foreach (QString url, urlList)
-        append(QUrl::fromEncoded(url.toLocal8Bit()));
 
-    if (downloadQueue.isEmpty())
-        QTimer::singleShot(0, this, SIGNAL(finished()));
-}
-void MusicView::append(const QUrl &url)
-{
-    if (downloadQueue.isEmpty())
-        QTimer::singleShot(0, this, SLOT(startNextDownload()));
-
-    downloadQueue.enqueue(url);
-    ++totalCount;
-}
-void MusicView::startNextDownload()
-{
-    //UI BLOCK
-    ui->allProgress->setValue((double)downloadedCount/maxCount*100);
-    ui->current->setText(QString::number(downloadedCount));
-
-    if (downloadQueue.isEmpty()) {
-        printf("%d/%d files downloaded successfully\n", downloadedCount, maxCount);
-        downloading = false;
-        emit finished();
-        return;
-    }
-
-    if(downloadedCount==maxCount) {downloading = false; return;}
-
-    if(checkedList.count()<=1)
-        ui->currentSong->setText(name[ui->listWidget->row(checkedList.at(0))]);
-    else
-        ui->currentSong->setText(name[ui->listWidget->row(checkedList.at(downloadedCount))]);
-
-    QUrl url = downloadQueue.dequeue();
-    QString filename;
-
-    if(checkedList.count()<=1)
-        filename = name[ui->listWidget->row(checkedList.at(0))]+".mp3";
-    else
-        filename = name[ui->listWidget->row(checkedList.at(downloadedCount))] + ".mp3";
-
-    output.setFileName(path+"/"+filename);
-
-    if (!output.open(QIODevice::WriteOnly)) {
-        fprintf(stderr, "Problem opening save file '%s' for download '%s': %s\n",
-                qPrintable(filename), url.toEncoded().constData(),
-                qPrintable(output.errorString()));
-        startNextDownload();
-        return;                 // skip this download
-    }
-
-    QNetworkRequest request(url);
-    currentDownload = manager.get(request);
-    connect(currentDownload, SIGNAL(downloadProgress(qint64,qint64)),
-            SLOT(downloadProgress(qint64,qint64)));
-    connect(currentDownload, SIGNAL(finished()),
-            SLOT(downloadFinished()));
-    connect(currentDownload, SIGNAL(readyRead()),
-            SLOT(downloadReadyRead()));
-    printf("Downloading %s...\n", url.toEncoded().constData());
-    downloadTime.start();
-}
-
-void MusicView::downloadProgress(qint64 bytesReceived, qint64 bytesTotal)
-{
-    // calculate the download speed
-    double speed = bytesReceived * 1000.0 / downloadTime.elapsed();
-    QString unit;
-    if (speed < 1024) {
-        unit = "bytes/sec";
-    } else if (speed < 1024*1024) {
-        speed /= 1024;
-        unit = "kB/s";
-    } else {
-        speed /= 1024*1024;
-        unit = "MB/s";
-    }
-    ui->curProgBar->setValue((double)bytesReceived/bytesTotal*100);
-    ui->curProgBar->update();
-    ui->currentSongSpeed->setText(QString::number(speed)+" "+unit);
-}
-
-void MusicView::downloadFinished()
-{
-    output.close();
-
-    if (currentDownload->error()) {
-        // download failed
-        fprintf(stderr, "Failed: %s\n", qPrintable(currentDownload->errorString()));
-    } else {
-        printf("Succeeded.\n");
-        ++downloadedCount;
-    }
-    currentDownload->deleteLater();
-    startNextDownload();
-}
-
-void MusicView::downloadReadyRead()
-{output.write(currentDownload->readAll());}
 
 void MusicView::stateChangedH(QMediaPlayer::State state)
 {
@@ -274,8 +198,7 @@ void MusicView::positionChangedH(qint64 pos)
     if(player->duration()>1)
         if(player->isSeekable())
             ui->curPlayer->setValue((double)pos/player->duration()*100);
-    QDateTime time;
-    ui->curSongTime->setText(QString("%1/%2").arg(GetTime(pos/1000)).arg(GetTime(player->duration()/1000)));
+    ui->curSongTime->setText(QString("%1/%2").arg(GetTime(pos)).arg(GetTime(player->duration())));
     if(pos>player->duration()-1000)
     {
         ++currentPlay;
@@ -284,14 +207,13 @@ void MusicView::positionChangedH(qint64 pos)
         connect(player,SIGNAL(stateChanged(QMediaPlayer::State)),this,SLOT(stateChangedH(QMediaPlayer::State)));
         connect(player,SIGNAL(positionChanged(qint64)),this,SLOT(positionChangedH(qint64)));
         ui->curPlaySong->setText(name[currentPlay]);
-    }
-    // ui->curSongTime->setText(QString("%1.%2/%3.%4").arg(QString::number((double)pos/60000==0?0:(int)(double)(pos/60000))).arg("qf").arg("qf").arg("qf"));
+    }    
 }
 
 
-QString MusicView::GetTime(qint64 pos)
+QString MusicView::GetTime(qint64 pos) //get time from milliseconds/1000
 {
-    QString res;
+    QString res; pos/=1000;
     int seconds = (int) (pos % 60);
     pos /= 60;
     int minutes = (int) (pos % 60);
@@ -303,6 +225,16 @@ QString MusicView::GetTime(qint64 pos)
     if (days == 0)
         return res.sprintf("%02d:%02d:%02d", hours, minutes, seconds);
     return res.sprintf("%dd%02d:%02d:%02d", days, hours, minutes, seconds);
+}
+
+int MusicView::getSoundCount(QString user_id)//get soung count from user id
+{
+    QUrlQuery qurl(methodUrl+"audio.getCount?");
+    qurl.addQueryItem("access_token",tok);
+    qurl.addQueryItem("owner_id",user_id);
+    QByteArray t = GET(QUrl(qurl.toString()));
+    QString _count = parse(QString(t)).toMap().value("response").toString();
+    return _count.toInt();
 }
 
 void MusicView::on_curPlayer_sliderMoved(int position)
@@ -331,7 +263,7 @@ void MusicView::on_previous_clicked()
 }
 
 void MusicView::oneDownload()
-{
+{/*
     qDebug() << "HUI";
     if(!downloading){
         ui->label->setText("Один трек"); ui->countSongs->setText("1");
@@ -342,7 +274,12 @@ void MusicView::oneDownload()
         maxCount = 1;
         append(urls[ui->listWidget->row(ui->listWidget->selectedItems()[0])]);
         downloading = true;
-    }
+    }*/
 }
 
 
+
+void MusicView::on_downButton_2_clicked()
+{
+    getSoundCount(userId);
+}

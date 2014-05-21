@@ -20,8 +20,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
-public slots:
-    void check_url(QUrl url);
+private slots:
+    void checkUrl(QUrl url);
 };
 
 #endif // MAINWINDOW_H
