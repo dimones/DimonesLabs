@@ -16,28 +16,28 @@ struct List
     Node *tail;
 };
 
-void init(List *lst)
+void init(List *lst)//Функция инициализации списков
 {
     lst->head = NULL;
     lst->tail = NULL;
 }
 
-void pushBack(List* lst,int elem)
+void pushBack(List* lst,int elem)//Вставка элемента в конец списка
 {
-    Node *t = new Node;
-    t->elem = elem;
+    Node *t = new Node;//Создаем "узел" списка
+    t->elem = elem;//заносим значение
     t->next = 0;
-    if(lst->head == 0)
+    if(lst->head == 0)//если не забита голова списка
     {
         lst->head = t;
         lst->tail = t;
         return;
     }
-    lst->tail->next = t;
+    lst->tail->next = t;//в остальных случаях доделываем
     lst->tail = t;
 }
 
-void print_list(List* lst)
+void print_list(List* lst) //вывод списка
 {
     for(Node* tmp = lst->head; tmp; tmp = tmp->next)
         cout <<"Element : " << tmp->elem<< endl;
@@ -48,22 +48,16 @@ List Function(List* lst1,List* lst2)
 {
     List T; init(&T);
     for(Node* tmp = lst1->head;tmp;tmp = tmp->next)
-    {
         for(Node* tmp2 = lst2->head;tmp2;tmp2 = tmp2->next)
-        {
             if(tmp->elem == tmp2->elem)
-            {
                 pushBack(&T,tmp->elem);
-            }
-        }
-    }
     return T;
 }
 
 int main(int argc, char *argv[])
 {
-    List A,B,OUT;
-    init(&A); init(&B); init(&OUT);
+    List A,B,OUT; //Объявление списков
+    init(&A); init(&B); init(&OUT); //Иницаилизация их
     QCoreApplication a(argc, argv);
     while(true)
     {
