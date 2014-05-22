@@ -28,8 +28,6 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-     elem table[30][24];
-
 private slots:
     void on_tableWidget_itemChanged(QTableWidgetItem *item);
 
@@ -51,6 +49,24 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    //Functions defenition:
+    char getCharFromPos(int pos);
+    int getPosFromChar(char c);
+    char* getValueFromItem(int row,char col);
+    char* getVariable(char *text);
+    double isValue(char *t);
+    int containsChar(char s[],char c);
+    void deleteChar(char s[],char c);
+    void checkItemsInList(QStringList &list);
+    double SUM(char *text);
+    double isFunc(char *t);
+    char* calc(char *t);
+    bool haveBrackets(char *t);
+    void superParser(QTableWidgetItem *item);
+    void Parser(QTableWidgetItem *item);
+
+
+
 };
 
 #endif // MAINWINDOW_H

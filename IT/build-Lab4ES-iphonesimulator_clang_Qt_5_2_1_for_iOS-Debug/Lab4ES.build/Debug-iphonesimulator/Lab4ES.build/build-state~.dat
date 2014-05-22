@@ -1,612 +1,0 @@
-TLab4ES
-v6
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Info.plist /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist
-cCompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cPhaseScriptExecution Qt\ Prelink /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Script-3DA90DAE39A0C9D07C6F6B0F.sh
-cLd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Lab4ES normal i386
-cCpResource Lab4ES.xcodeproj/Default-568h@2x.png Debug-iphonesimulator/Lab4ES.app/Default-568h@2x.png
-cTouch /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk
-c000000005347A3180000000000000198
-t1397203736
-s408
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/SDKSettings.plist
-c0000000053243B7000000000000003B4
-t1394883440
-s948
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/CoreServices/SystemVersion.plist
-c0000000053243B75000000000000019E
-t1394883445
-s414
-
-N/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-c00000000530CF21D0000000000688600
-t1393357341
-s6850048
-
-N/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000005302997D0000000000ED9D60
-t1392679293
-s15572320
-
-N/System/Library/Frameworks/CoreText.framework/CoreText
-c0000000053029A750000000000255920
-t1392679541
-s2447648
-
-N/System/Library/Frameworks/Foundation.framework/Foundation
-c00000000530299FA00000000009FB090
-t1392679418
-s10465424
-
-N/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-c0000000053029A8100000000004D4020
-t1392679553
-s5062688
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp
-c000000005369C043000000000000095B
-t1399439427
-s2395
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp
-c000000005367C2B300000000000000A0
-t1399308979
-s160
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app
-t1399441832
-s204
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Default-568h@2x.png
-t1399441832
-s18594
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Info.plist
-t1399441829
-s563
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Lab4ES
-t1399441831
-s27259328
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/PkgInfo
-t1399441829
-s8
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist
-c000000005369C9A40000000000000367
-t1399441828
-s871
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/*.o
-c00000000000000000000000000000000
-t2
-s0
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/Lab4ES.LinkFileList
-t1399441829
-s529
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o
-t1399441830
-s651100
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o
-t1399441830
-s427188
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o
-t1399441829
-s329180
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Script-3DA90DAE39A0C9D07C6F6B0F.sh
-c000000005369C9A50000000000000086
-t1399441829
-s134
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.xcodeproj/Default-568h@2x.png
-c000000005369C9A300000000000048A2
-t1399441827
-s18594
-
-N/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp
-c000000005369C9A50000000000000D6A
-t1399441829
-s3434
-
-N/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5Core_iphonesimulator_debug.a
-c0000000052EDBDD400000000048E7DE8
-t1391312340
-s76447208
-
-N/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5Gui_iphonesimulator_debug.a
-c0000000052EDBE81000000000939A6F0
-t1391312513
-s154773232
-
-N/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5PlatformSupport_iphonesimulator_debug.a
-c0000000052EDBE9100000000005ACA08
-t1391312529
-s5949960
-
-N/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5Widgets_iphonesimulator_debug.a
-c0000000052EDBF1D000000000D3D59D0
-t1391312669
-s222124496
-
-N/Users/dimones-dev/Qt/5.2.1/ios/plugins/platforms/libqios_iphonesimulator_debug.a
-c0000000052EDBF430000000000849AA0
-t1391312707
-s8690336
-
-CCheck dependencies
-r0
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies18"Check dependencies8f392325011ab941^62bb2325011ab941^---0#1#1#--18"Check dependencies36"48499272-734A-4FAA-A01E-0BB098C55C43-
-
-CCompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s421134629.142579
-e421134630.328443
-r1
-xCompileC
-xLab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QMainWindow
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qmainwindow.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qwidget.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qwindowdefs.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qglobal.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qconfig.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qfeatures.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsystemdetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qprocessordetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcompilerdetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qglobalstatic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qbasicatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qatomic_x86.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qgenericatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmutex.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlogging.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qflags.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qtypeinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qtypetraits.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsysinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobjectdefs.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qnamespace.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobjectdefs_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobject.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstring.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qchar.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qbytearray.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qrefcount.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qarraydata.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlist.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qalgorithms.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qiterator.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qscopedpointer.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmetatype.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvarlengtharray.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcontainerfwd.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qisenum.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobject_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmargins.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qrect.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsize.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qpoint.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpaintdevice.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpalette.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qcolor.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qrgb.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstringlist.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qdatastream.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qiodevice.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qpair.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qregexp.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstringmatcher.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qbrush.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvector.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qmatrix.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpolygon.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qregion.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qline.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qtransform.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpainterpath.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qimage.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpixmap.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsharedpointer.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qshareddata.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsharedpointer_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qhash.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfont.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfontmetrics.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfontinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qsizepolicy.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qcursor.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qkeysequence.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qtabwidget.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qicon.h
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/ui_lab4.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/QVariant
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvariant.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmap.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QAction
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qaction.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qactiongroup.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QApplication
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qapplication.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcoreapplication.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcoreevent.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qeventloop.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qguiapplication.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qinputmethod.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlocale.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QButtonGroup
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qbuttongroup.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QHeaderView
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qheaderview.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qabstractitemview.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qabstractscrollarea.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qframe.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qabstractitemmodel.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qitemselectionmodel.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qset.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qabstractitemdelegate.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qstyleoption.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qabstractspinbox.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qvalidator.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qregularexpression.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qslider.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qabstractslider.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qstyle.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qtabbar.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qrubberband.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QLabel
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qlabel.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QLineEdit
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qlineedit.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qtextcursor.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qtextformat.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpen.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qtextoption.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QListWidget
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qlistwidget.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qlistview.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QPushButton
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qpushbutton.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qabstractbutton.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QWidget
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Compile /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp201"CompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compilerc4982425011ab941^2b155426011ab941^---0#0#1#-19%DVTDocumentLocation2@64"file:///Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp0000000000000000^4215"CompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -mios-simulator-version-min=5.0 -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Lab4ES.hmap -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/include -I/Users/dimones-dev/Qt/5.2.1/ios/mkspecs/macx-ios-clang/ios -I../../../../Qt/5.2.1/ios/include -I../../../../Qt/5.2.1/ios/include/QtWidgets -I../../../../Qt/5.2.1/ios/include/QtGui -I../../../../Qt/5.2.1/ios/include/QtCore -I. -I../../../../Qt/5.2.1/ios/mkspecs/macx-ios-clang -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources/i386 -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources -F/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator -pipe -fvisibility=hidden -fpascal-strings -fmessage-length=0 -Wno-trigraphs -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-sign-conversion -fexceptions -fasm-blocks -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wno-unused-function -Wno-unused-label -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wpointer-sign -Wno-newline-eof -Wdeprecated-declarations -Winvalid-offsetof -Wno-conversion -fvisibility-inlines-hidden -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -stdlib=libstdc++ -g -gdwarf-2 -Wall -W -fPIE -DDARWIN_NO_CARBON -DQT_NO_PRINTER -DQT_NO_PRINTDIALOG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -MMD -MT dependencies -MF /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.d --serialize-diagnostics /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.dia -c /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.cpp -o /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o36"D8C1028B-BEFB-4D36-A869-49ADE0421868-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-
-CCompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s421134629.142210
-e421134630.071366
-r1
-xCompileC
-xLab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QMainWindow
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qmainwindow.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qwidget.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qwindowdefs.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qglobal.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qconfig.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qfeatures.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsystemdetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qprocessordetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcompilerdetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qglobalstatic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qbasicatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qatomic_x86.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qgenericatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmutex.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlogging.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qflags.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qtypeinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qtypetraits.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsysinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobjectdefs.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qnamespace.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobjectdefs_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobject.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstring.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qchar.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qbytearray.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qrefcount.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qarraydata.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlist.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qalgorithms.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qiterator.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qscopedpointer.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmetatype.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvarlengtharray.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcontainerfwd.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qisenum.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobject_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmargins.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qrect.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsize.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qpoint.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpaintdevice.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpalette.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qcolor.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qrgb.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstringlist.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qdatastream.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qiodevice.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qpair.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qregexp.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstringmatcher.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qbrush.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvector.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qmatrix.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpolygon.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qregion.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qline.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qtransform.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpainterpath.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qimage.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpixmap.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsharedpointer.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qshareddata.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsharedpointer_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qhash.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfont.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfontmetrics.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfontinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qsizepolicy.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qcursor.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qkeysequence.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qtabwidget.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qicon.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QApplication
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qapplication.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcoreapplication.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcoreevent.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qeventloop.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qguiapplication.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qinputmethod.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlocale.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvariant.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmap.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Compile /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp201"CompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler62842425011ab941^4e451226011ab941^---0#0#1#-19%DVTDocumentLocation2@64"file:///Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp0000000000000000^4215"CompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -mios-simulator-version-min=5.0 -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Lab4ES.hmap -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/include -I/Users/dimones-dev/Qt/5.2.1/ios/mkspecs/macx-ios-clang/ios -I../../../../Qt/5.2.1/ios/include -I../../../../Qt/5.2.1/ios/include/QtWidgets -I../../../../Qt/5.2.1/ios/include/QtGui -I../../../../Qt/5.2.1/ios/include/QtCore -I. -I../../../../Qt/5.2.1/ios/mkspecs/macx-ios-clang -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources/i386 -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources -F/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator -pipe -fvisibility=hidden -fpascal-strings -fmessage-length=0 -Wno-trigraphs -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-sign-conversion -fexceptions -fasm-blocks -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wno-unused-function -Wno-unused-label -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wpointer-sign -Wno-newline-eof -Wdeprecated-declarations -Winvalid-offsetof -Wno-conversion -fvisibility-inlines-hidden -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -stdlib=libstdc++ -g -gdwarf-2 -Wall -W -fPIE -DDARWIN_NO_CARBON -DQT_NO_PRINTER -DQT_NO_PRINTDIALOG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -MMD -MT dependencies -MF /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.dia -c /Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/main.cpp -o /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o36"23E4F725-2A33-4729-95F8-B8DDC280A4B1-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-
-CCompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s421134629.142982
-e421134629.974797
-r1
-xCompileC
-xLab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/Lab4ES/lab4.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/QMainWindow
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qmainwindow.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qwidget.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qwindowdefs.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qglobal.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qconfig.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qfeatures.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsystemdetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qprocessordetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcompilerdetection.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qglobalstatic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qbasicatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qatomic_x86.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qgenericatomic.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmutex.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlogging.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qflags.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qtypeinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qtypetraits.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsysinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobjectdefs.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qnamespace.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobjectdefs_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobject.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstring.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qchar.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qbytearray.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qrefcount.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qarraydata.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qlist.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qalgorithms.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qiterator.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qscopedpointer.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmetatype.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvarlengtharray.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qcontainerfwd.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qisenum.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qobject_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qmargins.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qrect.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsize.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qpoint.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpaintdevice.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpalette.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qcolor.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qrgb.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstringlist.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qdatastream.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qiodevice.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qpair.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qregexp.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qstringmatcher.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qbrush.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qvector.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qmatrix.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpolygon.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qregion.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qline.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qtransform.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpainterpath.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qimage.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qpixmap.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsharedpointer.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qshareddata.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qsharedpointer_impl.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtCore/qhash.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfont.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfontmetrics.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qfontinfo.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qsizepolicy.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qcursor.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qkeysequence.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtWidgets/qtabwidget.h
-d/Users/dimones-dev/Qt/5.2.1/ios/include/QtGui/qicon.h
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp160"CompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o moc_lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler7ac42425011ab941^098cf925011ab941^---0#0#1#-19%DVTDocumentLocation2@119"file:///Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp0000000000000000^4241"CompileC Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o moc_lab4.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export LANG=en_US.US-ASCII    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -fexceptions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -mios-simulator-version-min=5.0 -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Lab4ES.hmap -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/include -I/Users/dimones-dev/Qt/5.2.1/ios/mkspecs/macx-ios-clang/ios -I../../../../Qt/5.2.1/ios/include -I../../../../Qt/5.2.1/ios/include/QtWidgets -I../../../../Qt/5.2.1/ios/include/QtGui -I../../../../Qt/5.2.1/ios/include/QtCore -I. -I../../../../Qt/5.2.1/ios/mkspecs/macx-ios-clang -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources/i386 -I/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources -F/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator -pipe -fvisibility=hidden -fpascal-strings -fmessage-length=0 -Wno-trigraphs -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-sign-conversion -fexceptions -fasm-blocks -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wno-unused-function -Wno-unused-label -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wpointer-sign -Wno-newline-eof -Wdeprecated-declarations -Winvalid-offsetof -Wno-conversion -fvisibility-inlines-hidden -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -stdlib=libstdc++ -g -gdwarf-2 -Wall -W -fPIE -DDARWIN_NO_CARBON -DQT_NO_PRINTER -DQT_NO_PRINTDIALOG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -MMD -MT dependencies -MF /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.d --serialize-diagnostics /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.dia -c /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/moc_lab4.cpp -o /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o36"624053A0-D66C-401F-98E6-1FAE870B579B-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-
-CCpResource Lab4ES.xcodeproj/Default-568h@2x.png Debug-iphonesimulator/Lab4ES.app/Default-568h@2x.png
-s421134632.163662
-e421134632.164644
-r1
-xCpResource
-xLab4ES.xcodeproj/Default-568h@2x.png
-xDebug-iphonesimulator/Lab4ES.app/Default-568h@2x.png
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Copy Debug-iphonesimulator/Lab4ES.app/Default-568h@2x.png100"CpResource Lab4ES.xcodeproj/Default-568h@2x.png Debug-iphonesimulator/Lab4ES.app/Default-568h@2x.png5df82928011ab941^81262a28011ab941^---0#0#1#-19%DVTDocumentLocation2@159"file:///Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Default-568h@2x.png00340c43dfffdf42^872"CpResource Lab4ES.xcodeproj/Default-568h@2x.png Debug-iphonesimulator/Lab4ES.app/Default-568h@2x.png    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.xcodeproj/Default-568h@2x.png /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app36"E4D5DDEC-5131-4F12-83BC-5B5D2421EAEE-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-
-CLd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Lab4ES normal i386
-s421134630.485112
-e421134632.162727
-r1
-xLd
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Lab4ES
-xnormal
-xi386
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/Lab4ES.LinkFileList
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/crt1.o
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/main.o
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/lab4.o
-d/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/moc_lab4.o
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/OpenGLES.framework/OpenGLES
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libz.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libm.dylib
-d/Users/dimones-dev/Qt/5.2.1/ios/plugins/platforms/libqios_iphonesimulator_debug.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreText.framework/CoreText
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-d/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5PlatformSupport_iphonesimulator_debug.a
-d/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5Widgets_iphonesimulator_debug.a
-d/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5Gui_iphonesimulator_debug.a
-d/Users/dimones-dev/Qt/5.2.1/ios/lib/libQt5Core_iphonesimulator_debug.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libstdc++.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libSystem.dylib
-d/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/5.1/lib/darwin/libclang_rt.ios.a
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libc++abi.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_override.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcache_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcommonCrypto_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcorecrypto_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcompiler_rt_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libcopyfile_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdispatch.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libdyld_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libmacho_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libnotify_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libremovefile_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_blocks.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_c.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_dnssd.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_info.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_m.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_network.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libunwind_sim.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libxpc.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_configuration.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/libsystem_sim_asl.dylib
-d/usr/lib/libSystem.B.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/libobjc.A.dylib
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
-d/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/usr/lib/system/host/libdyld.dylib
-d/usr/lib/system/libcache.dylib
-d/usr/lib/system/libcommonCrypto.dylib
-d/usr/lib/system/libcompiler_rt.dylib
-d/usr/lib/system/libcopyfile.dylib
-d/usr/lib/system/libcorecrypto.dylib
-d/usr/lib/system/libkeymgr.dylib
-d/usr/lib/system/liblaunch.dylib
-d/usr/lib/system/libmacho.dylib
-d/usr/lib/system/libquarantine.dylib
-d/usr/lib/system/libremovefile.dylib
-d/usr/lib/system/libsystem_asl.dylib
-d/usr/lib/system/libsystem_blocks.dylib
-d/usr/lib/system/libsystem_c.dylib
-d/usr/lib/system/libsystem_configuration.dylib
-d/usr/lib/system/libsystem_dnssd.dylib
-d/usr/lib/system/libsystem_info.dylib
-d/usr/lib/system/libsystem_kernel.dylib
-d/usr/lib/system/libsystem_m.dylib
-d/usr/lib/system/libsystem_malloc.dylib
-d/usr/lib/system/libsystem_notify.dylib
-d/usr/lib/system/libsystem_platform.dylib
-d/usr/lib/system/libsystem_pthread.dylib
-d/usr/lib/system/libsystem_sandbox.dylib
-d/usr/lib/system/libunc.dylib
-d/usr/lib/system/libunwind.dylib
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"Link /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Lab4ES54"Ld Debug-iphonesimulator/Lab4ES.app/Lab4ES normal i386d8467c26011ab941^2eaa2928011ab941^---0#0#1#--2370"Ld Debug-iphonesimulator/Lab4ES.app/Lab4ES normal i386    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export IPHONEOS_DEPLOYMENT_TARGET=5.0    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk -L/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator -L/Users/dimones-dev/Qt/5.2.1/ios/plugins/platforms -L/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks -L/Users/dimones-dev/Qt/5.2.1/ios/lib -F/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator -filelist /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/Lab4ES.LinkFileList -Xlinker -objc_abi_version -Xlinker 2 -headerpad_max_install_names -stdlib=libstdc++ -u _qt_registerPlatformPlugin -L/Users/dimones-dev/Qt/5.2.1/ios/plugins/platforms -framework UIKit -L/Users/dimones-dev/Qt/5.2.1/ios/lib -framework OpenGLES -lz -lm -Xlinker -no_implicit_dylibs -mios-simulator-version-min=5.0 -lqios_iphonesimulator_debug -framework Foundation -framework QuartzCore -framework CoreFoundation -framework CoreText -framework CoreGraphics -lQt5PlatformSupport_iphonesimulator_debug -lQt5Widgets_iphonesimulator_debug -lQt5Gui_iphonesimulator_debug -lQt5Core_iphonesimulator_debug -Xlinker -dependency_info -Xlinker /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/Lab4ES_dependency_info.dat -o /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Lab4ES36"B7FED3AE-D39F-472E-8A9B-DBC2C8A89C33-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-
-CPhaseScriptExecution Qt\ Prelink /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Script-3DA90DAE39A0C9D07C6F6B0F.sh
-s421134630.330036
-e421134630.484199
-r1
-xPhaseScriptExecution
-xQt Prelink
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Script-3DA90DAE39A0C9D07C6F6B0F.sh
-oFound main() in main.o
-o  Renaming '_main' at offset 426877 to '_qtmn'
-o  Renaming '_main.eh' at offset 426907 to '_qtmn.eh'
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Qt Prelink'115"PhaseScriptExecution Qt\ Prelink Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Script-3DA90DAE39A0C9D07C6F6B0F.shc24e5526011ab941^0ef57b26011ab941^-123"Found main() in main.o  Renaming '_main' at offset 426877 to '_qtmn'  Renaming '_main.eh' at offset 426907 to '_qtmn.eh'3(21%IDEActivityLogMessage2@23"Found main() in main.o-421134630#0#23#-0#-----2@47"  Renaming '_main' at offset 426877 to '_qtmn'-421134630#23#47#-0#-----2@53"  Renaming '_main.eh' at offset 426907 to '_qtmn.eh'-421134630#70#53#-0#-----0#0#1#--25934"PhaseScriptExecution Qt\ Prelink Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Script-3DA90DAE39A0C9D07C6F6B0F.sh    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export ACTION=build    export AD_HOC_CODE_SIGNING_ALLOWED=NO    export ALTERNATE_GROUP=staff    export ALTERNATE_MODE=u+w,go-w,a+rX    export ALTERNATE_OWNER=dimones-dev    export ALWAYS_SEARCH_USER_PATHS=YES    export ALWAYS_USE_SEPARATE_HEADERMAPS=YES    export APPLE_INTERNAL_DEVELOPER_DIR=/AppleInternal/Developer    export APPLE_INTERNAL_DIR=/AppleInternal    export APPLE_INTERNAL_DOCUMENTATION_DIR=/AppleInternal/Documentation    export APPLE_INTERNAL_LIBRARY_DIR=/AppleInternal/Library    export APPLE_INTERNAL_TOOLS=/AppleInternal/Developer/Tools    export APPLY_RULES_IN_COPY_FILES=NO    export ARCHS=i386    export ARCHS_STANDARD="i386 x86_64"    export ARCHS_STANDARD_32_64_BIT="i386 x86_64"    export ARCHS_STANDARD_32_BIT=i386    export ARCHS_STANDARD_64_BIT=x86_64    export ARCHS_STANDARD_INCLUDING_64_BIT="i386 x86_64"    export AVAILABLE_PLATFORMS="iphonesimulator macosx iphoneos"    export BUILD_COMPONENTS="headers build"    export BUILD_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export BUILD_ROOT=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export BUILD_STYLE=    export BUILD_VARIANTS=normal    export BUILT_PRODUCTS_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator    export CACHE_ROOT=/var/folders/lf/p78jnycn06x6fl57lnybntxc0000gp/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode    export CC=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang    export CCHROOT=/var/folders/lf/p78jnycn06x6fl57lnybntxc0000gp/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode    export CHMOD=/bin/chmod    export CHOWN=/usr/sbin/chown    export CLASS_FILE_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/JavaClasses    export CLEAN_PRECOMPS=YES    export CLONE_HEADERS=NO    export CODESIGNING_FOLDER_PATH=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app    export CODE_SIGNING_ALLOWED=NO    export CODE_SIGN_CONTEXT_CLASS=XCiPhoneSimulatorCodeSignContext    export CODE_SIGN_IDENTITY="iPhone Developer"    export COLOR_DIAGNOSTICS=NO    export COMBINE_HIDPI_IMAGES=NO    export COMMAND_MODE=legacy    export COMPOSITE_SDK_DIRS=/var/folders/lf/p78jnycn06x6fl57lnybntxc0000gp/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/CompositeSDKs    export COMPRESS_PNG_FILES=YES    export CONFIGURATION=Debug    export CONFIGURATION_BUILD_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator    export CONFIGURATION_TEMP_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator    export CONTENTS_FOLDER_PATH=Lab4ES.app    export COPYING_PRESERVES_HFS_DATA=NO    export COPY_PHASE_STRIP=NO    export COPY_RESOURCES_FROM_STATIC_FRAMEWORKS=YES    export CP=/bin/cp    export CREATE_INFOPLIST_SECTION_IN_BINARY=NO    export CURRENT_ARCH=i386    export CURRENT_VARIANT=normal    export DEAD_CODE_STRIPPING=NO    export DEBUGGING_SYMBOLS=YES    export DEBUG_INFORMATION_FORMAT=dwarf    export DEFAULT_COMPILER=com.apple.compilers.llvm.clang.1_0    export DEFAULT_KEXT_INSTALL_PATH=/System/Library/Extensions    export DEPLOYMENT_LOCATION=NO    export DEPLOYMENT_POSTPROCESSING=NO    export DERIVED_FILES_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources    export DERIVED_FILE_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources    export DERIVED_SOURCES_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/DerivedSources    export DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Applications    export DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin    export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer    export DEVELOPER_FRAMEWORKS_DIR=/Applications/Xcode.app/Contents/Developer/Library/Frameworks    export DEVELOPER_FRAMEWORKS_DIR_QUOTED=/Applications/Xcode.app/Contents/Developer/Library/Frameworks    export DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/Developer/Library    export DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    export DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Tools    export DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr    export DEVELOPMENT_LANGUAGE=English    export DOCUMENTATION_FOLDER_PATH=Lab4ES.app/English.lproj/Documentation    export DO_HEADER_SCANNING_IN_JAM=NO    export DSTROOT=/tmp/Lab4ES.dst    export DT_TOOLCHAIN_DIR=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    export DWARF_DSYM_FILE_NAME=Lab4ES.app.dSYM    export DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT=NO    export DWARF_DSYM_FOLDER_PATH=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator    export DYLIB_COMPATIBILITY_VERSION=1.0    export DYLIB_CURRENT_VERSION=1.0.0    export EFFECTIVE_PLATFORM_NAME=-iphonesimulator    export ENABLE_HEADER_DEPENDENCIES=YES    export EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS=".DS_Store .svn .git .hg CVS"    export EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES="*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    export EXECUTABLES_FOLDER_PATH=Lab4ES.app/Executables    export EXECUTABLE_FOLDER_PATH=Lab4ES.app    export EXECUTABLE_NAME=Lab4ES    export EXECUTABLE_PATH=Lab4ES.app/Lab4ES    export FILE_LIST=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects/LinkFileList    export FIXED_FILES_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/FixedFiles    export FRAMEWORKS_FOLDER_PATH=Lab4ES.app/Frameworks    export FRAMEWORK_FLAG_PREFIX=-framework    export FRAMEWORK_SEARCH_PATHS="/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator "    export FRAMEWORK_VERSION=A    export FULL_PRODUCT_NAME=Lab4ES.app    export GCC3_VERSION=3.3    export GCC_DYNAMIC_NO_PIC=NO    export GCC_GENERATE_DEBUGGING_SYMBOLS=YES    export GCC_INLINES_ARE_PRIVATE_EXTERN=YES    export GCC_OBJC_LEGACY_DISPATCH=YES    export GCC_OPTIMIZATION_LEVEL=0    export GCC_PFE_FILE_C_DIALECTS="c objective-c c++ objective-c++"    export GCC_SYMBOLS_PRIVATE_EXTERN=YES    export GCC_TREAT_WARNINGS_AS_ERRORS=NO    export GCC_VERSION=com.apple.compilers.llvm.clang.1_0    export GCC_VERSION_IDENTIFIER=com_apple_compilers_llvm_clang_1_0    export GENERATE_MASTER_OBJECT_FILE=NO    export GENERATE_PKGINFO_FILE=YES    export GENERATE_PROFILING_CODE=NO    export GID=20    export GROUP=staff    export HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT=YES    export HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES=YES    export HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS=YES    export HEADERMAP_INCLUDES_PROJECT_HEADERS=YES    export HEADER_SEARCH_PATHS="/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/include /Users/dimones-dev/Qt/5.2.1/ios/mkspecs/macx-ios-clang/ios ../../../../Qt/5.2.1/ios/include ../../../../Qt/5.2.1/ios/include/QtWidgets ../../../../Qt/5.2.1/ios/include/QtGui ../../../../Qt/5.2.1/ios/include/QtCore . ../../../../Qt/5.2.1/ios/mkspecs/macx-ios-clang"    export ICONV=/usr/bin/iconv    export INFOPLIST_EXPAND_BUILD_SETTINGS=YES    export INFOPLIST_FILE=Info.plist    export INFOPLIST_OUTPUT_FORMAT=binary    export INFOPLIST_PATH=Lab4ES.app/Info.plist    export INFOPLIST_PREPROCESS=NO    export INFOSTRINGS_PATH=Lab4ES.app/English.lproj/InfoPlist.strings    export INSTALL_DIR=/tmp/Lab4ES.dst/Applications    export INSTALL_GROUP=staff    export INSTALL_MODE_FLAG=u+w,go-w,a+rX    export INSTALL_OWNER=dimones-dev    export INSTALL_PATH=/Applications    export INSTALL_ROOT=/tmp/Lab4ES.dst    export IPHONEOS_DEPLOYMENT_TARGET=5.0    export JAVAC_DEFAULT_FLAGS="-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    export JAVA_APP_STUB=/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    export JAVA_ARCHIVE_CLASSES=YES    export JAVA_ARCHIVE_TYPE=JAR    export JAVA_COMPILER=/usr/bin/javac    export JAVA_FOLDER_PATH=Lab4ES.app/Java    export JAVA_FRAMEWORK_RESOURCES_DIRS=Resources    export JAVA_JAR_FLAGS=cv    export JAVA_SOURCE_SUBDIR=.    export JAVA_USE_DEPENDENCIES=YES    export JAVA_ZIP_FLAGS=-urg    export JIKES_DEFAULT_FLAGS="+E +OLDCSO"    export KEEP_PRIVATE_EXTERNS=NO    export LDPLUSPLUS=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++    export LD_DEPENDENCY_INFO_FILE=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/Lab4ES_dependency_info.dat    export LD_GENERATE_MAP_FILE=NO    export LD_MAP_FILE_PATH=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Lab4ES-LinkMap-normal-i386.txt    export LD_NO_PIE=NO    export LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER=YES    export LEGACY_DEVELOPER_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    export LEX=lex    export LIBRARY_FLAG_NOSPACE=YES    export LIBRARY_FLAG_PREFIX=-l    export LIBRARY_KEXT_INSTALL_PATH=/Library/Extensions    export LIBRARY_SEARCH_PATHS="/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator /Users/dimones-dev/Qt/5.2.1/ios/plugins/platforms /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk/System/Library/Frameworks /Users/dimones-dev/Qt/5.2.1/ios/lib"    export LINKER_DISPLAYS_MANGLED_NAMES=NO    export LINK_FILE_LIST_normal_i386=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/Lab4ES.LinkFileList    export LINK_WITH_STANDARD_LIBRARIES=YES    export LOCALIZED_RESOURCES_FOLDER_PATH=Lab4ES.app/English.lproj    export LOCAL_ADMIN_APPS_DIR=/Applications/Utilities    export LOCAL_APPS_DIR=/Applications    export LOCAL_DEVELOPER_DIR=/Library/Developer    export LOCAL_LIBRARY_DIR=/Library    export MACH_O_TYPE=mh_execute    export MACOSX_DEPLOYMENT_TARGET=10.6    export MAC_OS_X_PRODUCT_BUILD_VERSION=13C64    export MAC_OS_X_VERSION_ACTUAL=1092    export MAC_OS_X_VERSION_MAJOR=1090    export MAC_OS_X_VERSION_MINOR=0902    export NATIVE_ARCH=i386    export NATIVE_ARCH_32_BIT=i386    export NATIVE_ARCH_64_BIT=x86_64    export NATIVE_ARCH_ACTUAL=x86_64    export NO_COMMON=YES    export OBJC_ABI_VERSION=2    export OBJECT_FILE_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects    export OBJECT_FILE_DIR_normal=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal    export OBJROOT=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export ONLY_ACTIVE_ARCH=NO    export OPTIMIZATION_LEVEL=0    export OS=MACOS    export OSAC=/usr/bin/osacompile    export OTHER_CFLAGS="-pipe -fvisibility=hidden -fpascal-strings -fmessage-length=0 -Wno-trigraphs -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-sign-conversion -fexceptions -fasm-blocks -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wno-unused-function -Wno-unused-label -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wpointer-sign -Wno-newline-eof -Wdeprecated-declarations -Winvalid-offsetof -Wno-conversion -g -gdwarf-2 -Wall -W -fPIE -DDARWIN_NO_CARBON -DQT_NO_PRINTER -DQT_NO_PRINTDIALOG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB"    export OTHER_CPLUSPLUSFLAGS="-pipe -fvisibility=hidden -fpascal-strings -fmessage-length=0 -Wno-trigraphs -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -Wno-sign-conversion -fexceptions -fasm-blocks -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-implicit-atomic-properties -Wformat -Wno-missing-braces -Wno-unused-function -Wno-unused-label -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-sign-compare -Wpointer-sign -Wno-newline-eof -Wdeprecated-declarations -Winvalid-offsetof -Wno-conversion -fvisibility-inlines-hidden -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -stdlib=libstdc++ -g -gdwarf-2 -Wall -W -fPIE -DDARWIN_NO_CARBON -DQT_NO_PRINTER -DQT_NO_PRINTDIALOG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB"    export OTHER_LDFLAGS="-headerpad_max_install_names -stdlib=libstdc++ -u _qt_registerPlatformPlugin -L/Users/dimones-dev/Qt/5.2.1/ios/plugins/platforms -framework UIKit -L/Users/dimones-dev/Qt/5.2.1/ios/lib -framework OpenGLES -lz -lm"    export PACKAGE_TYPE=com.apple.package-type.wrapper.application    export PASCAL_STRINGS=YES    export PATH="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    export PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES="/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    export PBDEVELOPMENTPLIST_PATH=Lab4ES.app/pbdevelopment.plist    export PFE_FILE_C_DIALECTS=c++    export PKGINFO_FILE_PATH=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/PkgInfo    export PKGINFO_PATH=Lab4ES.app/PkgInfo    export PLATFORM_DEVELOPER_APPLICATIONS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications    export PLATFORM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin    export PLATFORM_DEVELOPER_LIBRARY_DIR=/Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library    export PLATFORM_DEVELOPER_SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs    export PLATFORM_DEVELOPER_TOOLS_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Tools    export PLATFORM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr    export PLATFORM_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform    export PLATFORM_NAME=iphonesimulator    export PLATFORM_PREFERRED_ARCH=i386    export PLATFORM_PRODUCT_BUILD_VERSION=11D167    export PLATFORM_VERSION_AVAILABILITY_H_FORMAT=70100    export PLIST_FILE_OUTPUT_FORMAT=binary    export PLUGINS_FOLDER_PATH=Lab4ES.app/PlugIns    export PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR=YES    export PRECOMP_DESTINATION_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/PrefixHeaders    export PRESERVE_DEAD_CODE_INITS_AND_TERMS=NO    export PRIVATE_HEADERS_FOLDER_PATH=Lab4ES.app/PrivateHeaders    export PRODUCT_NAME=Lab4ES    export PRODUCT_SETTINGS_PATH=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist    export PRODUCT_TYPE=com.apple.product-type.application    export PROFILING_CODE=NO    export PROJECT=Lab4ES    export PROJECT_DERIVED_FILE_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/DerivedSources    export PROJECT_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export PROJECT_FILE_PATH=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.xcodeproj    export PROJECT_NAME=Lab4ES    export PROJECT_TEMP_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build    export PROJECT_TEMP_ROOT=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export PUBLIC_HEADERS_FOLDER_PATH=Lab4ES.app/Headers    export QT_LIBRARY_SUFFIX=_iphonesimulator_debug    export RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS=YES    export REMOVE_CVS_FROM_RESOURCES=YES    export REMOVE_GIT_FROM_RESOURCES=YES    export REMOVE_HG_FROM_RESOURCES=YES    export REMOVE_SVN_FROM_RESOURCES=YES    export REZ_COLLECTOR_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/ResourceManagerResources    export REZ_OBJECTS_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/ResourceManagerResources/Objects    export REZ_SEARCH_PATHS="/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator "    export SCAN_ALL_SOURCE_FILES_FOR_INCLUDES=NO    export SCRIPTS_FOLDER_PATH=Lab4ES.app/Scripts    export SCRIPT_INPUT_FILE_0="/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/*.o"    export SCRIPT_INPUT_FILE_COUNT=1    export SCRIPT_OUTPUT_FILE_0=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Objects-normal/i386/Lab4ES.LinkFileList    export SCRIPT_OUTPUT_FILE_COUNT=1    export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk    export SDK_DIR=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator7.1.sdk    export SDK_NAME=iphonesimulator7.1    export SDK_PRODUCT_BUILD_VERSION=11D167    export SED=/usr/bin/sed    export SEPARATE_STRIP=NO    export SEPARATE_SYMBOL_EDIT=NO    export SET_DIR_MODE_OWNER_GROUP=YES    export SET_FILE_MODE_OWNER_GROUP=NO    export SHALLOW_BUNDLE=YES    export SHARED_DERIVED_FILE_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/DerivedSources    export SHARED_FRAMEWORKS_FOLDER_PATH=Lab4ES.app/SharedFrameworks    export SHARED_PRECOMPS_DIR=/var/folders/lf/p78jnycn06x6fl57lnybntxc0000gp/C/com.apple.DeveloperTools/5.1.1-5B1008/Xcode/SharedPrecompiledHeaders    export SHARED_SUPPORT_FOLDER_PATH=Lab4ES.app/SharedSupport    export SKIP_INSTALL=NO    export SOURCE_ROOT=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export SRCROOT=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export STRINGS_FILE_OUTPUT_ENCODING=binary    export STRIP_INSTALLED_PRODUCT=YES    export STRIP_STYLE=all    export SUPPORTED_DEVICE_FAMILIES="1 2"    export SUPPORTED_PLATFORMS="iphonesimulator iphoneos"    export SYMROOT=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export SYSTEM_ADMIN_APPS_DIR=/Applications/Utilities    export SYSTEM_APPS_DIR=/Applications    export SYSTEM_CORE_SERVICES_DIR=/System/Library/CoreServices    export SYSTEM_DEMOS_DIR=/Applications/Extras    export SYSTEM_DEVELOPER_APPS_DIR=/Applications/Xcode.app/Contents/Developer/Applications    export SYSTEM_DEVELOPER_BIN_DIR=/Applications/Xcode.app/Contents/Developer/usr/bin    export SYSTEM_DEVELOPER_DEMOS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    export SYSTEM_DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer    export SYSTEM_DEVELOPER_DOC_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    export SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    export SYSTEM_DEVELOPER_JAVA_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    export SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR="/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    export SYSTEM_DEVELOPER_RELEASENOTES_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    export SYSTEM_DEVELOPER_TOOLS=/Applications/Xcode.app/Contents/Developer/Tools    export SYSTEM_DEVELOPER_TOOLS_DOC_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    export SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR="/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    export SYSTEM_DEVELOPER_USR_DIR=/Applications/Xcode.app/Contents/Developer/usr    export SYSTEM_DEVELOPER_UTILITIES_DIR=/Applications/Xcode.app/Contents/Developer/Applications/Utilities    export SYSTEM_DOCUMENTATION_DIR=/Library/Documentation    export SYSTEM_KEXT_INSTALL_PATH=/System/Library/Extensions    export SYSTEM_LIBRARY_DIR=/System/Library    export TARGETED_DEVICE_FAMILY=1,2    export TARGETNAME=Lab4ES    export TARGET_BUILD_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator    export TARGET_NAME=Lab4ES    export TARGET_TEMP_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build    export TEMP_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build    export TEMP_FILES_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build    export TEMP_FILE_DIR=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build    export TEMP_ROOT=/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export TOOLCHAINS=com.apple.dt.toolchain.XcodeDefault    export UID=502    export UNLOCALIZED_RESOURCES_FOLDER_PATH=Lab4ES.app    export UNSTRIPPED_PRODUCT=NO    export USER=dimones-dev    export USER_APPS_DIR=/Users/dimones-dev/Applications    export USER_LIBRARY_DIR=/Users/dimones-dev/Library    export USE_DYNAMIC_NO_PIC=YES    export USE_HEADERMAP=YES    export USE_HEADER_SYMLINKS=NO    export VALIDATE_PRODUCT=NO    export VALID_ARCHS="i386 x86_64"    export VERBOSE_PBXCP=NO    export VERSIONPLIST_PATH=Lab4ES.app/version.plist    export VERSION_INFO_BUILDER=dimones-dev    export VERSION_INFO_FILE=Lab4ES_vers.c    export VERSION_INFO_STRING="\"@(#)PROGRAM:Lab4ES  PROJECT:Lab4ES-\""    export WRAPPER_EXTENSION=app    export WRAPPER_NAME=Lab4ES.app    export WRAPPER_SUFFIX=.app    export XCODE_APP_SUPPORT_DIR=/Applications/Xcode.app/Contents/Developer/Library/Xcode    export XCODE_PRODUCT_BUILD_VERSION=5B1008    export XCODE_VERSION_ACTUAL=0511    export XCODE_VERSION_MAJOR=0500    export XCODE_VERSION_MINOR=0510    export XPCSERVICES_FOLDER_PATH=Lab4ES.app/XPCServices    export YACC=yacc    export arch=i386    export variant=normal    /bin/sh -c /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Lab4ES.build/Debug-iphonesimulator/Lab4ES.build/Script-3DA90DAE39A0C9D07C6F6B0F.sh36"7C19669F-B5D4-46EA-961A-8D3D9C10882C-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-
-CProcessInfoPlistFile /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Info.plist /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist
-s421134629.140248
-e421134629.141632
-r1
-xProcessInfoPlistFile
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Info.plist
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection118"Process /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist75"ProcessInfoPlistFile Debug-iphonesimulator/Lab4ES.app/Info.plist Info.plist1afa2325011ab941^20422425011ab941^---0#0#1#-19%DVTDocumentLocation2@117"file:///Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist0000000000000000^967"ProcessInfoPlistFile Debug-iphonesimulator/Lab4ES.app/Info.plist Info.plist    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Info.plist -genpkginfo /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app/Info.plist36"0C41E41C-DA4D-4F02-88BC-F239E357FBBB-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-
-CTouch /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app
-s421134632.165116
-e421134632.170459
-r1
-xTouch
-x/Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app
-lSLF06#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection138"Touch /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app38"Touch Debug-iphonesimulator/Lab4ES.appbd522a28011ab941^66a32b28011ab941^---0#0#1#--583"Touch Debug-iphonesimulator/Lab4ES.app    cd /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug    export PATH="/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/dimones-dev/Desktop/DimonesLabs/IT/build-Lab4ES-iphonesimulator_clang_Qt_5_2_1_for_iOS-Debug/Debug-iphonesimulator/Lab4ES.app36"35C01860-B06C-449E-A06A-A9CBE4BE6C0E-
-b336E7362-1D9D-4E5D-A6D5-94378D1938C1
-

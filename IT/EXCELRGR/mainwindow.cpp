@@ -22,17 +22,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->tableWidget->setColumnCount(24);
     ui->tableWidget->setRowCount(30);
     for(int i=0;i<24;i++)
-      {
+    {
         ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(QChar(colNames[i])));
         ui->tableWidget->setColumnWidth(i,70);
         for(int j=0;j<30;j++)
-          {
+        {
             ui->tableWidget->setRowHeight(i,20);
             table[i][j].type = 1;
             table[i][j].X = j;
             table[i][j].Y = i;
-          }
-      }
+        }
+    }
 }
 
 MainWindow::~MainWindow()
@@ -58,6 +58,15 @@ int  MainWindow::getPosFromChar(char c)
             return i;
         }
     return out;
+}
+
+void MainWindow::firstParse(QTableWidgetItem *item)
+{
+    if(item->text().contains("=")) Parse(item);
+    else {
+        strcpy( table[item->row()][item->column()].func,item->text().toUtf8().data());
+        strcpy( table[item->row()][item->column()].value,item->text().toUtf8().data());
+    }
 }
 
 char*  MainWindow::getValueFromItem(int row,char col)
@@ -246,7 +255,7 @@ char*  MainWindow::calc(char* text)
     qDebug() << "COUNT: " << l.count() << " LIST:" << l;
     checkListItems(l);
     qDebug() << "NEW COUNT: " << l.count() << " LIST:" << l<< "  ITERATOR: " << iteratorI <<" SIGNS:" << signs;
-    while(iteratorI>0){
+    while(iteratorI>=1){
         if(containsChar(signs,'*')!=-1)
         {
             //15+521*(1+2*3)
@@ -298,7 +307,15 @@ char*  MainWindow::calc(char* text)
 }
 
 bool  MainWindow::haveBrackets(char* t)
-{
+{/*
+    bool result = false;
+    while(*t!=0)
+    {
+        if(t=="("||t==")")
+        { result = true; break;}
+    }
+    return result;
+    */
     QRegExp exp("\\((.*)\\)");
     if(exp.indexIn(t) >= 0)
     {
@@ -307,6 +324,21 @@ bool  MainWindow::haveBrackets(char* t)
 }
 void  MainWindow::Parse(QTableWidgetItem *item)
 {
+    QString temp = item->text();
+    temp.remove("=");
+    if(!haveBrackets(temp.toUtf8().data()))
+    {
+        QRegExp rx("(\\+|\\-|\\*|\\:)");
+        QStringList list = temp.split(rx);
+        item->setText(QString(calc(item->text().toUtf8().data())));
+    }
+    qDebug() << "TEST";
+
+
+
+
+
+    /*
     if(item->text().contains("="))
     {
         char* functemp = new char[strlen(item->text().toUtf8().data())];
@@ -370,6 +402,6 @@ void  MainWindow::Parse(QTableWidgetItem *item)
         return;
     }
 
-
+*/
 
 }

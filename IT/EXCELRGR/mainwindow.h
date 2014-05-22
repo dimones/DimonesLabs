@@ -38,6 +38,7 @@ private:
     bool haveBrackets(char* t);
     void Parse(QTableWidgetItem *item);
     int  getPosFromChar(char c);
+    void firstParse(QTableWidgetItem *item);
 };
 
 #endif // MAINWINDOW_H
