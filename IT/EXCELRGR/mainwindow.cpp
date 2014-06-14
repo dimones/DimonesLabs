@@ -1,53 +1,60 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
-
-
+const int N = 1000;
 char colNames[24] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','V','X','Y','Z'};
 
-
-struct item{
-    int type;
-    int X,Y;
-    char func[256];
-    char value[256];
-};
-item table[24][30];
-
+QString path;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tableWidget->setColumnCount(24);
-    ui->tableWidget->setRowCount(30);
-    for(int i=0;i<24;i++)
-    {
-        ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(QChar(colNames[i])));
-        ui->tableWidget->setColumnWidth(i,70);
-        for(int j=0;j<30;j++)
-        {
-            ui->tableWidget->setRowHeight(i,20);
-            table[i][j].type = 1;
-            table[i][j].X = j;
-            table[i][j].Y = i;
-        }
-    }
+    newTable(100,100);
+    QObject::connect(ui->tableWidget->verticalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(handlerVertical(int)));
+    QObject::connect(ui->tableWidget->horizontalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(handlerHorizontal(int)));
 }
 
 MainWindow::~MainWindow()
 {
-
     delete ui;
+}
+
+void MainWindow::handlerVertical(int y)
+{
+    qDebug() << "y: " << y << endl;
+    if(y+22==ui->tableWidget->rowCount())
+        resizeTable(1);
+}
+
+void MainWindow::handlerHorizontal(int x)
+{
+    qDebug() << "x: " << x << endl;
+    if(x+11==ui->tableWidget->columnCount())
+        resizeTable(2);
 }
 
 void MainWindow::on_tableWidget_itemChanged(QTableWidgetItem *item)
 {
-    Parse(item);
+    firstParse(item);
 }
-char  MainWindow::getCharFromPos(int pos)
+char *MainWindow::getCharFromPos(int pos)
 {
-    return  colNames[pos];
+    int x = pos; int count = 0;
+    while(x>24)
+    {
+        x-=24;
+        count++;
+    }
+    if(count>0)
+    {
+        char *out = new char[count+1]; int i = 0;
+        for(i = 0;i<count;i++)
+            out[i] = colNames[0];
+        out[i] = colNames[x];
+        return out;
+    }
+    char *t = new char[1]; t[0] = colNames[pos];
+    return  t;
 }
 int  MainWindow::getPosFromChar(char c)
 {
@@ -62,149 +69,215 @@ int  MainWindow::getPosFromChar(char c)
 
 void MainWindow::firstParse(QTableWidgetItem *item)
 {
-    if(item->text().contains("=")) Parse(item);
-    else {
-        strcpy( table[item->row()][item->column()].func,item->text().toUtf8().data());
-        strcpy( table[item->row()][item->column()].value,item->text().toUtf8().data());
+    if(item->text().contains("="))
+        Parse(item);
+    else
+    {
+        char* temp = new char[strlen(item->text().toUtf8().data())]; strcpy(temp,item->text().toUtf8().constData());
+        T->pushTo(item->row(),item->column(),temp,temp);
     }
 }
 
+bool MainWindow::isNumber(char t)
+{
+    for(int i =0;i<10;i++)
+        if(i==t-'0')
+            return true;
+    return false;
+}
+
+bool MainWindow::isChar(char t)
+{
+    for(int i = 0;i<100;i++)
+        if(t == i)
+            return true;
+    return false;
+}
+
+
+
 char*  MainWindow::getValueFromItem(int row,char col)
 {
-    char* out = new char[strlen(table[row][getPosFromChar(col)].value)];
-    strcpy(out,table[row][getPosFromChar(col)].value);
-    return out;
+    return T->getValue(row,getPosFromChar(col));
 }
 
 char*  MainWindow::getVariable(char *text)//получение строки между скобками
 {
-    QRegExp exp("\\((.*)\\)"); int s = 0;
-    if(exp.indexIn(text) >= 0)
-    {
-        s = 1;
-    }
-    qDebug() << exp.cap(1).toUtf8().data();
-    return s==1?exp.cap(1).toUtf8().data():NULL;
+    char* temp = new char[strlen(text)-2];
+    int left = 0,right = 0,i = 0;
+    for(;right<=strlen(text)&&text[right]!=')';right++);
+    for(left = right;left>0&&text[left]!='(';left--);
+    for(int j = left+1;j<right;i++,j++) temp[i] = text[j]; temp[i] = NULL;
+    return temp;
 }
 char*  MainWindow::getVariableBR(char *text)//получение строки между скобками
 {
-    QRegExp exp("\\{(.*)\\}"); int s = 0;
-    if(exp.indexIn(text) >= 0)
-    {
-        s = 1;
-    }
-    qDebug() << exp.cap(1).toUtf8().data();
-    return s==1?exp.cap(1).toUtf8().data():NULL;
+    char* temp = new char[strlen(text)-2];
+    int left = 0,right = 0,i = 0;
+    for(;right<=strlen(text)&&text[right]!='}';right++);
+    for(left = right;left>0&&text[left]!='{';left--);
+    for(int j = left+1;j<right;i++,j++) temp[i] = text[j]; temp[i] = NULL;
+    return temp;
 }
 
 double  MainWindow::isValue(char* t)
 {
-    if(atof(t)==0)
+    if(!QString(t).contains("&"))
+        return -1;
+    strcpy(t,QString(t).remove("&").toUtf8().constData());
+    int X = 0,Y = 0; int outRow,outCol = 0;
+    char *row = new char[100]; char *col = new char[100];
+    for(int i = strlen(t);i>=0;i--)
     {
-        int row = strlen(t)!=2?((t[1]-'0')*10+(t[2]-'0')):(t[1]-'0'); char col = t[0];
-        qDebug() << "ROW: "<< row<<"   COL: " << col;
-        if(table[row][getPosFromChar(col)].value!=NULL)
+        if(isNumber(t[i]))
         {
-            return atof(table[row][getPosFromChar(col)].value);
+            row[X] = t[i];
+            X++;
+        }
+        else if(isalpha(t[i]))
+        {
+            col[Y] = t[i];
+            Y++;
         }
     }
-    return -1;
+    outRow = QString(mirror(row)).toInt();
+    if(strlen(mirror(col))>1)
+    {
+        char *temp = new char[strlen(mirror(col))];
+        temp = mirror(col);
+        for(int i = 0;i<strlen(temp);i++)
+            if(containsChar(colNames,t[i])==0)
+                outCol+=24;
+            else
+                outCol += containsChar(colNames,t[i]);
+    }
+    else outCol = containsChar(colNames,mirror(col)[0]);
+    return atof(ui->tableWidget->item(outRow-1,outCol)->text().toUtf8().data());
 }
 double  MainWindow::SUM(char* text)
 {
     double out = 0;
-    qDebug() <<"INPUT TEXT:" <<text;
     QStringList list = QString(text).split(";");
-    qDebug() << "COUNT:" << list.count();
-    checkListItems(list); //TODO
+    checkListItems(list);
     for(int i =0;i<list.count();i++)
+        out += atof(list[i].toUtf8().data());
+    return out;
+}
+double MainWindow::min(char *t)
+{
+    QStringList list = QString(t).split(";");
+    checkListItems(list);
+    double min = atof(list[0].toUtf8().data());
+    for(int i=1;i<list.count();i++)    
+        if(atof(list[i].toUtf8().data())<min)
+            min = atof(list[i].toUtf8().data());
+    return min;
+}
+double MainWindow::max(char *t)
+{
+    QStringList list = QString(t).split(";");
+    checkListItems(list);
+    double max = atof(list[0].toUtf8().data());
+    for(int i=1;i<list.count();i++)
+        if(atof(list[i].toUtf8().data())>max)
+            max = atof(list[i].toUtf8().data());
+    return max;
+}
+double MainWindow::pow(char *t){
+    QStringList list = QString(t).split(";");
+    checkListItems(list);
+    if(list.count()>2) return -1;
+    return powf(atof(list[0].toUtf8().data()),atof(list[1].toUtf8().data()));
+}
+
+void MainWindow::resizeTable(int mode)
+{
+    switch (mode) {
+    case 1:
     {
-        out+=isValue(list[i].toUtf8().data())!=-1?isValue(list[i].toUtf8().data()):0.0;
+        ui->tableWidget->setRowCount(ui->tableWidget->rowCount()+10);
+        for(int i = ui->tableWidget->rowCount()-10;i<ui->tableWidget->rowCount();i++)
+            ui->tableWidget->setRowHeight(i,20);
     }
-    qDebug() << "SUM: "<< out;
+        break;
+    case 2:
+    {
+        ui->tableWidget->setColumnCount(ui->tableWidget->columnCount()+10);
+        for(int i = ui->tableWidget->columnCount()-10;i<ui->tableWidget->columnCount();i++){
+            ui->tableWidget->setColumnWidth(i,70);
+            ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(QString(getCharFromPos(i))));
+        }
+    }
+        break;
+    default:
+        break;
+    }
+}
+
+char *MainWindow::mirror(char *in)
+{
+    char *out = new char[strlen(in)]; int i = 0; int j =strlen(in)-1;
+    for( ; j>=0 ;j--,i++)
+        out[i] = in[j];
     return out;
 }
 
 double  MainWindow::isFunc(char* t){
-    qDebug()<<"isFunc(atof test): " << atof(t);
-    qDebug() << endl;
-    qDebug() << "ATOI ISALNUM" << isalnum(atoi(t));
-    if(atof(t)==0)
+    if(isalnum(atoi(t))==0)
     {
-        qDebug() << "isFunc: " << t;
-        qDebug() << endl;
         if (QString(t).toLower().contains("abs"))
-        {
-            return isValue(t)!=-1 ? (double)abs((int)isValue(getVariableBR(t))) : -1;
-        }
+            return abs(isValue(getVariableBR(t))!=-1? atof(getVariableBR(t)):isValue(getVariableBR(t)));
         else if(QString(t).toLower().contains("asin"))
-        {
-            return isValue(t)!=-1?sin(isValue(getVariableBR(t))):-1;
-        }
+            return asin(isValue(getVariableBR(t))!=-1? atof(getVariableBR(t)):isValue(getVariableBR(t)));
         else if(QString(t).toLower().contains("atan"))
-        {
-            return isValue(t)!=-1?atan(isValue(getVariableBR(t))):-1;
-        }
+            return atan(isValue(getVariableBR(t))!=-1? atof(getVariableBR(t)):isValue(getVariableBR(t)));
         else if(QString(t).toLower().contains("cos"))
-        {
-            return isValue(t)!=-1?cos(isValue(getVariableBR(t))):-1;
-        }
+            return cos(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("exp"))
-        {
-            return isValue(t)!=-1?exp(isValue(getVariableBR(t))):-1;
-        }
+            return exp(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("floor"))
-        {
-            return isValue(t)!=-1?floor(isValue(getVariableBR(t))):-1;
-        }
+            return floor(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("log10"))
-        {
-            return isValue(t)!=-1?log10(isValue(getVariableBR(t))):-1;
-        }
+            return log10(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("log"))
-        {
-            return isValue(t)!=-1?log(isValue(getVariableBR(t))):-1;
-        }
+            return log(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("max"))
         {
-            //return (atof(getVariableBR(t)));
+            return max(getVariableBR(t));
         }
         else if(QString(t).toLower().contains("min"))
         {
-            //
+            return min(getVariableBR(t));
         }
         else if(QString(t).toLower().contains("pow"))
         {
-            //
+            return pow(getVariableBR(t));
         }
         else if(QString(t).toLower().contains("round"))
-        {
-            return isValue(t)!=-1?round(isValue(getVariableBR(t))):-1;
-        }
+            return round(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("sinh"))
-        {
-            return isValue(t)!=-1?sinh(isValue(getVariableBR(t))):-1;
-        }
+            return sinh(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("sin"))
         {
-            return isValue(t)!=-1?sin(isValue(getVariableBR(t))):-1;
+
+            //            qDebug() << "DEBUG";
+            //            qDebug() << "VALUE: " << isValue(getVariableBR(t));
+            //            qDebug() << "ATOF: " << atof(getVariableBR(t));
+            //            qDebug() << "END DEBUG";
+            //            qDebug() << "RESULT: " << QString::number(      sin(atof(getVariableBR(t))!=0.0 ?   isValue(getVariableBR(t)) :atof(getVariableBR(t)) ));
+            //            qDebug() << "RESULT: " << QString::number(sin(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t))));
+            //            //return -1;
+            //return sin(isValue(getVariableBR(t))!=-1?atof(getVariableBR(t)):isValue(getVariableBR(t)));
+            return sin( isValue(getVariableBR(t))!=-1? atof(getVariableBR(t)):isValue(getVariableBR(t)));
         }
         else if(QString(t).toLower().contains("sqrt"))
-        {
-            return isValue(t)!=-1?sqrt(isValue(getVariableBR(t))):-1;
-        }
+            return sqrt(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("tanh"))
-        {
-            return isValue(t)!=-1?tanh(isValue(getVariableBR(t))):-1;
-        }
+            return tanh(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("tan"))
-        {
-            return isValue(t)!=-1?tan(isValue(getVariableBR(t))):-1;
-        }
+            return tan(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("sum"))
-        {
             return SUM(getVariableBR(t));
-        }
     }
     return -1;
 }
@@ -222,21 +295,20 @@ void  MainWindow::deleteChar(char s[],char c)
         s[i] = s[i+1];
     s[i+1]=0;
 }
-
-
-
 void  MainWindow::checkListItems(QStringList &list)
 {
     for(int i=0;i<list.count();i++)
     {
+        if(isValue(list[i].toUtf8().data())!=-1)
+        {
+            list.replace(i,QString::number(isValue(list[i].toUtf8().data()),'G',10));
+            continue;
+        }
         if(isFunc(list[i].toUtf8().data())!=-1)
         {
             qDebug() << "FUNC BEFORE: " << list[i];
-            list.replace(i,QString::number(isFunc(list[i].toUtf8().data())));
-        }
-        if(isValue(list[i].toUtf8().data())!=-1)
-        {
-            list.replace(i,QString::number(isValue(list[i].toUtf8().data())));
+            list.replace(i,QString::number(isFunc(list[i].toUtf8().data()),'G',10));
+            continue;
         }
     }
 }
@@ -245,16 +317,11 @@ char*  MainWindow::calc(char* text)
 {
     char signs[32]; int iteratorI=0,i = 0; double out = 0; char* ret = new char[1000];
     for(;text[i]!=0;i++)
-    {
         if(text[i]=='-'||text[i]=='+'||text[i]=='*'||text[i]==':')
         { signs[iteratorI] = text[i]; iteratorI++; }
-    }
-    qDebug()<< text;
     QRegExp rx("(\\+|\\-|\\*|\\:)");
     QStringList l = QString(text).split(rx);
-    qDebug() << "COUNT: " << l.count() << " LIST:" << l;
     checkListItems(l);
-    qDebug() << "NEW COUNT: " << l.count() << " LIST:" << l<< "  ITERATOR: " << iteratorI <<" SIGNS:" << signs;
     while(iteratorI>=1){
         if(containsChar(signs,'*')!=-1)
         {
@@ -302,106 +369,200 @@ char*  MainWindow::calc(char* text)
             iteratorI--;
         }
     }
-    strcpy(ret,QString::number(out).toUtf8().constData());
+    strcpy(ret,QString::number(out,'G',10).toUtf8().constData());
     return ret;
 }
 
 bool  MainWindow::haveBrackets(char* t)
-{/*
-    bool result = false;
-    while(*t!=0)
-    {
-        if(t=="("||t==")")
-        { result = true; break;}
-    }
-    return result;
-    */
+{
     QRegExp exp("\\((.*)\\)");
     if(exp.indexIn(t) >= 0)
     {
         return true;
-    }else return false;
+    } else return false;
 }
 void  MainWindow::Parse(QTableWidgetItem *item)
 {
-    QString temp = item->text();
+    QString temp = item->text(); QString tempFunc = item->text();
     temp.remove("=");
     if(!haveBrackets(temp.toUtf8().data()))
     {
         QRegExp rx("(\\+|\\-|\\*|\\:)");
         QStringList list = temp.split(rx);
-        item->setText(QString(calc(item->text().toUtf8().data())));
-    }
-    qDebug() << "TEST";
-
-
-
-
-
-    /*
-    if(item->text().contains("="))
-    {
-        char* functemp = new char[strlen(item->text().toUtf8().data())];
-        QString temp = QString(item->text()); strcpy(functemp,temp.toUtf8().constData());
-        temp.remove("=");
-        QRegExp rx("(\\+|\\-|\\*|\\:)");
-        QStringList list = temp.split(rx);
-        qDebug() << "Parser count: " << list.count();
-        char* out = new char[strlen(temp.toUtf8().data())];
-        strcpy(out,temp.toUtf8().constData());
-        if(!haveBrackets(temp.toUtf8().data()))
+        if(list.count()>1)
+            item->setText(QString(calc(item->text().remove("=").toUtf8().data())));
+        else if(list.count()==1)
         {
-            strcpy(functemp,QString("=(%1)").arg(temp).toUtf8().constData());
-            temp = QString("(%1)").arg(temp);
-        }
-        else strcpy(functemp,temp.toUtf8().constData());
-        if(list.count()==1)
-        {
-            if(temp.remove("=").toInt()!=0)
+            if(isValue(list[0].toUtf8().data())!=-1)
             {
-                strcpy(table[item->row()][item->column()].func,item->text().contains("=")?item->text().remove("=").toUtf8().constData():item->text().toUtf8().constData());
-                strcpy(table[item->row()][item->column()].value,item->text().contains("=")?item->text().toUtf8().constData():item->text().remove("=").toUtf8().constData());
+                qDebug() << "is func epta : " << tempFunc << endl;
+                item->setText(QString::number(isValue(list[0].toUtf8().data())));
+                T->pushTo(item->row(),item->column(),QString::number(isValue(list[0].toUtf8().data())).toUtf8().data(),tempFunc.toUtf8().data());
                 return;
             }
+            if(isFunc(list[0].toUtf8().data())!=-1)
+            {
+                qDebug() << "is func epta : " << tempFunc << endl;
+                item->setText(QString::number(isFunc(list[0].toUtf8().data())));
 
-            if(isFunc(temp.toUtf8().data())!=-1)
-            {
-                qDebug() << temp;
-                item->setText(QString::number(isFunc(getVariable(temp.toUtf8().data()))));
-                strcpy(table[item->row()][item->column()].func,temp.toUtf8().constData());
-                strcpy(table[item->row()][item->column()].value,item->text().toUtf8().constData());
+                T->pushTo(item->row(),item->column(),QString::number(isValue(list[0].toUtf8().data())).toUtf8().data(),tempFunc.toUtf8().data());
+                return;
             }
-            if(isValue(temp.toUtf8().data())!=-1)
-            {
-                strcpy(table[item->row()][item->column()].func,temp.toUtf8().constData());
-                item->setText(QString::number(isValue(getVariable(temp.toUtf8().data()))));
-                strcpy(table[item->row()][item->column()].value,item->text().toUtf8().constData());
-            }
-        }
-        else
-        {
-            char* t = new char[1000]; strcpy(t,out);
-            while(haveBrackets(out))
-            {
-                while(haveBrackets(t))
-                    strcpy(t,getVariable(t));
-                char* t2 = new char[1000];
-                QString fix = QString("(%1)").arg(t);
-                strcpy(t2,QString(out).replace(fix,calc(t)).remove(("=")).toUtf8().constData());
-                qDebug() << "BIG FUNC: " << t2;
-                strcpy(out,t2);
-            }
-            item->setText(out);
-            strcpy(table[item->row()][item->column()].func,functemp);
         }
     }
     else
     {
-        strcpy(table[item->row()][item->column()].func,item->text().contains("=")?item->text().remove("=").toUtf8().constData():item->text().toUtf8().constData());
-        strcpy(table[item->row()][item->column()].value,item->text().contains("=")?item->text().toUtf8().constData():item->text().remove("=").toUtf8().constData());
-        return;
+        QString out = item->text().remove("=");
+        while(haveBrackets(out.toUtf8().data()))
+        {
+            QString t = out;
+            while(haveBrackets(t.toUtf8().data()))
+                t = QString(getVariable(t.toUtf8().data()));
+            qDebug() << "func:    " << t;
+            QString fix = QString("(%1)").arg(t);
+            out = out.replace(fix,calc(t.toUtf8().data()));
+            qDebug() << "OUT  :" << out ;
+            QRegExp rx("(\\+|\\-|\\*|\\:)");
+            QStringList list = out.split(rx);
+            if((list.count()>1)&&!haveBrackets(out.toUtf8().data()))
+                out = QString("(%1)").arg(out);
+        }
+        qDebug() << "is func epta : " << tempFunc << endl;
+        T->pushTo(item->row(),item->column(),out.toUtf8().data(),tempFunc.toUtf8().data());
+        item->setText(out);
     }
+}
 
-*/
+void MainWindow::on_tableWidget_itemEntered(QTableWidgetItem *item)
+{
+    firstParse(item);
+}
 
+void MainWindow::on_tableWidget_itemClicked(QTableWidgetItem *item)
+{
+    qDebug() << "CLICKED ";
+    ui->edit_func->setText(QString(T->getFunc(item->row(),item->column())));
+}
+
+void MainWindow::on_tableWidget_itemActivated(QTableWidgetItem *item)
+{
+    qDebug() << "QCTIVATED";
+}
+
+void MainWindow::on_tableWidget_itemPressed(QTableWidgetItem *item)
+{
+    qDebug() << "PRESSED";
+    ui->edit_func->setText(QString(T->getFunc(item->row(),item->column())));
+}
+
+void MainWindow::on_tableWidget_itemSelectionChanged()
+{
+    QList<QModelIndex> list = ui->tableWidget->selectionModel()->selectedIndexes();
+    if(list.count()==1)
+        ui->edit_cur_item->setText(QString("%1%2").arg(QString(getCharFromPos(list[0].column()))).arg(QString::number(list[0].row()+1)));
+    else if(list.count()>1)
+    {
+        int t = 0;
+        ui->edit_cur_item->setText(QString("%1%2-%3%4").arg(QString(getCharFromPos(list[0].column())))
+                .arg(QString::number(list[0].row()+1)).arg(QString(getCharFromPos(t!=0?t:list[list.count()-1].column()))).arg(QString::number(list[list.count()-1].row()+1)));
+    }
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    funcHelp *h = new funcHelp();
+    h->show();
+}
+
+void MainWindow::on_btn_home_clicked()
+{
+    T->printAll();
+}
+
+void MainWindow::on_btn_load_clicked()
+{
+    path = QFileDialog::getOpenFileName();
+    FILE *fd = fopen(path.toUtf8().constData(),"r");
+    ui->tableWidget->clear();
+    while(!feof(fd))
+    {
+        int x,y;
+        char *test= new char[256];
+        char *test1= new char[256];
+        std::fread(&x,sizeof(int),1,fd);
+        std::fread(&y,sizeof(int),1,fd);
+        std::fread(&test,sizeof(char*),1,fd);
+        std::fread(&test1,sizeof(char*),1,fd);
+        T->pushTo(x,y,test,test1);
+        QTableWidgetItem *item = new QTableWidgetItem(QString(test1));
+        ui->tableWidget->setItem(x,y,item);
+    }
+    fclose(fd);
+}
+
+void MainWindow::on_btn_save_clicked()
+{
+    T->saveToFile(QFileDialog::getSaveFileName().toUtf8().data());
+}
+
+void MainWindow::on_action_triggered()
+{
+    newTable(100,100);
+}
+
+void MainWindow::on_open_triggered()
+{
+    on_btn_load_clicked();
+}
+
+void MainWindow::on_save_triggered()
+{
+    on_btn_save_clicked();
+}
+
+void MainWindow::on_exit_triggered()
+{
+    exit(1);
+}
+
+void MainWindow::on_func_help_triggered()
+{
+    funcHelp *h = new funcHelp();
+    h->show();
+}
+
+void MainWindow::on_all_help_triggered()
+{
+
+}
+
+void MainWindow::on_about_triggered()
+{
+    about *a = new about();
+    a->show();
+}
+
+void MainWindow::newTable(int count_x,int count_y)
+{
+    List *t = new List();
+    T = t;
+    ui->tableWidget->clear();
+    ui->tableWidget->setColumnCount(count_x);
+    ui->tableWidget->setRowCount(count_y);
+    int countC = 0;
+    for(int i=0;i<count_x;i++)
+    {
+        ui->tableWidget->setHorizontalHeaderItem(i,new QTableWidgetItem(QString(getCharFromPos(i))));
+        ui->tableWidget->setColumnWidth(i,70);
+        if(i/(countC+1)==strlen(colNames)) countC++;
+        for(int j=0;j<count_y;j++)
+        {
+            ui->tableWidget->setRowHeight(i,20);
+        }
+    }
+}
+
+void MainWindow::on_tableWidget_viewportEntered()
+{
+    qDebug() << ui->tableWidget->pos();
 }

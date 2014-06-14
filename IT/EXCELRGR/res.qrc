@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/1402580305_475334-backup.png</file>
+        <file>images/1402580322_add.png</file>
+        <file>images/1402580335_home.png</file>
+        <file>funcs.txt</file>
+        <file>abs.txt</file>
+        <file>atan.txt</file>
+        <file>cos.txt</file>
+        <file>exp.txt</file>
+        <file>floor.txt</file>
+        <file>log.txt</file>
+        <file>log10.txt</file>
+        <file>max.txt</file>
+        <file>min.txt</file>
+        <file>pow.txt</file>
+        <file>res.qrc</file>
+        <file>round.txt</file>
+        <file>sin.txt</file>
+        <file>sinh.txt</file>
+        <file>sqrt.txt</file>
+        <file>sum.txt</file>
+        <file>tan.txt</file>
+        <file>tanh.txt</file>
+    </qresource>
+</RCC>
