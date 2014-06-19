@@ -67,6 +67,8 @@ public:
         }
 
         void pushTo(int y,char *value,char *func){
+
+          //  qDebug() << "СМАЛЛ ЛИСТ INPUT FUNC: " << func << "  VALUE: " << value << endl;
             if(isConsists(y))
             {
                 for(Cell *t = this->head;t;t=t->next)
@@ -94,6 +96,8 @@ public:
         }
         void pushBack(int y,char *func, char *value)
         {
+
+        //    qDebug() << "СМАЛЛ БАК ЛИСТ INPUT FUNC: " << func << "  VALUE: " << value << endl;
             Cell *c = new Cell(1,func,value,y);
             c->next = 0;
             //qDebug() << "init in push element" << y << "  " << func << "  " << value << endl;
@@ -181,12 +185,13 @@ public:
         }
         void pushTo(int x,int y,char *value,char *func)
         {
-            qDebug() << "INPUT FUNC: " << func << "  VALUE: " << value << endl;
+         //   qDebug() << "БИГ ЛИСТ INPUT FUNC: " << func << "  VALUE: " << value << endl;
             if(isConsists(x))
             {
                 for(Node *t = this->head;t;t=t->next)
-                    if(t->x==x)
-                        t->elem->pushTo(y, value, func);
+                    if(t->x==x) {
+                        t->elem->pushTo(y,value,func);
+                    }
             }
             else{
                 pushBack(x);
@@ -236,10 +241,6 @@ private slots:
 
     void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
-    void on_tableWidget_itemActivated(QTableWidgetItem *item);
-
-    void on_tableWidget_itemPressed(QTableWidgetItem *item);
-
     void on_tableWidget_itemSelectionChanged();
 
     void on_pushButton_clicked();
@@ -264,16 +265,12 @@ private slots:
 
     void on_about_triggered();
 
-    void on_tableWidget_viewportEntered();
     void on_runAll_clicked();
 
     void on_runAll_2_clicked();
 
     void on_tableWidget_itemDoubleClicked(QTableWidgetItem *item);
 
-protected:
-    void keyPressEvent(QKeyEvent *);
-    void keyReleaseEvent(QKeyEvent *);
 private:
     Ui::MainWindow *ui;
     void newTable(int count_x, int count_y);

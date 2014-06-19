@@ -387,6 +387,7 @@ bool  MainWindow::haveBrackets(char* t)
 }
 void  MainWindow::Parse(QTableWidgetItem *item)
 {
+    qDebug() << "INPUT " << item->text();
     QString temp = item->text(); QString tempFunc = item->text();
     temp.remove("=");
     if(!haveBrackets(temp.toUtf8().data()))
@@ -397,6 +398,7 @@ void  MainWindow::Parse(QTableWidgetItem *item)
         {
             item->setText(QString(calc(item->text().remove("=").toUtf8().data())));
             T->pushTo(item->row(),item->column(),item->text().toUtf8().data(),tempFunc.toUtf8().data());
+            return;
         }
         else if(list.count()==1)
         {
@@ -433,7 +435,9 @@ void  MainWindow::Parse(QTableWidgetItem *item)
         qDebug() << "is func epta : " << tempFunc << endl;
         T->pushTo(item->row(),item->column(),out.toUtf8().data(),temp.toUtf8().data());
         item->setText(out);
+        return;
     }
+    return;
 }
 
 void MainWindow::on_tableWidget_itemEntered(QTableWidgetItem *item)
@@ -446,18 +450,6 @@ void MainWindow::on_tableWidget_itemClicked(QTableWidgetItem *item)
     qDebug() << "CLICKED ";
     ui->edit_func->setText(QString(T->getFunc(item->row(),item->column())));
 }
-
-void MainWindow::on_tableWidget_itemActivated(QTableWidgetItem *item)
-{
-    qDebug() << "QCTIVATED";
-}
-
-void MainWindow::on_tableWidget_itemPressed(QTableWidgetItem *item)
-{
-    qDebug() << "PRESSED";
-    ui->edit_func->setText(QString(T->getFunc(item->row(),item->column())));
-}
-
 void MainWindow::on_tableWidget_itemSelectionChanged()
 {
     QList<QModelIndex> list = ui->tableWidget->selectionModel()->selectedIndexes();
@@ -472,7 +464,7 @@ void MainWindow::on_tableWidget_itemSelectionChanged()
         int t = 0;
         ui->edit_cur_item->setText(QString("%1%2-%3%4").arg(QString(getCharFromPos(list[0].column())))
                 .arg(QString::number(list[0].row()+1)).arg(QString(getCharFromPos(t!=0?t:list[list.count()-1].column()))).arg(QString::number(list[list.count()-1].row()+1)));
-     }
+    }
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -567,34 +559,26 @@ void MainWindow::newTable(int count_x,int count_y)
     }
 }
 
-void MainWindow::on_tableWidget_viewportEntered()
-{
-    qDebug() << ui->tableWidget->pos();
-}
-
-void MainWindow::keyPressEvent(QKeyEvent *event)
-{
-    if(event->key()==Qt::SHIFT)
-        qDebug() << "SHIFT!!!" << endl;
-}
-
-void MainWindow::keyReleaseEvent(QKeyEvent *event)
-{
-    if(Qt::CTRL == event->key())
-        pressed = false;
-}
 
 void MainWindow::on_runAll_clicked()
 {
+    QTime time;
+    time.start();
     QList<QModelIndex> list = ui->tableWidget->selectionModel()->selectedIndexes();
-    qDebug() << list << endl;
-    for(int i = ui->tableWidget->selectionModel()->selectedIndexes()[0].row(); i < ui->tableWidget->selectionModel()->selectedRows().count();i++)
-    {
-        for(int j = ui->tableWidget->selectionModel()->selectedIndexes()[0].column();j< ui->tableWidget->selectionModel()->selectedColumns().count();j++)
-        {
 
+    qDebug() << "ROW" <<ui->tableWidget->selectionModel()->selectedIndexes()[0].row() << " COLUMN" << ui->tableWidget->selectionModel()->selectedIndexes()[0].column() << "  agd " << list.count();
+    qDebug() << "Test get value:" << T->getFunc(ui->tableWidget->selectionModel()->selectedIndexes()[0].row()-1,ui->tableWidget->selectionModel()->selectedIndexes()[0].column());
+    for(int j = list[0].column();j<list[list.count()-1].column()+1;j++)
+    {
+        for(int i = list[0].row()+1; i < list[list.count()-1].row()+1;i++)
+        {
+            QTableWidgetItem *item = new QTableWidgetItem(QString(T->getFunc(list[0].row(),j)));
+            ui->tableWidget->setItem(i,j,item);
+            Parse(ui->tableWidget->item(i,j));
         }
     }
+    int time_int = time.elapsed();
+    ui->time->setText("Потрачено времени на " + QString::number(list.count())+" ячеек: " + QString::number(time_int) + "мс");
 }
 
 void MainWindow::on_runAll_2_clicked()
@@ -604,5 +588,5 @@ void MainWindow::on_runAll_2_clicked()
 
 void MainWindow::on_tableWidget_itemDoubleClicked(QTableWidgetItem *item)
 {
-    item->setText(T->getFunc(item->row(),item->column()));
+    // item->setText(T->getFunc(item->row(),item->column()));
 }
