@@ -21,14 +21,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::handlerVertical(int y)
 {
-    qDebug() << "y: " << y << endl;
     if(y+22==ui->tableWidget->rowCount())
         resizeTable(1);
 }
 
 void MainWindow::handlerHorizontal(int x)
 {
-    qDebug() << "x: " << x << endl;
     if(x+11==ui->tableWidget->columnCount())
         resizeTable(2);
 }
@@ -152,7 +150,7 @@ double  MainWindow::isValue(char* t)
                 outCol += containsChar(colNames,t[i]);
     }
     else outCol = containsChar(colNames,mirror(col)[0]);
-    return atof(ui->tableWidget->item(outRow-1,outCol)->text().toUtf8().data());
+    return atof(T->getValue(outRow-1,outCol)!=NULL?T->getValue(outRow-1,outCol):"-1");
 }
 double  MainWindow::SUM(char* text)
 {
@@ -167,8 +165,9 @@ double MainWindow::min(char *t)
 {
     QStringList list = QString(t).split(";");
     checkListItems(list);
+    qDebug() << "min list: " << list;
     double min = atof(list[0].toUtf8().data());
-    for(int i=1;i<list.count();i++)    
+    for(int i=1;i<list.count();i++)
         if(atof(list[i].toUtf8().data())<min)
             min = atof(list[i].toUtf8().data());
     return min;
@@ -242,17 +241,11 @@ double  MainWindow::isFunc(char* t){
         else if(QString(t).toLower().contains("log"))
             return log(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("max"))
-        {
             return max(getVariableBR(t));
-        }
         else if(QString(t).toLower().contains("min"))
-        {
             return min(getVariableBR(t));
-        }
         else if(QString(t).toLower().contains("pow"))
-        {
             return pow(getVariableBR(t));
-        }
         else if(QString(t).toLower().contains("round"))
             return round(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("sinh"))
@@ -306,7 +299,6 @@ void  MainWindow::checkListItems(QStringList &list)
         }
         if(isFunc(list[i].toUtf8().data())!=-1)
         {
-            qDebug() << "FUNC BEFORE: " << list[i];
             list.replace(i,QString::number(isFunc(list[i].toUtf8().data()),'G',10));
             continue;
         }
@@ -315,12 +307,25 @@ void  MainWindow::checkListItems(QStringList &list)
 
 char*  MainWindow::calc(char* text)
 {
-    char signs[32]; int iteratorI=0,i = 0; double out = 0; char* ret = new char[1000];
+    char signs[1000]; int iteratorI=0,i = 0; double out = 0; char* ret = new char[1000];
     for(;text[i]!=0;i++)
+    {
         if(text[i]=='-'||text[i]=='+'||text[i]=='*'||text[i]==':')
         { signs[iteratorI] = text[i]; iteratorI++; }
+    }
     QRegExp rx("(\\+|\\-|\\*|\\:)");
     QStringList l = QString(text).split(rx);
+    for(int i = 0;i<l.count();i++)
+    {
+        if(l[i]=="")
+        {
+            l.replace(i+1,QString::number(-1*atof(l[i+1].toUtf8().data()),'G',10));
+            for(int k = i;k<l.count();k++)
+                signs[k] = signs[k+1];
+            l.removeAt(i);
+            iteratorI--;
+        }
+    }
     checkListItems(l);
     while(iteratorI>=1){
         if(containsChar(signs,'*')!=-1)
@@ -329,8 +334,8 @@ char*  MainWindow::calc(char* text)
             int j =containsChar(signs,'*');
             out = (atof(l[j].toUtf8().constData()))*(atof(l[j+1].toUtf8().constData()));
             l[j] = QString::number(out);
-            for(int k=j;k<iteratorI-1;k++)
-                l.insert(k,l[k+1]);
+            for(int k=j+1;k<iteratorI;k++)
+                l.replace(k,l[k+1]);
             if(l.count()>1) l.removeLast();
             deleteChar(signs,'*');
             iteratorI--;
@@ -340,19 +345,19 @@ char*  MainWindow::calc(char* text)
             int j =containsChar(signs,':');
             out = (atof(l[j].toUtf8().constData()))/(atof(l[j+1].toUtf8().constData()));
             l[j] = QString::number(out);
-            for(int k=j;k<iteratorI-1;k++)
-                l.insert(k,l[k+1]);
+            for(int k=j+1;k<iteratorI;k++)
+                l.replace(k,l[k+1]);
             if(l.count()>1) l.removeLast();
             deleteChar(signs,':');
             iteratorI--;
         }
         else if(containsChar(signs,'+')!=-1)
         {
-            int j =containsChar(signs,'+');
+            int j = containsChar(signs,'+');
             out = (atof(l[j].toUtf8().constData()))+(atof(l[j+1].toUtf8().constData()));
             l[j] = QString::number(out);
-            for(int k=j;k<iteratorI-1;k++)
-                l.insert(k,l[k+1]);
+            for(int k=j+1;k<iteratorI;k++)
+                l.replace(k,l[k+1]);
             if(l.count()>1) l.removeLast();
             deleteChar(signs,'+');
             iteratorI--;
@@ -362,14 +367,14 @@ char*  MainWindow::calc(char* text)
             int j =containsChar(signs,'-');
             out = (atof(l[j].toUtf8().constData()))-(atof(l[j+1].toUtf8().constData()));
             l[j] = QString::number(out);
-            for(int k=j;k<iteratorI-1;k++)
-                l.insert(k,l[k+1]);
+            for(int k=j+1;k<iteratorI;k++)
+                l.replace(k,l[k+1]);
             if(l.count()>1) l.removeLast();
             deleteChar(signs,'-');
             iteratorI--;
         }
     }
-    strcpy(ret,QString::number(out,'G',10).toUtf8().constData());
+    strcpy(ret,QString::number(out,'G',10).toUtf8().data());
     return ret;
 }
 
@@ -404,7 +409,6 @@ void  MainWindow::Parse(QTableWidgetItem *item)
             {
                 qDebug() << "is func epta : " << tempFunc << endl;
                 item->setText(QString::number(isFunc(list[0].toUtf8().data())));
-
                 T->pushTo(item->row(),item->column(),QString::number(isValue(list[0].toUtf8().data())).toUtf8().data(),tempFunc.toUtf8().data());
                 return;
             }
@@ -412,7 +416,7 @@ void  MainWindow::Parse(QTableWidgetItem *item)
     }
     else
     {
-        QString out = item->text().remove("=");
+        QString out = item->text().remove("="); QString temp = item->text();
         while(haveBrackets(out.toUtf8().data()))
         {
             QString t = out;
@@ -421,14 +425,17 @@ void  MainWindow::Parse(QTableWidgetItem *item)
             qDebug() << "func:    " << t;
             QString fix = QString("(%1)").arg(t);
             out = out.replace(fix,calc(t.toUtf8().data()));
-            qDebug() << "OUT  :" << out ;
+            qDebug() << "OUT  :" << out;
             QRegExp rx("(\\+|\\-|\\*|\\:)");
             QStringList list = out.split(rx);
-            if((list.count()>1)&&!haveBrackets(out.toUtf8().data()))
-                out = QString("(%1)").arg(out);
+            if(list.count()!=1)
+                if((list.count()>2)&&!haveBrackets(out.toUtf8().data()))
+                    out = QString("(%1)").arg(out);
+            qDebug() << "out: " << out;
+            t.clear();
         }
         qDebug() << "is func epta : " << tempFunc << endl;
-        T->pushTo(item->row(),item->column(),out.toUtf8().data(),tempFunc.toUtf8().data());
+        T->pushTo(item->row(),item->column(),out.toUtf8().data(),temp.toUtf8().data());
         item->setText(out);
     }
 }
@@ -487,8 +494,8 @@ void MainWindow::on_btn_load_clicked()
     while(!feof(fd))
     {
         int x,y;
-        char *test= new char[256];
-        char *test1= new char[256];
+        char *test = new char[256];
+        char *test1 = new char[256];
         std::fread(&x,sizeof(int),1,fd);
         std::fread(&y,sizeof(int),1,fd);
         std::fread(&test,sizeof(char*),1,fd);
@@ -556,9 +563,7 @@ void MainWindow::newTable(int count_x,int count_y)
         ui->tableWidget->setColumnWidth(i,70);
         if(i/(countC+1)==strlen(colNames)) countC++;
         for(int j=0;j<count_y;j++)
-        {
             ui->tableWidget->setRowHeight(i,20);
-        }
     }
 }
 

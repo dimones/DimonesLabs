@@ -26,9 +26,8 @@ public:
     ~MainWindow();
     struct Cell{
         int type;
-        char* func;
+        char* func  = new char[256];
         char* value = new char[256];
-        char* identifier = new char[256];
         int y = 0;
         Cell(int type0,char *func0,char *value0,int y0)
         {
@@ -36,7 +35,7 @@ public:
             func = func0;
             value = value0;
             y = y0;
-            qDebug() << y << "  " << value << "  " << func << endl;
+            //qDebug() << y << "  " << value << "  " << func << endl;
         }
         Cell *next;
     };
@@ -96,7 +95,7 @@ public:
         {
             Cell *c = new Cell(1,value,func,y);
             c->next = 0;
-            qDebug() << "init in push element" << y << "  " << func << "  " << value << endl;
+            //qDebug() << "init in push element" << y << "  " << func << "  " << value << endl;
             if(this->head==0)
             {
                 this->head = c;
@@ -142,7 +141,6 @@ public:
         {
             head = NULL;
             tail = NULL;
-            qDebug() << "List init"<<endl;
         }
         int getCountNode()
         {
@@ -155,9 +153,7 @@ public:
         {
             FILE *fd = fopen(nm,"wb+");
             for(Node *t = this->head;t;t=t->next)
-            {
                 t->elem->saveToFile(t->x,fd);
-            }
             fclose(fd);
         }
         void printAll()
@@ -219,7 +215,7 @@ public:
         }
         int *getIndexes()
         {
-            int * ret= new int[getCountNode()];
+            int *ret= new int[getCountNode()];
             for(Node *t = this->head;t;t=t->next)
             {
                 *ret = t->x;
@@ -229,7 +225,6 @@ public:
         }
     };
     List *T = new List();
-
 private slots:
     void handlerVertical(int y);
     void handlerHorizontal(int x);
