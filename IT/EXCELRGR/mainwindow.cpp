@@ -3,13 +3,14 @@
 const int N = 1000;
 const float PI = 3.14159265359;
 char colNames[24] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','V','X','Y','Z'};
-
+bool pressed = false;
 QString path;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->runAll->setHidden(true);
     newTable(100,100);
     QObject::connect(ui->tableWidget->verticalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(handlerVertical(int)));
     QObject::connect(ui->tableWidget->horizontalScrollBar(),SIGNAL(valueChanged(int)),this,SLOT(handlerHorizontal(int)));
@@ -118,7 +119,15 @@ char*  MainWindow::getVariableBR(char *text)//получение строки м
     for(int j = left+1;j<right;i++,j++) temp[i] = text[j]; temp[i] = NULL;
     return temp;
 }
-
+char*  MainWindow::getVariableBROutside(char *text)//получение строки между скобками
+{
+    char* temp = new char[strlen(text)-2];
+    int left = 0,right = strlen(text),i = 0;
+    for(;right>0&&text[right]!='}';right--);
+    for(;left<right&&text[left]!='{';left++);
+    for(int j = left+1;j<right;i++,j++) temp[i] = text[j]; temp[i] = NULL;
+    return temp;
+}
 double  MainWindow::isValue(char* t)
 {
     if(!QString(t).contains("&"))
@@ -246,24 +255,13 @@ double  MainWindow::isFunc(char* t){
         else if(QString(t).toLower().contains("min"))
             return min(getVariableBR(t));
         else if(QString(t).toLower().contains("pow"))
-            return pow(getVariableBR(t));
+            return pow(getVariableBROutside(t));
         else if(QString(t).toLower().contains("round"))
             return round(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("sinh"))
             return sinh((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
         else if(QString(t).toLower().contains("sin"))
-        {
-
-            //            qDebug() << "DEBUG";
-            //            qDebug() << "VALUE: " << isValue(getVariableBR(t));
-            //            qDebug() << "ATOF: " << atof(getVariableBR(t));
-            //            qDebug() << "END DEBUG";
-            //            qDebug() << "RESULT: " << QString::number(      sin(atof(getVariableBR(t))!=0.0 ?   isValue(getVariableBR(t)) :atof(getVariableBR(t)) ));
-            //            qDebug() << "RESULT: " << QString::number(sin(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t))));
-            //            //return -1;
-            //return sin(isValue(getVariableBR(t))!=-1?atof(getVariableBR(t)):isValue(getVariableBR(t)));
             return sin((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
-        }
         else if(QString(t).toLower().contains("sqrt"))
             return sqrt(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("tanh"))
@@ -271,7 +269,7 @@ double  MainWindow::isFunc(char* t){
         else if(QString(t).toLower().contains("tan"))
             return tan((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
         else if(QString(t).toLower().contains("sum"))
-            return SUM(getVariableBR(t));
+            return SUM(getVariableBROutside(t));
     }
     return -1;
 }
@@ -396,21 +394,24 @@ void  MainWindow::Parse(QTableWidgetItem *item)
         QRegExp rx("(\\+|\\-|\\*|\\:)");
         QStringList list = temp.split(rx);
         if(list.count()>1)
+        {
             item->setText(QString(calc(item->text().remove("=").toUtf8().data())));
+            T->pushTo(item->row(),item->column(),item->text().toUtf8().data(),tempFunc.toUtf8().data());
+        }
         else if(list.count()==1)
         {
             if(isValue(list[0].toUtf8().data())!=-1)
             {
                 qDebug() << "is func epta : " << tempFunc << endl;
                 item->setText(QString::number(isValue(list[0].toUtf8().data())));
-                T->pushTo(item->row(),item->column(),QString::number(isValue(list[0].toUtf8().data())).toUtf8().data(),tempFunc.toUtf8().data());
+                T->pushTo(item->row(),item->column(),item->text().toUtf8().data(),tempFunc.toUtf8().data());
                 return;
             }
             if(isFunc(list[0].toUtf8().data())!=-1)
             {
                 qDebug() << "is func epta : " << tempFunc << endl;
                 item->setText(QString::number(isFunc(list[0].toUtf8().data())));
-                T->pushTo(item->row(),item->column(),QString::number(isValue(list[0].toUtf8().data())).toUtf8().data(),tempFunc.toUtf8().data());
+                T->pushTo(item->row(),item->column(),item->text().toUtf8().data(),tempFunc.toUtf8().data());
                 return;
             }
         }
@@ -461,13 +462,17 @@ void MainWindow::on_tableWidget_itemSelectionChanged()
 {
     QList<QModelIndex> list = ui->tableWidget->selectionModel()->selectedIndexes();
     if(list.count()==1)
+    {
         ui->edit_cur_item->setText(QString("%1%2").arg(QString(getCharFromPos(list[0].column()))).arg(QString::number(list[0].row()+1)));
+        ui->runAll->setHidden(true);
+    }
     else if(list.count()>1)
     {
+        ui->runAll->setHidden(false);
         int t = 0;
         ui->edit_cur_item->setText(QString("%1%2-%3%4").arg(QString(getCharFromPos(list[0].column())))
                 .arg(QString::number(list[0].row()+1)).arg(QString(getCharFromPos(t!=0?t:list[list.count()-1].column()))).arg(QString::number(list[list.count()-1].row()+1)));
-    }
+     }
 }
 
 void MainWindow::on_pushButton_clicked()
@@ -565,4 +570,39 @@ void MainWindow::newTable(int count_x,int count_y)
 void MainWindow::on_tableWidget_viewportEntered()
 {
     qDebug() << ui->tableWidget->pos();
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if(event->key()==Qt::SHIFT)
+        qDebug() << "SHIFT!!!" << endl;
+}
+
+void MainWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if(Qt::CTRL == event->key())
+        pressed = false;
+}
+
+void MainWindow::on_runAll_clicked()
+{
+    QList<QModelIndex> list = ui->tableWidget->selectionModel()->selectedIndexes();
+    qDebug() << list << endl;
+    for(int i = ui->tableWidget->selectionModel()->selectedIndexes()[0].row(); i < ui->tableWidget->selectionModel()->selectedRows().count();i++)
+    {
+        for(int j = ui->tableWidget->selectionModel()->selectedIndexes()[0].column();j< ui->tableWidget->selectionModel()->selectedColumns().count();j++)
+        {
+
+        }
+    }
+}
+
+void MainWindow::on_runAll_2_clicked()
+{
+    T->printAll();
+}
+
+void MainWindow::on_tableWidget_itemDoubleClicked(QTableWidgetItem *item)
+{
+    item->setText(T->getFunc(item->row(),item->column()));
 }

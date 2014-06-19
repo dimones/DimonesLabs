@@ -1,13 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <QWidget>
+#include <QtGui>
 #include <QMainWindow>
 #include <QTableWidgetItem>
 #include <QDebug>
 #include <math.h>
 #include <QRegExp>
 #include <QFileDialog>
-#include <fstream.h>
+#include <QKeyEvent>
 #include "about.h"
 #include <iostream>
 #include <stdio.h>
@@ -32,8 +33,8 @@ public:
         Cell(int type0,char *func0,char *value0,int y0)
         {
             type = type0;
-            func = func0;
-            value = value0;
+            strcpy(func, func0);
+            strcpy(value, value0);
             y = y0;
             //qDebug() << y << "  " << value << "  " << func << endl;
         }
@@ -71,8 +72,8 @@ public:
                 for(Cell *t = this->head;t;t=t->next)
                     if(t->y==y)
                     {
-                        strcpy(t->func,func);
-                        strcpy(t->value,value);
+                        strcpy(t->func, func);
+                        strcpy(t->value, value);
                     }
             }
             else
@@ -93,7 +94,7 @@ public:
         }
         void pushBack(int y,char *func, char *value)
         {
-            Cell *c = new Cell(1,value,func,y);
+            Cell *c = new Cell(1,func,value,y);
             c->next = 0;
             //qDebug() << "init in push element" << y << "  " << func << "  " << value << endl;
             if(this->head==0)
@@ -180,6 +181,7 @@ public:
         }
         void pushTo(int x,int y,char *value,char *func)
         {
+            qDebug() << "INPUT FUNC: " << func << "  VALUE: " << value << endl;
             if(isConsists(x))
             {
                 for(Node *t = this->head;t;t=t->next)
@@ -263,7 +265,15 @@ private slots:
     void on_about_triggered();
 
     void on_tableWidget_viewportEntered();
+    void on_runAll_clicked();
 
+    void on_runAll_2_clicked();
+
+    void on_tableWidget_itemDoubleClicked(QTableWidgetItem *item);
+
+protected:
+    void keyPressEvent(QKeyEvent *);
+    void keyReleaseEvent(QKeyEvent *);
 private:
     Ui::MainWindow *ui;
     void newTable(int count_x, int count_y);
@@ -289,6 +299,7 @@ private:
     double pow(char *t);
     void resizeTable(int mode);
     char *mirror(char *in);
+    char *getVariableBROutside(char *text);
 };
 
 #endif // MAINWINDOW_H
