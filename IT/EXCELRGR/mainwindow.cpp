@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 const int N = 1000;
+const float PI = 3.14159265359;
 char colNames[24] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','V','X','Y','Z'};
 
 QString path;
@@ -231,7 +232,7 @@ double  MainWindow::isFunc(char* t){
         else if(QString(t).toLower().contains("atan"))
             return atan(isValue(getVariableBR(t))!=-1? atof(getVariableBR(t)):isValue(getVariableBR(t)));
         else if(QString(t).toLower().contains("cos"))
-            return cos(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
+            return cos((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
         else if(QString(t).toLower().contains("exp"))
             return exp(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("floor"))
@@ -249,7 +250,7 @@ double  MainWindow::isFunc(char* t){
         else if(QString(t).toLower().contains("round"))
             return round(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("sinh"))
-            return sinh(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
+            return sinh((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
         else if(QString(t).toLower().contains("sin"))
         {
 
@@ -261,14 +262,14 @@ double  MainWindow::isFunc(char* t){
             //            qDebug() << "RESULT: " << QString::number(sin(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t))));
             //            //return -1;
             //return sin(isValue(getVariableBR(t))!=-1?atof(getVariableBR(t)):isValue(getVariableBR(t)));
-            return sin( isValue(getVariableBR(t))!=-1? atof(getVariableBR(t)):isValue(getVariableBR(t)));
+            return sin((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
         }
         else if(QString(t).toLower().contains("sqrt"))
             return sqrt(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
         else if(QString(t).toLower().contains("tanh"))
-            return tanh(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
+            return tanh((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
         else if(QString(t).toLower().contains("tan"))
-            return tan(isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)));
+            return tan((isValue(getVariableBR(t))!=-1?isValue(getVariableBR(t)):atof(getVariableBR(t)))*PI/180);
         else if(QString(t).toLower().contains("sum"))
             return SUM(getVariableBR(t));
     }
@@ -426,12 +427,6 @@ void  MainWindow::Parse(QTableWidgetItem *item)
             QString fix = QString("(%1)").arg(t);
             out = out.replace(fix,calc(t.toUtf8().data()));
             qDebug() << "OUT  :" << out;
-            QRegExp rx("(\\+|\\-|\\*|\\:)");
-            QStringList list = out.split(rx);
-            if(list.count()!=1)
-                if((list.count()>2)&&!haveBrackets(out.toUtf8().data()))
-                    out = QString("(%1)").arg(out);
-            qDebug() << "out: " << out;
             t.clear();
         }
         qDebug() << "is func epta : " << tempFunc << endl;
